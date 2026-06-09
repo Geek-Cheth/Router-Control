@@ -30,3 +30,8 @@ asarUnpack:
   - "**/*.node"
   - "**/@libsql/**"
   - "**/libsql/**"
+publish:
+  provider: github
+  owner: Geek-Cheth
+  repo: Router-Control
+  releaseType: release

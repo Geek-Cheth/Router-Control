@@ -133,7 +133,7 @@ GET ...&cmd=monthly_tx_bytes,monthly_rx_bytes,realtime_tx_thrpt,realtime_rx_thrp
 | Field | Unit | Notes |
 |-------|------|-------|
 | `monthly_tx_bytes` / `monthly_rx_bytes` | bytes | Billing-cycle cumulative |
-| `realtime_tx_thrpt` / `realtime_rx_thrpt` | **Kbps** | Live throughput |
+| `realtime_tx_thrpt` / `realtime_rx_thrpt` | **centi-Kbps** (÷100 → Kbps) | Live throughput; e.g. `37923` = 379.23 Kbps |
 | `realtime_tx_bytes` / `realtime_rx_bytes` | bytes | Shorter-window counters |
 | `realtime_time` | seconds | Window for realtime counters |
 
@@ -477,6 +477,8 @@ LTE type returned; signal metrics empty (may need separate unauthenticated query
 ---
 
 ## 5. Realtime Throughput Polling
+
+**Units:** `realtime_tx_thrpt` and `realtime_rx_thrpt` are **centi-Kbps** (hundredths of a Kbps), not plain Kbps. Divide the raw value by 100 before displaying as Kbps or Mbps (e.g. `13961` → 139.61 Kbps ≈ 0.14 Mbps).
 
 **Command:**
 ```

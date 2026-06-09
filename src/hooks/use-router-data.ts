@@ -9,6 +9,7 @@ export function useRouterData() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
   const fetchData = useCallback(async () => {
     try {
@@ -19,6 +20,7 @@ export function useRouterData() {
         setData(null);
       } else {
         setData(json);
+        setLastUpdated(new Date());
         setError(null);
       }
     } catch {
@@ -30,10 +32,17 @@ export function useRouterData() {
   }, []);
 
   useEffect(() => {
-    fetchData();
-    const id = setInterval(fetchData, POLL_INTERVAL);
-    return () => clearInterval(id);
+    const initial = setTimeout(() => {
+      void fetchData();
+    }, 0);
+    const id = setInterval(() => {
+      void fetchData();
+    }, POLL_INTERVAL);
+    return () => {
+      clearTimeout(initial);
+      clearInterval(id);
+    };
   }, [fetchData]);
 
-  return { data, error, loading, refresh: fetchData };
+  return { data, error, loading, lastUpdated, refresh: fetchData };
 }

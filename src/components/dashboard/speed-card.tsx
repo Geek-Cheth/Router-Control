@@ -8,18 +8,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { formatSpeed } from "@/lib/format";
-import type { LiveSpeed, TrafficStats } from "@/lib/router-types";
+import type { LiveSpeed } from "@/lib/router-types";
 import { cn } from "@/lib/utils";
 import { Activity, ArrowDown, ArrowUp } from "lucide-react";
 
 interface Props {
-  traffic: TrafficStats;
-  live?: LiveSpeed | null;
+  live: LiveSpeed | null;
 }
 
-export function SpeedCard({ traffic, live }: Props) {
-  const downloadKbps = live?.realtimeRxKbps ?? traffic.realtimeRxKbps;
-  const uploadKbps = live?.realtimeTxKbps ?? traffic.realtimeTxKbps;
+export function SpeedCard({ live }: Props) {
+  const downloadKbps = live?.realtimeRxKbps ?? 0;
+  const uploadKbps = live?.realtimeTxKbps ?? 0;
   const totalKbps = downloadKbps + uploadKbps;
   const isIdle = totalKbps === 0;
 

@@ -3,12 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { LiveSpeed } from "@/lib/router-types";
 
-/** Poll interval for live speed — 1s (byte-delta accuracy) */
-export const LIVE_SPEED_POLL_MS = 1000;
+const LIVE_SPEED_POLL_MS = 1000;
 
 export function useLiveSpeed(enabled = true) {
   const [speed, setSpeed] = useState<LiveSpeed | null>(null);
-  const [error, setError] = useState<string | null>(null);
   const inFlight = useRef(false);
 
   const poll = useCallback(async () => {
@@ -17,14 +15,9 @@ export function useLiveSpeed(enabled = true) {
     try {
       const res = await fetch("/api/router/speed", { cache: "no-store" });
       const json = await res.json();
-      if (!res.ok) {
-        setError(json.error ?? "Speed fetch failed");
-      } else {
-        setSpeed(json);
-        setError(null);
-      }
+      if (res.ok) setSpeed(json);
     } catch {
-      setError("Speed fetch failed");
+      // Keep last reading on transient failures.
     } finally {
       inFlight.current = false;
     }
@@ -32,10 +25,17 @@ export function useLiveSpeed(enabled = true) {
 
   useEffect(() => {
     if (!enabled) return;
-    poll();
-    const id = setInterval(poll, LIVE_SPEED_POLL_MS);
-    return () => clearInterval(id);
+    const initial = setTimeout(() => {
+      void poll();
+    }, 0);
+    const id = setInterval(() => {
+      void poll();
+    }, LIVE_SPEED_POLL_MS);
+    return () => {
+      clearTimeout(initial);
+      clearInterval(id);
+    };
   }, [enabled, poll]);
 
-  return { speed, error };
+  return { speed };
 }

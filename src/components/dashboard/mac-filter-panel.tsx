@@ -63,13 +63,6 @@ export function MacFilterPanel({ macFilter, devices, onUpdate }: Props) {
   const [success, setSuccess] = useState<string | null>(null);
 
   useEffect(() => {
-    setMode(macFilter.mode);
-    setMacs(
-      macFilter.mode === "blacklist" ? macFilter.blackList : macFilter.whiteList
-    );
-  }, [macFilter]);
-
-  useEffect(() => {
     if (!success) return;
     const timer = setTimeout(() => setSuccess(null), 3000);
     return () => clearTimeout(timer);

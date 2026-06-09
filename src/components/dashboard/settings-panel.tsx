@@ -41,7 +41,7 @@ export function SettingsPanel() {
   );
 }
 
-export function RebootPanel() {
+function RebootPanel() {
   const [open, setOpen] = useState(false);
   const [rebooting, setRebooting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -127,7 +127,7 @@ export function RebootPanel() {
   );
 }
 
-export function PasswordChangePanel() {
+function PasswordChangePanel() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -285,7 +285,7 @@ function parseDateInputToMs(dateInput: string, opts: { endExclusive: boolean }) 
   return base.getTime();
 }
 
-export function DataPurchasePanel({ className }: DataPurchasePanelProps) {
+function DataPurchasePanel({ className }: DataPurchasePanelProps) {
   const [amountGb, setAmountGb] = useState(80);
   const [notes, setNotes] = useState("");
   const [alertPercent, setAlertPercent] = useState(80);

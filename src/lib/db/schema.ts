@@ -66,7 +66,3 @@ export const dataPurchases = sqliteTable("data_purchases", {
   alertPercent: integer("alert_percent").notNull().default(80),
 });
 
-export type MonthlyUsageRow = typeof monthlyUsage.$inferSelect;
-export type QuotaSettingsRow = typeof quotaSettings.$inferSelect;
-export type AuditLogRow = typeof auditLog.$inferSelect;
-export type DataPurchaseRow = typeof dataPurchases.$inferSelect;

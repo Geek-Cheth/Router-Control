@@ -28,33 +28,6 @@ export async function logSettingChange(
     });
 }
 
-export async function listAuditLog(limit = 50) {
-  return getDb()
-    .select()
-    .from(schema.auditLog)
-    .orderBy(desc(schema.auditLog.createdAt))
-    .limit(limit);
-}
-
-export async function getQuotaSettings() {
-  const rows = await getDb()
-    .select()
-    .from(schema.quotaSettings)
-    .where(eq(schema.quotaSettings.id, 1));
-  return rows[0] ?? { id: 1, enabled: true, limitGb: 80, alertPercent: 80, updatedAt: Date.now() };
-}
-
-export async function saveQuotaSettingsLocal(enabled: boolean, limitGb: number, alertPercent: number) {
-  const now = Date.now();
-  await getDb()
-    .insert(schema.quotaSettings)
-    .values({ id: 1, enabled, limitGb, alertPercent, updatedAt: now })
-    .onConflictDoUpdate({
-      target: schema.quotaSettings.id,
-      set: { enabled, limitGb, alertPercent, updatedAt: now },
-    });
-}
-
 export async function listMonthlyUsage() {
   return getDb()
     .select()

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
 import { DevicesTable } from "@/components/dashboard/devices-table";
 import { EmptyState } from "@/components/dashboard/empty-state";
@@ -32,13 +31,8 @@ const TAB_TRIGGER_CLASS =
   "gap-2 rounded-none border-0 px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-muted-foreground shadow-none after:bottom-0 after:h-px after:bg-cyan-400 data-active:bg-transparent data-active:text-cyan-400 data-active:shadow-[0_1px_12px_theme(colors.cyan.400/0.35)] dark:data-active:bg-transparent sm:px-4";
 
 export default function DashboardPage() {
-  const { data, error, loading, refresh } = useRouterData();
+  const { data, error, loading, lastUpdated, refresh } = useRouterData();
   const { speed: liveSpeed } = useLiveSpeed(!!data);
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
-
-  useEffect(() => {
-    if (data) setLastUpdated(new Date());
-  }, [data]);
 
   const routerUrl =
     process.env.NEXT_PUBLIC_ROUTER_URL ?? "192.168.8.1";
@@ -109,7 +103,7 @@ export default function DashboardPage() {
                   />
                 </div>
                 <div className="lg:col-span-4">
-                  <SpeedCard traffic={data.traffic} live={liveSpeed} />
+                  <SpeedCard live={liveSpeed} />
                 </div>
                 <div className="lg:col-span-3">
                   <RouterInfoCard info={data.info} signal={data.signal} />
@@ -127,6 +121,7 @@ export default function DashboardPage() {
             <TabsContent value="security">
               <div className="grid gap-3 lg:grid-cols-2">
                 <MacFilterPanel
+                  key={`${data.macFilter.mode}-${data.macFilter.blackList.join(",")}-${data.macFilter.whiteList.join(",")}`}
                   macFilter={data.macFilter}
                   devices={data.devices}
                   onUpdate={refresh}
@@ -170,9 +165,8 @@ function OverviewStats({
   data: DashboardData;
   liveSpeed: LiveSpeed | null;
 }) {
-  const downloadKbps =
-    liveSpeed?.realtimeRxKbps ?? data.traffic.realtimeRxKbps;
-  const isLiveSpeed = liveSpeed?.realtimeRxKbps !== undefined;
+  const downloadKbps = liveSpeed?.realtimeRxKbps ?? 0;
+  const isLiveSpeed = liveSpeed !== null;
 
   const purchase = data.purchaseStatus;
   const dataUsedValue = purchase

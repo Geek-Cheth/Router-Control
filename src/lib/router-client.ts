@@ -2,7 +2,6 @@ import type {
   ConnectedDevice,
   DashboardData,
   MacFilterState,
-  QuotaSettings,
   RouterInfo,
   SignalInfo,
   TrafficStats,
@@ -34,7 +33,8 @@ class RouterClient {
 
   private parseThrpt(raw: string | undefined): number {
     const n = parseFloat(raw ?? "0");
-    return Number.isFinite(n) ? n : 0;
+    // Firmware reports centi-Kbps (1/100 Kbps); divide to get Kbps for display.
+    return Number.isFinite(n) ? n / 100 : 0;
   }
 
   private get baseUrl() {
@@ -128,13 +128,12 @@ class RouterClient {
     return {
       realtimeTxKbps: this.parseThrpt(data.realtime_tx_thrpt),
       realtimeRxKbps: this.parseThrpt(data.realtime_rx_thrpt),
-      fetchedAt: Date.now(),
     };
   }
 
   async getTrafficStats(): Promise<TrafficStats> {
     const data = await this.getCmd(
-      "monthly_tx_bytes,monthly_rx_bytes,data_volume_limit_switch,data_volume_limit_size,realtime_tx_thrpt,realtime_rx_thrpt",
+      "monthly_tx_bytes,monthly_rx_bytes,data_volume_limit_switch,data_volume_limit_size",
       true
     );
     const tx = parseInt(data.monthly_tx_bytes ?? "0", 10) || 0;
@@ -151,8 +150,6 @@ class RouterClient {
       dataLimitSwitch: data.data_volume_limit_switch === "1",
       dataLimitGB: limitGB,
       usagePercent,
-      realtimeTxKbps: this.parseThrpt(data.realtime_tx_thrpt),
-      realtimeRxKbps: this.parseThrpt(data.realtime_rx_thrpt),
     };
   }
 
@@ -296,45 +293,6 @@ class RouterClient {
     const data = await res.json();
     if (data.result !== "success") {
       throw new Error("Password change failed — check current password");
-    }
-  }
-
-  async getQuotaSettings(): Promise<QuotaSettings> {
-    const data = await this.getCmd(
-      "data_volume_limit_switch,data_volume_limit_unit,data_volume_limit_size,data_volume_alert_percent",
-      true
-    );
-    const limitGB = parseDataLimit(data.data_volume_limit_size ?? "80_1024");
-    return {
-      enabled: data.data_volume_limit_switch === "1",
-      limitGB,
-      alertPercent: parseInt(data.data_volume_alert_percent ?? "80", 10) || 80,
-      routerLimitSize: data.data_volume_limit_size,
-    };
-  }
-
-  async setQuotaSettings(settings: QuotaSettings): Promise<void> {
-    await this.ensureLogin();
-    const body = new URLSearchParams({
-      isTest: "false",
-      goformId: "DATA_LIMIT_SETTING",
-      data_volume_limit_switch: settings.enabled ? "1" : "0",
-      data_volume_limit_unit: "data",
-      data_volume_limit_size: `${settings.limitGB}_1024`,
-      data_volume_alert_percent: String(settings.alertPercent),
-      CSRFToken: "",
-    });
-    const res = await this.fetch(`${this.baseUrl}${SET_URL}`, {
-      method: "POST",
-      headers: {
-        ...this.headers(),
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: body.toString(),
-    });
-    const data = await res.json();
-    if (data.result !== "success" && data.result !== "0" && data.result !== 0) {
-      throw new Error(`Quota update failed: ${JSON.stringify(data)}`);
     }
   }
 

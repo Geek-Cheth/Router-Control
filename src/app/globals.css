@@ -155,3 +155,15 @@
     opacity: 0.035;
   }
 }
+
+/* Electron desktop: hide native scrollbars; wheel/trackpad scrolling still works */
+.electron-app,
+.electron-app * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.electron-app::-webkit-scrollbar,
+.electron-app *::-webkit-scrollbar {
+  display: none;
+}

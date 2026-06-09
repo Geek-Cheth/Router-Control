@@ -15,14 +15,11 @@ export interface TrafficStats {
   dataLimitSwitch: boolean;
   dataLimitGB: number;
   usagePercent: number;
-  realtimeTxKbps: number;
-  realtimeRxKbps: number;
 }
 
 export interface LiveSpeed {
   realtimeTxKbps: number;
   realtimeRxKbps: number;
-  fetchedAt: number;
 }
 
 export interface MacFilterState {
@@ -65,13 +62,6 @@ export interface DashboardData {
     totalBytes: number;
   };
   purchaseStatus?: PurchaseStatus | null;
-}
-
-export interface QuotaSettings {
-  enabled: boolean;
-  limitGB: number;
-  alertPercent: number;
-  routerLimitSize?: string;
 }
 
 export interface PurchaseStatus {

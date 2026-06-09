@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "standalone",
+  serverExternalPackages: ["@libsql/client"],
+  outputFileTracingIncludes: {
+    "/*": [
+      "./node_modules/@libsql/**/*",
+      "./node_modules/libsql/**/*",
+    ],
+  },
 };
 
 export default nextConfig;

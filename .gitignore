@@ -32,6 +32,23 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# local database and app config (Electron stores config under ~/.browser-control/)
+/data/
+*.db
+*.db-wal
+*.db-shm
+
+# investigation captures (device IDs, LAN IPs, session data)
+scripts/investigate-*-output.json
+scripts/probe-per-device-output.json
+scripts/service.js.dump
+
+# electron
+/dist-electron/
+/release/
+/electron-resources/
 
 # vercel
 .vercel

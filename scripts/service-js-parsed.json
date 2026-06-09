@@ -1,0 +1,786 @@
+{
+  "goformIds": [
+    "ACL_SETTING",
+    "ADD_IP_PORT_FILETER",
+    "ADD_IP_PORT_FILETER_V4V6",
+    "ADD_PORT_MAP",
+    "ADD_RATE_LIMIT",
+    "ALL_DELETE_SMS",
+    "APN2_PROC_EX",
+    "APN3_PROC_EX",
+    "APN_PROC",
+    "APN_PROC_EX",
+    "BASIC_SETTING",
+    "CHANGE_MODE",
+    "CHANGE_PASSWORD",
+    "CONNECT_NETWORK",
+    "DATA_LIMIT_SETTING",
+    "DELETE_SMS",
+    "DEL_IP_PORT_FILETER",
+    "DEL_IP_PORT_FILETER_V4V6",
+    "DEL_PORT_MAP",
+    "DEL_RATE_LIMIT",
+    "DHCP_SETTING",
+    "DHCP_SETTING1",
+    "DHCP_SETTING2",
+    "DIGITMAP_SETTINGS",
+    "DISABLE_PIN",
+    "DISCONNECT_NETWORK",
+    "DMZ_SETTING",
+    "EDIT_HOSTNAME",
+    "ENABLE_PIN",
+    "ENABLE_WPS_SET",
+    "ENTER_PIN",
+    "ENTER_PUK",
+    "FLOW_CALIBRATION_MANUAL",
+    "FLOW_SWITCH",
+    "FW_FORWARD_ADD",
+    "FW_FORWARD_DEL",
+    "GET_STATUS_ROUTE",
+    "GOFORM_HTTPSHARE_CHECK_FILE",
+    "GRE_SETTING",
+    "HOTLINE_SETTINGS",
+    "HTTPS_PORT_SETTINGS",
+    "HTTPS_SWITCH_PORT_SETTINGS",
+    "IF_UPGRADE",
+    "L2TP_SETTING",
+    "LOCK_FREQUENCY",
+    "LOGIN",
+    "LOGOUT",
+    "MGMT_CONTROL_POWER_ON_SPEED",
+    "MONITOR_GETTINGS",
+    "MONITOR_SETTINGS",
+    "NAT_SETTING",
+    "PBM_CONTACT_ADD",
+    "PBM_CONTACT_DEL",
+    "POLARITY_REVERSAL",
+    "PORT_SETTINGS",
+    "PPPOE_SETTING",
+    "QUICK_SETUP",
+    "QUICK_SETUP_EX",
+    "REBOOT_DEVICE",
+    "RESTORE_FACTORY_SETTINGS",
+    "RESULT_RESTORE",
+    "SAVE_SMS",
+    "SAVE_TSW",
+    "SCAN_NETWORK",
+    "SEND_SMS",
+    "SEND_SMS_ID",
+    "SET_BEARER_PREFERENCE",
+    "SET_HOTSPOTSERVER",
+    "SET_MESSAGE_CENTER",
+    "SET_MSG_READ",
+    "SET_MTU",
+    "SET_NETWORK",
+    "SET_STATUS_ROUTE",
+    "SET_UART_BAUDRATE",
+    "SET_USB_MODE",
+    "SET_W13_WLAN",
+    "SET_WEB_LANGUAGE",
+    "SET_WIFI_COVERAGE",
+    "SET_WIFI_INFO",
+    "SET_WIFI_INFO2",
+    "SET_WIFI_SLEEP_INFO",
+    "SET_WIFI_SSID1_SETTINGS",
+    "SET_WIFI_SSID2_SETTINGS",
+    "SET_WIFI_SSID3_SETTINGS",
+    "SET_WIFI_SSID4_SETTINGS",
+    "SET_WIFI_SSID5_SETTINGS",
+    "SIP_SERVER_SETTING",
+    "STATIC_IP",
+    "TURN_OFF_DEVICE",
+    "TZ_CMD_SECURE_LOGIN",
+    "TZ_ENTER_PUK",
+    "TZ_GET_LOCK_BAND",
+    "TZ_GET_LOCK_PLMN",
+    "TZ_PIN_WSC_CONFIGURED",
+    "TZ_POST_ROUTE",
+    "TZ_SET_LOCK_BAND",
+    "TZ_SET_LOCK_PLMN",
+    "TZ_SET_UNLOCK_CODE",
+    "TZ_SET_USB_STATUS",
+    "TZ_SET_WPS_PIN_CONFIG",
+    "TZ_START_CONFIG_UPDATE",
+    "TZ_START_SYSTEM_UPGRADE",
+    "TZ_UNLOCK_PLMN",
+    "UNLOCK_NETWORK",
+    "UNLOCK_PLMN_PSK",
+    "UPNP_SETTING",
+    "USSD_PROCESS",
+    "VIRTUAL_SERVER",
+    "VOLTE_APN",
+    "WB_MODE",
+    "WIFI_MAC_FILTER",
+    "WIFI_WPS_SET"
+  ],
+  "cmds": [
+    "1",
+    "allow_login_from_wan,web_used_port",
+    "apn2_profile_name,apn2_wan,apn2_type,apn2_auth_mode,apn2_username,apn2_passwd,apn3_profile_name,apn3_wan,apn3_type,apn3_auth_mode,apn3_username,apn3_passwd,tz_apn2_enable,tz_apn3_enable,main_nat_1,main_nat_2",
+    "blc_wan_mode,blc_wan_auto_mode,loginfo,ppp_status,rj45_state,ethwan_mode",
+    "config_version",
+    "current_network_mode,m_netselect_save,net_select_mode,m_netselect_contents,net_select,ppp_status,modem_main_state,tz_close_gms",
+    "cvmod_ims",
+    "data_volume_limit_switch,data_volume_limit_unit,data_volume_limit_size,data_volume_alert_percent,monthly_tx_bytes,monthly_rx_bytes,monthly_time,traffic_alined_delta,data_remind_sms_switch,data_remind_sms_number,data_remind_sms_content",
+    "device_version",
+    "fota_current_upgrade_state",
+    "fota_new_version_state",
+    "get_ddos_status",
+    "get_hash",
+    "get_random",
+    "get_token",
+    "hotspot_enable,hotspot_eap_enable,hotspot_eap_radius_ip,hotspot_eap_radius_port,hotspot_eap_radius_secret",
+    "if_has_select",
+    "ip_postroute_enable,ip_postroute_mac",
+    "is_have_system_log,is_start_syslog",
+    "is_mandatory",
+    "lan_station_list",
+    "loginfo,tz_account_power,tz_build_time",
+    "logs_level",
+    "m_netselect_contents",
+    "m_netselect_result",
+    "m_netselect_status",
+    "main_nat,main_nat_1,main_nat_2",
+    "mgmt_quicken_power_on,need_hard_reboot,need_sim_pin",
+    "modem_main_state,puknumber,pinnumber,blc_wan_mode,blc_wan_auto_mode,psw_fail_num_str,login_lock_time,unlock_plmn_time,auto_simpin",
+    "mtu,mss",
+    "network_tools",
+    "opms_wan_auto_mode,ethwan_mode,pppoe_username,pppoe_password,ethwan_dialmode,ppp_status,static_wan_ipaddr,static_wan_netmask,static_wan_gateway,static_wan_primary_dns,static_wan_secondary_dns,rj45_state,lan_ipaddr,lan_netmask",
+    "pack_size_info",
+    "pbm_capacity_info",
+    "pbm_data_info",
+    "pbm_data_total",
+    "pbm_init_flag",
+    "pinnumber,pin_status,puknumber,modem_main_state,auto_simpin",
+    "restore_flag",
+    "rj45_mode,ethwan_mode,static_ethwan_ip,static_ethwan_mac,static_ethwan_gw,static_ethwan_nm,static_ethwan_pridns,static_ethwan_secdns,pppoe_password,pppoe_username",
+    "rj45_plug",
+    "router_diagnostics",
+    "set_ddos_status",
+    "set_hash",
+    "set_random",
+    "set_token",
+    "sms_capacity_info",
+    "sms_cmd_status_info",
+    "sms_data_total",
+    "sms_parameter_info",
+    "sms_status_rpt_data",
+    "sntp_year,sntp_month,sntp_day,sntp_hour,sntp_minute,sntp_server_list1,sntp_server_list2,sntp_server_list3,sntp_second,sntp_time_set_mode,sntp_server0,sntp_server1,sntp_server2,sntp_other_server0,sntp_other_server1,sntp_other_server2,sntp_timezone,sntp_timezone_index,sntp_dst_enable,ppp_status,sntp_process_result,rj45_state,syn_done",
+    "ssid_and_pwd",
+    "station_list",
+    "syn_done",
+    "system_log",
+    "system_status",
+    "telnetd_enable,dropbear_enable,adbd_enable",
+    "tz_account_power",
+    "tz_change_theme",
+    "tz_dynamic_info",
+    "tz_export_diagnosis",
+    "tz_gre_state,tz_gre_tunnel_name,tz_gre_default_gateway,tz_gre_ip_addr,tz_gre_local_ip,tz_gre_remote_ip",
+    "tz_l2tp_status,tz_l2tp_state,tz_l2tp_lac_name,tz_l2tp_lns_server,tz_l2tp_tunnel_name,tz_l2tp_challenge_pass,tz_l2tp_auth_name,tz_l2tp_auth_pass,tz_l2tp_mtu,tz_l2tp_lns_checkalive,tz_l2tp_get_ip,tz_l2tp_peer_ip,tz_l2tp_ipsec_enable,tz_l2tp_ipsec_psk,tz_l2tp_ipsec_status",
+    "tz_pptp_vpn_state,tz_l2tp_state,tz_gre_state",
+    "tz_real_version",
+    "tz_save_iptables",
+    "tz_save_user_info",
+    "tz_tcpdump",
+    "tz_unlock_plmn_pwd,tz_unlock_plmn_times,tz_unlock_private_mark",
+    "tz_upgrade_state",
+    "tz_voice_type",
+    "tz_web_page_hide",
+    "tz_web_special_func",
+    "tz_web_user_hide",
+    "uart_baudrate",
+    "unlock_nck_time",
+    "update_info",
+    "update_type",
+    "upgrade_result",
+    "usb_mode",
+    "ussd_data_info",
+    "ussd_write_flag",
+    "wan_ssl_enable,wan_ssl_port",
+    "wifi_coverage",
+    "wifi_sta_connection,pswan_priority,wifiwan_priority,ethwan_priority"
+  ],
+  "snippets": {
+    "station_list": [
+      {
+        "pos": 52047,
+        "context": "n(e){return e||f})},getCurrentlyAttachedDevicesInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"station_list\"}},function(e){for(var t=[],n=e.station_list,_=0;n&&_<n.length;_++){var r={};r.ssid_index=n[_].ssid_index,r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip_addr,t.push(r)}return{attachedDevices:t}},null,!1)},"
+      },
+      {
+        "pos": 52092,
+        "context": "esInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"station_list\"}},function(e){for(var t=[],n=e.station_list,_=0;n&&_<n.length;_++){var r={};r.ssid_index=n[_].ssid_index,r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip_addr,t.push(r)}return{attachedDevices:t}},null,!1)},getAttachedCableDevices:function(){return v(a"
+      },
+      {
+        "pos": 52423,
+        "context": "edDevices:t}},null,!1)},getAttachedCableDevices:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"lan_station_list\"}},function(e){for(var t=[],n=e.lan_station_list||e.station_list,_=0;n&&_<n.length;_++){var r={};r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip,t.push(r)}return{attachedDevices:t}},null,!1)},getLanguage:E,"
+      },
+      {
+        "pos": 52472,
+        "context": "unction(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"lan_station_list\"}},function(e){for(var t=[],n=e.lan_station_list||e.station_list,_=0;n&&_<n.length;_++){var r={};r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip,t.push(r)}return{attachedDevices:t}},null,!1)},getLanguage:E,setLanguage:function(){return v(arguments,{},func"
+      },
+      {
+        "pos": 52488,
+        "context": " v(arguments,{},function(e,t){return{isTest:o,cmd:\"lan_station_list\"}},function(e){for(var t=[],n=e.lan_station_list||e.station_list,_=0;n&&_<n.length;_++){var r={};r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip,t.push(r)}return{attachedDevices:t}},null,!1)},getLanguage:E,setLanguage:function(){return v(arguments,{},function(e,t){var n="
+      }
+    ],
+    "lan_station_list": [
+      {
+        "pos": 52419,
+        "context": "tachedDevices:t}},null,!1)},getAttachedCableDevices:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"lan_station_list\"}},function(e){for(var t=[],n=e.lan_station_list||e.station_list,_=0;n&&_<n.length;_++){var r={};r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip,t.push(r)}return{attachedDevices:t}},null,!1)},getLanguag"
+      },
+      {
+        "pos": 52468,
+        "context": "es:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"lan_station_list\"}},function(e){for(var t=[],n=e.lan_station_list||e.station_list,_=0;n&&_<n.length;_++){var r={};r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip,t.push(r)}return{attachedDevices:t}},null,!1)},getLanguage:E,setLanguage:function(){return v(arguments,{},"
+      }
+    ],
+    "traffic": [
+      {
+        "pos": 4734,
+        "context": "network_mode,main_antenna,sub_antenna,hide_home_data_switch,show_qrcode_flag,m_ssid_enable,polarity_reversal,wb_mode,tz_traffic_share_switch,ip_postroute_enable,telnetd_enable,dropbear_enable,RemoteManagement,WANPingFilter,tz_usb_support,tz_usb_downloader,guest_user,tz_change_password,tz_change_user,guest_Password,tz_account_power,w13_connected,plmn_unlock,tz_plmn_is_lock,tz_unlock_plmn_num,login_"
+      },
+      {
+        "pos": 6773,
+        "context": "ag:\"1\"==e.show_qrcode_flag,multi_ssid_enable:e.m_ssid_enable,polarity_reversal:e.polarity_reversal,wb_mode:e.wb_mode,tz_traffic_share_switch:\"1\"==e.tz_traffic_share_switch?\"1\":\"0\",postRouteFlag:\"1\"==e.ip_postroute_enable?\"1\":\"0\",telnetFlag:\"y\"==e.telnetd_enable?\"y\":\"n\",sshFlag:\"y\"==e.dropbear_enable?\"y\":\"n\",remoteFlag:\"1\"==e.RemoteManagement?\"1\":\"0\",pingFlag:\"1\"==e.WANPingFilter?\"1\":\"0\",usbPortFla"
+      },
+      {
+        "pos": 6804,
+        "context": "i_ssid_enable:e.m_ssid_enable,polarity_reversal:e.polarity_reversal,wb_mode:e.wb_mode,tz_traffic_share_switch:\"1\"==e.tz_traffic_share_switch?\"1\":\"0\",postRouteFlag:\"1\"==e.ip_postroute_enable?\"1\":\"0\",telnetFlag:\"y\"==e.telnetd_enable?\"y\":\"n\",sshFlag:\"y\"==e.dropbear_enable?\"y\":\"n\",remoteFlag:\"1\"==e.RemoteManagement?\"1\":\"0\",pingFlag:\"1\"==e.WANPingFilter?\"1\":\"0\",usbPortFlag:\"1\"==e.tz_usb_support?\"1\":\"0\""
+      },
+      {
+        "pos": 9617,
+        "context": "lag:y.show_qrcode_flag,multi_ssid_enable:y.multi_ssid_enable,polarity_reversal:y.polarity_reversal,wb_mode:y.wb_mode,tz_traffic_share_switch:y.tz_traffic_share_switch,postRouteFlag:y.postRouteFlag,telnetFlag:y.telnetFlag,sshFlag:y.sshFlag,remoteFlag:y.remoteFlag,pingFlag:y.pingFlag,usbPortFlag:y.usbPortFlag,usbDownloadFlag:y.usbDownloadFlag,guest_user:y.guest_user,tz_change_password:y.tz_change_pa"
+      },
+      {
+        "pos": 9643,
+        "context": "ti_ssid_enable:y.multi_ssid_enable,polarity_reversal:y.polarity_reversal,wb_mode:y.wb_mode,tz_traffic_share_switch:y.tz_traffic_share_switch,postRouteFlag:y.postRouteFlag,telnetFlag:y.telnetFlag,sshFlag:y.sshFlag,remoteFlag:y.remoteFlag,pingFlag:y.pingFlag,usbPortFlag:y.usbPortFlag,usbDownloadFlag:y.usbDownloadFlag,guest_user:y.guest_user,tz_change_password:y.tz_change_password,tz_change_user:y.tz"
+      }
+    ],
+    "bandwidth": [
+      {
+        "pos": 7762,
+        "context": "z_apn2_enable:e.tz_apn2_enable,tz_apn3_enable:e.tz_apn3_enable,apnMode:e.apn_mode,tz_used_logo_file:e.tz_used_logo_file,bandwidth:e.wifi_11n_cap,hide_lte_single:e.hide_lte_single,hide_at_send:e.hide_at_send,tz_area_code:e.tz_area_code,cellid_is_lock:e.cellid_is_lock,adbd_enable:e.adbd_enable,set_need_language:e.set_need_language,is_show_hotspot_web:e.is_show_hotspot_web,LocalDomain:e.LocalDomain,m"
+      },
+      {
+        "pos": 10453,
+        "context": "ck_cp_status,tz_apn2_enable:y.tz_apn2_enable,tz_apn3_enable:y.tz_apn3_enable,apnMode:y.apnMode,logo:y.tz_used_logo_file,bandwidth:y.bandwidth,hide_lte_single:y.hide_lte_single,hide_at_send:y.hide_at_send,tz_area_code:y.tz_area_code,adbd_enable:y.adbd_enable,cellid_is_lock:y.cellid_is_lock,set_need_language:y.set_need_language,is_show_hotspot_web:y.is_show_hotspot_web,LocalDomain:y.LocalDomain,mem_"
+      },
+      {
+        "pos": 10465,
+        "context": ",tz_apn2_enable:y.tz_apn2_enable,tz_apn3_enable:y.tz_apn3_enable,apnMode:y.apnMode,logo:y.tz_used_logo_file,bandwidth:y.bandwidth,hide_lte_single:y.hide_lte_single,hide_at_send:y.hide_at_send,tz_area_code:y.tz_area_code,adbd_enable:y.adbd_enable,cellid_is_lock:y.cellid_is_lock,set_need_language:y.set_need_language,is_show_hotspot_web:y.is_show_hotspot_web,LocalDomain:y.LocalDomain,mem_total:y.mem_"
+      },
+      {
+        "pos": 45499,
+        "context": "={goformId:\"SET_W13_WLAN\",isTest:o,ssid:e.SSID,broadcastSsidEnabled:e.broadcast,security_mode:e.AuthMode,wifi_11n_cap:e.bandwidth,selectedChannel:e.channel,wifiMode:e.mode,MAX_Access_num:e.MAX_Access_num,wifiEnabled:e.wifiEnabled,w13_lan_ip:e.ipAddress};d.WIFI_WEP_SUPPORT&&(t.wep_default_key=e.wep_default_key,t.wep_key_1=e.wep_key_1,t.wep_key_2=e.wep_key_2,t.wep_key_3=e.wep_key_3,t.wep_key_4=e.wep"
+      },
+      {
+        "pos": 91556,
+        "context": "_hi_max,mode:e.WirelessMode,countryCode:e.CountryCode,channel:e.Channel,rate:e.HT_MCS,wifiBand:\"a\"==e.wifi_band?\"a\":\"b\",bandwidth:e.wifi_11n_cap,MAX_Station_num:p.isNumeric(e.MAX_Station_num)?e.MAX_Station_num:d.MAX_STATION_NUMBER,MAX_Access_num:e.MAX_Access_num,m_MAX_Access_num:e.m_MAX_Access_num,ap_station_enable:e.wifi_sta_connection,manual_channelOption_start:e.manual_channelOption_start}:f}},"
+      }
+    ],
+    "reboot": [
+      {
+        "pos": 74454,
+        "context": "pEnd,n.dhcpDns=e.dhcpDns,n.dhcp2_Enabled=e.dhcp2_Enabled,n.dhcp2_Dns=e.dhcp2_Dns,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},setSipServer:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SIP_SERVER_SETTING\",n.sip_reg_server=e.sip_reg_server,n.sip_reg_port=e.sip_reg_port,n.is_show_sipServer=e.is_show_sipServer,n.sip"
+      },
+      {
+        "pos": 75569,
+        "context": "hcpDns=e.dhcpDns,n.va0_dhcp2_Dns=e.dhcp2_Dns,n.va0_dhcp2_Enabled=e.dhcp2_Enabled,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},setLanInfo2:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,n.goformId=\"DHCP_SETTING2\",n.lanIp=e.ipAddress,n.lanNetmask=e.subnetMask,n.lanDhcpType=\"1\"==e.dhcpServer?\"SERVER\":\"DISABLE\",n.CSRFToken=e.CSRFToken,\""
+      },
+      {
+        "pos": 76041,
+        "context": "hcpDns=e.dhcpDns,n.va1_dhcp2_Dns=e.dhcp2_Dns,n.va1_dhcp2_Enabled=e.dhcp2_Enabled,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},getSmsSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"sms_parameter_info\",n},function(e){{if(e){var t={};switch(t.centerNumber=e.sms_para_sca,t.memStroe=e.sms_para_mem_store,t.deliveryRep"
+      },
+      {
+        "pos": 109952,
+        "context": ")},getFastbootSetting:function(){return v(arguments,{},function(e){return{isTest:o,cmd:\"mgmt_quicken_power_on,need_hard_reboot,need_sim_pin\",multi_data:1}},function(e){return{fastbootEnabled:\"1\"==e.mgmt_quicken_power_on?\"1\":\"0\",need_hard_reboot:e.need_hard_reboot,need_sim_pin:\"yes\"==e.need_sim_pin?\"yes\":\"no\"}},null,!1)},setFastbootSetting:function(){return v(arguments,{},function(e){return{isTest:"
+      },
+      {
+        "pos": 110070,
+        "context": "d_reboot,need_sim_pin\",multi_data:1}},function(e){return{fastbootEnabled:\"1\"==e.mgmt_quicken_power_on?\"1\":\"0\",need_hard_reboot:e.need_hard_reboot,need_sim_pin:\"yes\"==e.need_sim_pin?\"yes\":\"no\"}},null,!1)},setFastbootSetting:function(){return v(arguments,{},function(e){return{isTest:o,goformId:\"MGMT_CONTROL_POWER_ON_SPEED\",mgmt_quicken_power_on:e.fastbootEnabled}},function(e){return e&&\"success\"==e."
+      }
+    ],
+    "REBOOT": [
+      {
+        "pos": 110621,
+        "context": "e){return e||f},null,!0)},restart:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"REBOOT_DEVICE\",n},function(e){return e||f},null,!0)},timerUpdaterEnable:e,switchPortForLog:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"CHANGE_MODE\",n.change_mode=e.change_mode,n},function(e){return e||f},null,!0)},childGroupList:ne,checkC"
+      }
+    ],
+    "CHANGE_PASSWORD": [
+      {
+        "pos": 71490,
+        "context": "ode(e.newPassword):e.newPassword,n.oldPassword=d.PASSWORD_ENCODE?Base64.encode(e.oldPassword):e.oldPassword,n.goformId=\"CHANGE_PASSWORD\",n.isTest=o,n},function(e){return e&&\"success\"===e.result?{result:!0}:\"user_name_already_exist\"===e.result?p.extend(f,{errorType:\"usernameExist\"}):p.extend(f,{errorType:\"badPassword\"})},null,!0)},getPinData:function(){return v(arguments,{},function(e,t){var n={};r"
+      }
+    ],
+    "PASSWORD": [
+      {
+        "pos": 41478,
+        "context": "elcelLogoImg\").detach())}return{getWifiBasic:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o;var _=d.PASSWORD_ENCODE?\"WPAPSK1_encode,m_WPAPSK1_encode,\":\"WPAPSK1,m_WPAPSK1,\",r=d.PASSWORD_ENCODE?\"WPAPSK2_encode,m_WPAPSK1_encode,\":\"WPAPSK2,m_WPAPSK1,\",s=d.PASSWORD_ENCODE?\"WPAPSK3_encode,m_WPAPSK1_encode,\":\"WPAPSK3,m_WPAPSK1,\",a=d.PASSWORD_ENCODE?\"WPAPSK4_encode,m_WPAPSK1_encode,\":\""
+      },
+      {
+        "pos": 41554,
+        "context": "},function(e,t){var n={};n.isTest=o;var _=d.PASSWORD_ENCODE?\"WPAPSK1_encode,m_WPAPSK1_encode,\":\"WPAPSK1,m_WPAPSK1,\",r=d.PASSWORD_ENCODE?\"WPAPSK2_encode,m_WPAPSK1_encode,\":\"WPAPSK2,m_WPAPSK1,\",s=d.PASSWORD_ENCODE?\"WPAPSK3_encode,m_WPAPSK1_encode,\":\"WPAPSK3,m_WPAPSK1,\",a=d.PASSWORD_ENCODE?\"WPAPSK4_encode,m_WPAPSK1_encode,\":\"WPAPSK4,m_WPAPSK1,\";return n.cmd=\"wifi_cur_state,wifiEnabled,tz_ssid2_enable"
+      },
+      {
+        "pos": 41630,
+        "context": "m_WPAPSK1_encode,\":\"WPAPSK1,m_WPAPSK1,\",r=d.PASSWORD_ENCODE?\"WPAPSK2_encode,m_WPAPSK1_encode,\":\"WPAPSK2,m_WPAPSK1,\",s=d.PASSWORD_ENCODE?\"WPAPSK3_encode,m_WPAPSK1_encode,\":\"WPAPSK3,m_WPAPSK1,\",a=d.PASSWORD_ENCODE?\"WPAPSK4_encode,m_WPAPSK1_encode,\":\"WPAPSK4,m_WPAPSK1,\";return n.cmd=\"wifi_cur_state,wifiEnabled,tz_ssid2_enable,tz_ssid3_enable,tz_ssid4_enable,NoForwarding,m_NoForwarding,\"+_+r+s+a+\"MAX_"
+      },
+      {
+        "pos": 41706,
+        "context": "m_WPAPSK1_encode,\":\"WPAPSK2,m_WPAPSK1,\",s=d.PASSWORD_ENCODE?\"WPAPSK3_encode,m_WPAPSK1_encode,\":\"WPAPSK3,m_WPAPSK1,\",a=d.PASSWORD_ENCODE?\"WPAPSK4_encode,m_WPAPSK1_encode,\":\"WPAPSK4,m_WPAPSK1,\";return n.cmd=\"wifi_cur_state,wifiEnabled,tz_ssid2_enable,tz_ssid3_enable,tz_ssid4_enable,NoForwarding,m_NoForwarding,\"+_+r+s+a+\"MAX_Station_num,SSID1,AuthMode,HideSSID,MAX_Access_num,EncrypType,Key1Str1,Key2S"
+      },
+      {
+        "pos": 43258,
+        "context": "num4:d.MAX_STATION_NUMBER,AuthMode:e.AuthMode,SSID:e.SSID1,broadcast:e.HideSSID,apIsolation:e.NoForwarding,passPhrase:d.PASSWORD_ENCODE?Base64.decode(e.WPAPSK1_encode):e.WPAPSK1,MAX_Access_num:e.MAX_Access_num,cipher:\"TKIP\"==e.EncrypType?\"0\":\"AES\"==e.EncrypType?1:2,encryptType:e.EncrypType,keyID:e.DefaultKeyID,Key1Str1:e.Key1Str1,Key2Str1:e.Key2Str1,Key3Str1:e.Key3Str1,Key4Str1:e.Key4Str1,S2_keyID"
+      }
+    ],
+    "SSID": [
+      {
+        "pos": 14094,
+        "context": "VolumePercent:N.limitVolumePercent,limitVolumeSize:N.limitVolumeSize,connectWifiProfile:N.connectWifiProfile,connectWifiSSID:N.connectWifiSSID,connectWifiStatus:N.connectWifiStatus,multi_ssid_enable:N.multi_ssid_enable,blc_wan_mode:N.blc_wan_mode,roamMode:N.roamMode,current_upgrade_state:N.current_upgrade_state,is_mandatory:N.is_mandatory,new_version_state:N.new_version_state,allowRoamingUpdate:N."
+      },
+      {
+        "pos": 14112,
+        "context": "mitVolumePercent,limitVolumeSize:N.limitVolumeSize,connectWifiProfile:N.connectWifiProfile,connectWifiSSID:N.connectWifiSSID,connectWifiStatus:N.connectWifiStatus,multi_ssid_enable:N.multi_ssid_enable,blc_wan_mode:N.blc_wan_mode,roamMode:N.roamMode,current_upgrade_state:N.current_upgrade_state,is_mandatory:N.is_mandatory,new_version_state:N.new_version_state,allowRoamingUpdate:N.allowRoamingUpdate"
+      },
+      {
+        "pos": 16070,
+        "context": "VolumePercent:N.limitVolumePercent,limitVolumeSize:N.limitVolumeSize,connectWifiProfile:N.connectWifiProfile,connectWifiSSID:N.connectWifiSSID,connectWifiStatus:N.connectWifiStatus,multi_ssid_enable:N.multi_ssid_enable,roamMode:N.roamMode,blc_wan_mode:N.blc_wan_mode,current_upgrade_state:N.current_upgrade_state,is_mandatory:N.is_mandatory,new_version_state:N.new_version_state,allowRoamingUpdate:N."
+      },
+      {
+        "pos": 16088,
+        "context": "mitVolumePercent,limitVolumeSize:N.limitVolumeSize,connectWifiProfile:N.connectWifiProfile,connectWifiSSID:N.connectWifiSSID,connectWifiStatus:N.connectWifiStatus,multi_ssid_enable:N.multi_ssid_enable,roamMode:N.roamMode,blc_wan_mode:N.blc_wan_mode,current_upgrade_state:N.current_upgrade_state,is_mandatory:N.is_mandatory,new_version_state:N.new_version_state,allowRoamingUpdate:N.allowRoamingUpdate"
+      },
+      {
+        "pos": 17399,
+        "context": "\",\"tz_account_power\",\"tz_update_config_state\",\"tz_build_time\",\"web_signal\",\"network_type\",\"ppp_status\",\"rj45_state\",\"EX_SSID1\",\"sta_ip_status\",\"tz_update_config_state\",\"m_ssid_enable\",\"wifi_cur_state\",\"SSID1\",\"simcard_roam\",\"lan_ipaddr\",\"battery_charging\",\"battery_vol_percent\",\"battery_pers\",\"spn_name_data\",\"spn_b1_flag\",\"spn_b2_flag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realti"
+      }
+    ],
+    "DHCP": [
+      {
+        "pos": 33190,
+        "context": "List.HIDE_APN1)&&p(\"#setapn_1\").detach(),u(hideItemsBitList.HIDE_APN2)&&p(\"#setapn_2\").detach(),u(hideItemsBitList.HIDE_DHCP1)&&p(\"#dhcp1_settings\").detach(),u(hideItemsBitList.HIDE_DHCP2)&&p(\"#dhcp2_settings\").detach(),\"1\"==ae&&p(\".bandGsmList\").detach(),u(hideItemsBitList.HIDE_TDS)&&p(\".bandTdsList\").detach(),a(itemsFuncList.FREQUENCY_HIDE)||p(\"#enableFrequency\").detach(),u(hideItemsBitList.HIDE"
+      },
+      {
+        "pos": 33252,
+        "context": "DE_APN2)&&p(\"#setapn_2\").detach(),u(hideItemsBitList.HIDE_DHCP1)&&p(\"#dhcp1_settings\").detach(),u(hideItemsBitList.HIDE_DHCP2)&&p(\"#dhcp2_settings\").detach(),\"1\"==ae&&p(\".bandGsmList\").detach(),u(hideItemsBitList.HIDE_TDS)&&p(\".bandTdsList\").detach(),a(itemsFuncList.FREQUENCY_HIDE)||p(\"#enableFrequency\").detach(),u(hideItemsBitList.HIDE_SIPSERVER_SWITCH)||p(\"#tz_is_show_sipService_switch\").detach("
+      },
+      {
+        "pos": 33639,
+        "context": "tch\").detach(),u(hideItemsBitList.HIDE_SIPSERVER_APN)||p(\"#tz_is_hide_sipService_apn\").detach(),u(hideItemsBitList.HIDE_DHCP_DNS2)||p(\".is_show_dhcp_dns2\").detach(),u(hideItemsBitList.HIDE_HTTPS)||p(\".httpsPort\").detach();else if(\"3\"==se.tz_account_power){\"release\"==se.tz_version_type&&(p(\"#import_export\").detach(),p(\"#one_key_export\").detach(),p(\"#tcpdump\").detach(),p(\"#voip_log\").detach(),p(\"#tr"
+      },
+      {
+        "pos": 34222,
+        "context": "\"#deviceInternater\").detach()),l(hideUserItemsBitList.HIDE_HTTPS)||p(\".httpsPort\").detach(),l(hideUserItemsBitList.HIDE_DHCP_DNS2)||p(\".is_show_dhcp_dns2\").detach(),l(hideUserItemsBitList.HIDE_APN1)&&p(\".HideNat1\").detach(),l(hideUserItemsBitList.HIDE_APN2)&&p(\".HideNat2\").detach(),l(hideUserItemsBitList.HIDE_DHCP1)&&p(\"#dhcp1_settings\").detach(),l(hideUserItemsBitList.HIDE_DHCP2)&&p(\"#dhcp2_setti"
+      },
+      {
+        "pos": 34413,
+        "context": "E_APN1)&&p(\".HideNat1\").detach(),l(hideUserItemsBitList.HIDE_APN2)&&p(\".HideNat2\").detach(),l(hideUserItemsBitList.HIDE_DHCP1)&&p(\"#dhcp1_settings\").detach(),l(hideUserItemsBitList.HIDE_DHCP2)&&p(\"#dhcp2_settings\").detach(),l(hideUserItemsBitList.HIDE_APN1)&&p(\"#setapn_1\").detach(),l(hideUserItemsBitList.HIDE_APN2)&&p(\"#setapn_2\").detach(),l(hideUserItemsBitList.CELL_LOCK)&&p(\"#net_lockpci\").detac"
+      }
+    ],
+    "url_filter": [
+      {
+        "pos": 30978,
+        "context": ".detach(),u(hideItemsBitList.HIDE_FLOW_SETTING)||p(\"#flow_setting\").detach(),u(hideItemsBitList.HIDE_URL_FILTER_1)||p(\"#url_filter_1\").detach(),u(hideItemsBitList.HIDE_URL_FILTER_2)||p(\"#url_filter_2\").detach(),u(hideItemsBitList.HIDE_URL_FILTER_ALL)||p(\".hide_url_tabs\").detach(),u(hideItemsBitList.HIDE_APN)&&p(\"#apn_setting\").detach(),u(hideItemsBitList.CONFIGURATION)&&p(\"#export_load_configurati"
+      },
+      {
+        "pos": 31045,
+        "context": ".detach(),u(hideItemsBitList.HIDE_URL_FILTER_1)||p(\"#url_filter_1\").detach(),u(hideItemsBitList.HIDE_URL_FILTER_2)||p(\"#url_filter_2\").detach(),u(hideItemsBitList.HIDE_URL_FILTER_ALL)||p(\".hide_url_tabs\").detach(),u(hideItemsBitList.HIDE_APN)&&p(\"#apn_setting\").detach(),u(hideItemsBitList.CONFIGURATION)&&p(\"#export_load_configuration\").detach(),u(hideItemsBitList.POST_ROUTE)&&p(\"#postroute\").detac"
+      },
+      {
+        "pos": 35940,
+        "context": "),l(hideUserItemsBitList.HIDE_FLOW_SETTING)||p(\"#flow_setting\").detach(),l(hideUserItemsBitList.HIDE_URL_FILTER_1)||p(\"#url_filter_1\").detach(),l(hideUserItemsBitList.HIDE_URL_FILTER_2)||p(\"#url_filter_2\").detach(),l(hideUserItemsBitList.HIDE_URL_FILTER_ALL)||p(\".hide_url_tabs\").detach(),l(hideUserItemsBitList.HIDE_APN)&&p(\"#apn_setting\").detach(),l(hideUserItemsBitList.HIDE_SIPSERVER_SWITCH)||p(\""
+      },
+      {
+        "pos": 36011,
+        "context": "),l(hideUserItemsBitList.HIDE_URL_FILTER_1)||p(\"#url_filter_1\").detach(),l(hideUserItemsBitList.HIDE_URL_FILTER_2)||p(\"#url_filter_2\").detach(),l(hideUserItemsBitList.HIDE_URL_FILTER_ALL)||p(\".hide_url_tabs\").detach(),l(hideUserItemsBitList.HIDE_APN)&&p(\"#apn_setting\").detach(),l(hideUserItemsBitList.HIDE_SIPSERVER_SWITCH)||p(\"#tz_is_show_sipService_switch\").detach(),l(hideUserItemsBitList.HIDE_SI"
+      }
+    ],
+    "port_forward": [
+      {
+        "pos": 131748,
+        "context": "er||\"3\"==se.tz_account_power)&&a(itemsFuncList.NET_SELECT),\"logo_smart.png\"==se.logo?(p(\"#port_map\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_trans\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_setting\").attr(\"data-trans\",\"port_forward_setting2\"),p(\"#port_forward_list\").attr(\"data-trans\",\"port_forward_list2\"),p(\"#port_forward_note_info\").attr(\"data-trans\",\"port_forward_note_info"
+      },
+      {
+        "pos": 131768,
+        "context": "nt_power)&&a(itemsFuncList.NET_SELECT),\"logo_smart.png\"==se.logo?(p(\"#port_map\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_trans\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_setting\").attr(\"data-trans\",\"port_forward_setting2\"),p(\"#port_forward_list\").attr(\"data-trans\",\"port_forward_list2\"),p(\"#port_forward_note_info\").attr(\"data-trans\",\"port_forward_note_info2\")):(p(\"#port_map\")"
+      },
+      {
+        "pos": 131808,
+        "context": "logo_smart.png\"==se.logo?(p(\"#port_map\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_trans\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_setting\").attr(\"data-trans\",\"port_forward_setting2\"),p(\"#port_forward_list\").attr(\"data-trans\",\"port_forward_list2\"),p(\"#port_forward_note_info\").attr(\"data-trans\",\"port_forward_note_info2\")):(p(\"#port_map\").attr(\"data-trans\",\"port_forward\"),p(\"#p"
+      },
+      {
+        "pos": 131828,
+        "context": "logo?(p(\"#port_map\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_trans\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_setting\").attr(\"data-trans\",\"port_forward_setting2\"),p(\"#port_forward_list\").attr(\"data-trans\",\"port_forward_list2\"),p(\"#port_forward_note_info\").attr(\"data-trans\",\"port_forward_note_info2\")):(p(\"#port_map\").attr(\"data-trans\",\"port_forward\"),p(\"#port_forward_trans\")."
+      },
+      {
+        "pos": 131870,
+        "context": "rt_forward2\"),p(\"#port_forward_trans\").attr(\"data-trans\",\"port_forward2\"),p(\"#port_forward_setting\").attr(\"data-trans\",\"port_forward_setting2\"),p(\"#port_forward_list\").attr(\"data-trans\",\"port_forward_list2\"),p(\"#port_forward_note_info\").attr(\"data-trans\",\"port_forward_note_info2\")):(p(\"#port_map\").attr(\"data-trans\",\"port_forward\"),p(\"#port_forward_trans\").attr(\"data-trans\",\"port_forward\"),p(\"#port"
+      }
+    ],
+    "DMZ": [
+      {
+        "pos": 93983,
+        "context": "\",t}return f}},null,!1)},getDmzSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"DMZEnable,DMZIPAddress\",n.multi_data=1,n},function(e){{if(e){var t={};return t.dmzSetting=\"1\"==e.DMZEnable?\"1\":\"0\",t.ipAddress=e.DMZIPAddress,t}return f}},null,!1)},setDmzSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"DMZ_SETTING\"};n.isTest=o,n.DMZEnabled"
+      },
+      {
+        "pos": 93993,
+        "context": " f}},null,!1)},getDmzSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"DMZEnable,DMZIPAddress\",n.multi_data=1,n},function(e){{if(e){var t={};return t.dmzSetting=\"1\"==e.DMZEnable?\"1\":\"0\",t.ipAddress=e.DMZIPAddress,t}return f}},null,!1)},setDmzSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"DMZ_SETTING\"};n.isTest=o,n.DMZEnabled=e.dmzSett"
+      },
+      {
+        "pos": 94080,
+        "context": "turn n.isTest=o,n.cmd=\"DMZEnable,DMZIPAddress\",n.multi_data=1,n},function(e){{if(e){var t={};return t.dmzSetting=\"1\"==e.DMZEnable?\"1\":\"0\",t.ipAddress=e.DMZIPAddress,t}return f}},null,!1)},setDmzSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"DMZ_SETTING\"};n.isTest=o,n.DMZEnabled=e.dmzSetting,n.CSRFToken=e.CSRFToken,\"1\"==n.DMZEnabled&&(n.DMZIPAddress=e.ipAddress);return n},f"
+      },
+      {
+        "pos": 94112,
+        "context": ",DMZIPAddress\",n.multi_data=1,n},function(e){{if(e){var t={};return t.dmzSetting=\"1\"==e.DMZEnable?\"1\":\"0\",t.ipAddress=e.DMZIPAddress,t}return f}},null,!1)},setDmzSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"DMZ_SETTING\"};n.isTest=o,n.DMZEnabled=e.dmzSetting,n.CSRFToken=e.CSRFToken,\"1\"==n.DMZEnabled&&(n.DMZIPAddress=e.ipAddress);return n},function(e){return e||f},null,!0)"
+      },
+      {
+        "pos": 94226,
+        "context": "ess=e.DMZIPAddress,t}return f}},null,!1)},setDmzSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"DMZ_SETTING\"};n.isTest=o,n.DMZEnabled=e.dmzSetting,n.CSRFToken=e.CSRFToken,\"1\"==n.DMZEnabled&&(n.DMZIPAddress=e.ipAddress);return n},function(e){return e||f},null,!0)},getSSIDPwdRuless:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"ssid_and_pwd\","
+      }
+    ],
+    "guest": [
+      {
+        "pos": 4870,
+        "context": "itch,ip_postroute_enable,telnetd_enable,dropbear_enable,RemoteManagement,WANPingFilter,tz_usb_support,tz_usb_downloader,guest_user,tz_change_password,tz_change_user,guest_Password,tz_account_power,w13_connected,plmn_unlock,tz_plmn_is_lock,tz_unlock_plmn_num,login_mexico_show,tz_lock_plmn_state,login_Italia_show,lan_ipaddr,dhcpEnd,dhcpStart,check_cp_status,tz_apn2_enable,tz_apn3_enable,apn_mode,tz_"
+      },
+      {
+        "pos": 4915,
+        "context": "ear_enable,RemoteManagement,WANPingFilter,tz_usb_support,tz_usb_downloader,guest_user,tz_change_password,tz_change_user,guest_Password,tz_account_power,w13_connected,plmn_unlock,tz_plmn_is_lock,tz_unlock_plmn_num,login_mexico_show,tz_lock_plmn_state,login_Italia_show,lan_ipaddr,dhcpEnd,dhcpStart,check_cp_status,tz_apn2_enable,tz_apn3_enable,apn_mode,tz_used_logo_file,wifi_11n_cap,hide_lte_single,h"
+      },
+      {
+        "pos": 7134,
+        "context": "\"1\"==e.WANPingFilter?\"1\":\"0\",usbPortFlag:\"1\"==e.tz_usb_support?\"1\":\"0\",usbDownloadFlag:\"1\"==e.tz_usb_downloader?\"1\":\"0\",guest_user:e.guest_user,tz_change_password:e.tz_change_password,tz_change_user:e.tz_change_user,guest_Password:e.guest_Password,tz_account_power:e.tz_account_power,w13_connected:e.w13_connected,plmn_unlock:e.plmn_unlock,tz_plmn_is_lock:e.tz_plmn_is_lock,login_mexico_show:e.login_"
+      },
+      {
+        "pos": 7147,
+        "context": "gFilter?\"1\":\"0\",usbPortFlag:\"1\"==e.tz_usb_support?\"1\":\"0\",usbDownloadFlag:\"1\"==e.tz_usb_downloader?\"1\":\"0\",guest_user:e.guest_user,tz_change_password:e.tz_change_password,tz_change_user:e.tz_change_user,guest_Password:e.guest_Password,tz_account_power:e.tz_account_power,w13_connected:e.w13_connected,plmn_unlock:e.plmn_unlock,tz_plmn_is_lock:e.tz_plmn_is_lock,login_mexico_show:e.login_mexico_show,t"
+      },
+      {
+        "pos": 7230,
+        "context": "_usb_downloader?\"1\":\"0\",guest_user:e.guest_user,tz_change_password:e.tz_change_password,tz_change_user:e.tz_change_user,guest_Password:e.guest_Password,tz_account_power:e.tz_account_power,w13_connected:e.w13_connected,plmn_unlock:e.plmn_unlock,tz_plmn_is_lock:e.tz_plmn_is_lock,login_mexico_show:e.login_mexico_show,tz_lock_plmn_state:e.tz_lock_plmn_state,login_Italia_show:e.login_Italia_show,tz_unl"
+      }
+    ],
+    "sms": [
+      {
+        "pos": 1616,
+        "context": "on(e){{return e?{tz_web_special_func:parseInt(e.tz_web_special_func,16).toString(2).split(\"\").reverse()}:f}},null,!1)}tosms=function(e){if(window.location.hash!=\"#\"+e.substring(1)){intervalID&&(\"ping\"===preHash&&b({pingTimes:\"0\",url:\"\",subcmd:0},function(){preHash=\"\"}),\"trace\"===preHash&&b({pingTimes:\"1\",url:\"\",subcmd:1},function(){preHash=\"\"}),clearInterval(intervalID)),\"#wifiSwitch\"==e&&(\"p19\"!="
+      },
+      {
+        "pos": 2232,
+        "context": "hash:e.substring(1)}),S({random:t}),window.location=\"?t=\"+e}},pageForward=function(){\"home\"==getCookie(\"pageForward\")?tosms(\"#home\"):(setCookie(\"pageForward\",\"home\"),tosms(\"#device_settings\"))};var s=s(),t=t(),n=n();function a(e){return\"1\"!=s.tz_web_special_func[e]}function u(e){return\"1\"==t.hideItems[e]}function l(e){return\"1\"==n.hideItems[e]}function g(){return v(arguments,{},function(e,t){var n"
+      },
+      {
+        "pos": 2280,
+        "context": "ion=\"?t=\"+e}},pageForward=function(){\"home\"==getCookie(\"pageForward\")?tosms(\"#home\"):(setCookie(\"pageForward\",\"home\"),tosms(\"#device_settings\"))};var s=s(),t=t(),n=n();function a(e){return\"1\"!=s.tz_web_special_func[e]}function u(e){return\"1\"==t.hideItems[e]}function l(e){return\"1\"==n.hideItems[e]}function g(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"get_token\",n},funct"
+      },
+      {
+        "pos": 4323,
+        "context": "ma_bands,tz_tds_bands,tz_gsm_bands,tz_lock_wcdma_band,tz_lock_tds_band,tz_display_3G_band_list,control_apn_edit,control_sms_edit,login_enter_apn,hide_modify_firmware_version,modify_firmware_version,tz_multidhcp_enable,tz_multiapn_enable,cvmod_ims,tz_ssid2_station_num,tz_ssid3_station_num,tz_ssid4_station_num,digitmap_str,digitmap_switch,dialog_hotline_str,need_support_pb,need_support_sms,tz_sn_cod"
+      },
+      {
+        "pos": 4590,
+        "context": ",tz_ssid3_station_num,tz_ssid4_station_num,digitmap_str,digitmap_switch,dialog_hotline_str,need_support_pb,need_support_sms,tz_sn_code,set_show_network_mode,main_antenna,sub_antenna,hide_home_data_switch,show_qrcode_flag,m_ssid_enable,polarity_reversal,wb_mode,tz_traffic_share_switch,ip_postroute_enable,telnetd_enable,dropbear_enable,RemoteManagement,WANPingFilter,tz_usb_support,tz_usb_downloader,"
+      }
+    ],
+    "SMS": [
+      {
+        "pos": 18221,
+        "context": "\"cgreg_stat\",\"cellid_is_lock\",\"battery_exist\",\"power_exist\",\"battery_high\",\"battery_value\",\"battery_charge_full\"];d.HAS_SMS&&p.merge(L,[\"sms_received_flag\",\"sts_received_flag\",\"sms_unread_num\"]);var k=[],C=[H];function M(){e?T(function(){var e={multi_data:1,isTest:o};d.HAS_SMS&&(e.sms_received_flag=0,e.sts_received_flag=0);0<L.length&&-1==c.indexOf(D,L[0])&&p.each(L,function(e,t){D.push(t)});retur"
+      },
+      {
+        "pos": 18375,
+        "context": "\",\"sts_received_flag\",\"sms_unread_num\"]);var k=[],C=[H];function M(){e?T(function(){var e={multi_data:1,isTest:o};d.HAS_SMS&&(e.sms_received_flag=0,e.sts_received_flag=0);0<L.length&&-1==c.indexOf(D,L[0])&&p.each(L,function(e,t){D.push(t)});return e.cmd=D.join(\",\"),e}(),function(e){for(var t=0;t<C.length;t++)\"function\"==typeof C[t]&&C[t](e);p.merge(C,k),k=[],window.location.hash,setTimeout(functio"
+      },
+      {
+        "pos": 21863,
+        "context": ":\"\"==e.date_month?1:e.date_month},N.ssid=e.SSID1,N.authMode=e.AuthMode,N.isLoggedIn=!d.HAS_LOGIN||\"ok\"==e.loginfo,d.HAS_SMS&&(N.newSmsReceived||(N.newSmsReceived=0<e.sms_received_flag),N.smsReportReceived||(N.smsReportReceived=0<e.sts_received_flag),void 0!==e.sms_dev_unread_num?N.smsUnreadCount=d.SMS_UNREAD_NUM_INCLUDE_SIM?parseInt(0|e.sms_dev_unread_num,10)+parseInt(0|e.sms_sim_unread_num,10):pa"
+      },
+      {
+        "pos": 22042,
+        "context": "flag),N.smsReportReceived||(N.smsReportReceived=0<e.sts_received_flag),void 0!==e.sms_dev_unread_num?N.smsUnreadCount=d.SMS_UNREAD_NUM_INCLUDE_SIM?parseInt(0|e.sms_dev_unread_num,10)+parseInt(0|e.sms_sim_unread_num,10):parseInt(0|e.sms_dev_unread_num,10):N.smsUnreadCount=parseInt(0|e.sms_unread_num,10)),\"1\"==e.data_volume_limit_switch)if(N.limitVolumeEnable=!0,N.limitVolumeType=\"data\"==e.data_volu"
+      },
+      {
+        "pos": 26236,
+        "context": "rrorType:\"LoginStatusError\"})}},null,!1)}function Z(e,t){for(var n,_=[],r=0;r<e.length;r++)if(d.SHOW_UN_COMPLETE_CONCAT_SMS||void 0===e[r].received_all_concat_sms||\"0\"!=e[r].received_all_concat_sms){var s={};s.id=e[r].id,s.number=e[r].number,s.content=t?e[r].content:(n=e[r].content,decodeMessage(escapeMessage(n))),s.time=transTime(\"20\"+e[r].date),s.isNew=\"1\"==e[r].tag,s.groupId=e[r].draft_group_id"
+      }
+    ],
+    "firmware": [
+      {
+        "pos": 4360,
+        "context": "_lock_wcdma_band,tz_lock_tds_band,tz_display_3G_band_list,control_apn_edit,control_sms_edit,login_enter_apn,hide_modify_firmware_version,modify_firmware_version,tz_multidhcp_enable,tz_multiapn_enable,cvmod_ims,tz_ssid2_station_num,tz_ssid3_station_num,tz_ssid4_station_num,digitmap_str,digitmap_switch,dialog_hotline_str,need_support_pb,need_support_sms,tz_sn_code,set_show_network_mode,main_antenna,"
+      },
+      {
+        "pos": 4384,
+        "context": "_tds_band,tz_display_3G_band_list,control_apn_edit,control_sms_edit,login_enter_apn,hide_modify_firmware_version,modify_firmware_version,tz_multidhcp_enable,tz_multiapn_enable,cvmod_ims,tz_ssid2_station_num,tz_ssid3_station_num,tz_ssid4_station_num,digitmap_str,digitmap_switch,dialog_hotline_str,need_support_pb,need_support_sms,tz_sn_code,set_show_network_mode,main_antenna,sub_antenna,hide_home_da"
+      },
+      {
+        "pos": 5950,
+        "context": "d,control_apn_edit:e.control_apn_edit,control_sms_edit:e.control_sms_edit,login_enter_apn:e.login_enter_apn,hide_modify_firmware_version:e.hide_modify_firmware_version,modify_firmware_version:e.modify_firmware_version,tz_language_select_hide:e.tz_language_select_hide,tz_multiapn_enable:e.tz_multiapn_enable,tz_cvmod_state:e.cvmod_ims,tz_ssid2_station_num:e.tz_ssid2_station_num,tz_ssid3_station_num:"
+      },
+      {
+        "pos": 5981,
+        "context": "n_edit,control_sms_edit:e.control_sms_edit,login_enter_apn:e.login_enter_apn,hide_modify_firmware_version:e.hide_modify_firmware_version,modify_firmware_version:e.modify_firmware_version,tz_language_select_hide:e.tz_language_select_hide,tz_multiapn_enable:e.tz_multiapn_enable,tz_cvmod_state:e.cvmod_ims,tz_ssid2_station_num:e.tz_ssid2_station_num,tz_ssid3_station_num:e.tz_ssid3_station_num,tz_ssid4"
+      },
+      {
+        "pos": 6005,
+        "context": "e.control_sms_edit,login_enter_apn:e.login_enter_apn,hide_modify_firmware_version:e.hide_modify_firmware_version,modify_firmware_version:e.modify_firmware_version,tz_language_select_hide:e.tz_language_select_hide,tz_multiapn_enable:e.tz_multiapn_enable,tz_cvmod_state:e.cvmod_ims,tz_ssid2_station_num:e.tz_ssid2_station_num,tz_ssid3_station_num:e.tz_ssid3_station_num,tz_ssid4_station_num:e.tz_ssid4_"
+      }
+    ],
+    "realtime_tx_thrpt": [
+      {
+        "pos": 17673,
+        "context": "nt\",\"battery_pers\",\"spn_name_data\",\"spn_b1_flag\",\"spn_b2_flag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"roam_setting_option\",\"upg_roam_switch\",\"fota_p"
+      },
+      {
+        "pos": 21220,
+        "context": "=e.battery_charging?\"0\":e.battery_charging,N.batteryLevel=t,N.batteryTime=n.toString(),N.data_counter={uploadRate:\"\"==e.realtime_tx_thrpt?0:e.realtime_tx_thrpt,downloadRate:\"\"==e.realtime_rx_thrpt?0:e.realtime_rx_thrpt,currentSent:\"\"==e.realtime_tx_bytes?0:e.realtime_tx_bytes,currentReceived:\"\"==e.realtime_rx_bytes?0:e.realtime_rx_bytes,currentConnectedTime:\"\"==e.realtime_time?0:e.realtime_time,mo"
+      },
+      {
+        "pos": 21242,
+        "context": "\":e.battery_charging,N.batteryLevel=t,N.batteryTime=n.toString(),N.data_counter={uploadRate:\"\"==e.realtime_tx_thrpt?0:e.realtime_tx_thrpt,downloadRate:\"\"==e.realtime_rx_thrpt?0:e.realtime_rx_thrpt,currentSent:\"\"==e.realtime_tx_bytes?0:e.realtime_tx_bytes,currentReceived:\"\"==e.realtime_rx_bytes?0:e.realtime_rx_bytes,currentConnectedTime:\"\"==e.realtime_time?0:e.realtime_time,monthlySent:\"\"==e.monthl"
+      }
+    ],
+    "realtime_rx_thrpt": [
+      {
+        "pos": 17693,
+        "context": "spn_name_data\",\"spn_b1_flag\",\"spn_b2_flag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"roam_setting_option\",\"upg_roam_switch\",\"fota_package_already_downl"
+      },
+      {
+        "pos": 21279,
+        "context": ",N.batteryTime=n.toString(),N.data_counter={uploadRate:\"\"==e.realtime_tx_thrpt?0:e.realtime_tx_thrpt,downloadRate:\"\"==e.realtime_rx_thrpt?0:e.realtime_rx_thrpt,currentSent:\"\"==e.realtime_tx_bytes?0:e.realtime_tx_bytes,currentReceived:\"\"==e.realtime_rx_bytes?0:e.realtime_rx_bytes,currentConnectedTime:\"\"==e.realtime_time?0:e.realtime_time,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,month"
+      },
+      {
+        "pos": 21301,
+        "context": "ing(),N.data_counter={uploadRate:\"\"==e.realtime_tx_thrpt?0:e.realtime_tx_thrpt,downloadRate:\"\"==e.realtime_rx_thrpt?0:e.realtime_rx_thrpt,currentSent:\"\"==e.realtime_tx_bytes?0:e.realtime_tx_bytes,currentReceived:\"\"==e.realtime_rx_bytes?0:e.realtime_rx_bytes,currentConnectedTime:\"\"==e.realtime_time?0:e.realtime_time,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.month"
+      }
+    ],
+    "monthly_tx_bytes": [
+      {
+        "pos": 17732,
+        "context": "ag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"roam_setting_option\",\"upg_roam_switch\",\"fota_package_already_download\",\"ssid\",\"dial_mode\",\"ethwan_mode\",\""
+      },
+      {
+        "pos": 21516,
+        "context": "=e.realtime_rx_bytes?0:e.realtime_rx_bytes,currentConnectedTime:\"\"==e.realtime_time?0:e.realtime_time,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.monthly_rx_bytes?0:e.monthly_rx_bytes,traffic_alined_delta:e.traffic_alined_delta=e.traffic_alined_delta,monthlyConnectedTime:\"\"==e.monthly_time?0:e.monthly_time,month:\"\"==e.date_month?1:e.date_month},N.ssid=e.SSID1,N.au"
+      },
+      {
+        "pos": 21537,
+        "context": "0:e.realtime_rx_bytes,currentConnectedTime:\"\"==e.realtime_time?0:e.realtime_time,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.monthly_rx_bytes?0:e.monthly_rx_bytes,traffic_alined_delta:e.traffic_alined_delta=e.traffic_alined_delta,monthlyConnectedTime:\"\"==e.monthly_time?0:e.monthly_time,month:\"\"==e.date_month?1:e.date_month},N.ssid=e.SSID1,N.authMode=e.AuthMode,N.i"
+      },
+      {
+        "pos": 98198,
+        "context": "){return{isTest:o,cmd:\"data_volume_limit_switch,data_volume_limit_unit,data_volume_limit_size,data_volume_alert_percent,monthly_tx_bytes,monthly_rx_bytes,monthly_time,traffic_alined_delta,data_remind_sms_switch,data_remind_sms_number,data_remind_sms_content\",multi_data:1}},function(e){{if(e){var t=\"data\"==e.data_volume_limit_unit;return{dataLimitChecked:e.data_volume_limit_switch,dataLimitTypeChec"
+      },
+      {
+        "pos": 98700,
+        "context": "nt:\"0\",limitTimeMonth:t?\"0\":e.data_volume_limit_size,alertTimeReach:t?\"0\":e.data_volume_alert_percent,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.monthly_rx_bytes?0:e.monthly_rx_bytes,monthlyConnectedTime:\"\"==e.monthly_time?0:e.monthly_time,traffic_alined_delta:\"\"==e.traffic_alined_delta?0:e.traffic_alined_delta,data_remind_sms_switch:e.data_remind_sms_switch,data"
+      }
+    ],
+    "monthly_rx_bytes": [
+      {
+        "pos": 17713,
+        "context": "b1_flag\",\"spn_b2_flag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"roam_setting_option\",\"upg_roam_switch\",\"fota_package_already_download\",\"ssid\",\"dial_mo"
+      },
+      {
+        "pos": 21576,
+        "context": "ime:\"\"==e.realtime_time?0:e.realtime_time,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.monthly_rx_bytes?0:e.monthly_rx_bytes,traffic_alined_delta:e.traffic_alined_delta=e.traffic_alined_delta,monthlyConnectedTime:\"\"==e.monthly_time?0:e.monthly_time,month:\"\"==e.date_month?1:e.date_month},N.ssid=e.SSID1,N.authMode=e.AuthMode,N.isLoggedIn=!d.HAS_LOGIN||\"ok\"==e.loginfo"
+      },
+      {
+        "pos": 21597,
+        "context": "me?0:e.realtime_time,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.monthly_rx_bytes?0:e.monthly_rx_bytes,traffic_alined_delta:e.traffic_alined_delta=e.traffic_alined_delta,monthlyConnectedTime:\"\"==e.monthly_time?0:e.monthly_time,month:\"\"==e.date_month?1:e.date_month},N.ssid=e.SSID1,N.authMode=e.AuthMode,N.isLoggedIn=!d.HAS_LOGIN||\"ok\"==e.loginfo,d.HAS_SMS&&(N.newSms"
+      },
+      {
+        "pos": 98215,
+        "context": ",cmd:\"data_volume_limit_switch,data_volume_limit_unit,data_volume_limit_size,data_volume_alert_percent,monthly_tx_bytes,monthly_rx_bytes,monthly_time,traffic_alined_delta,data_remind_sms_switch,data_remind_sms_number,data_remind_sms_content\",multi_data:1}},function(e){{if(e){var t=\"data\"==e.data_volume_limit_unit;return{dataLimitChecked:e.data_volume_limit_switch,dataLimitTypeChecked:t?\"1\":\"0\",lim"
+      },
+      {
+        "pos": 98760,
+        "context": "meReach:t?\"0\":e.data_volume_alert_percent,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.monthly_rx_bytes?0:e.monthly_rx_bytes,monthlyConnectedTime:\"\"==e.monthly_time?0:e.monthly_time,traffic_alined_delta:\"\"==e.traffic_alined_delta?0:e.traffic_alined_delta,data_remind_sms_switch:e.data_remind_sms_switch,data_remind_sms_number:e.data_remind_sms_number,data_remind_sms_"
+      }
+    ],
+    "device": [
+      {
+        "pos": 2286,
+        "context": "t=\"+e}},pageForward=function(){\"home\"==getCookie(\"pageForward\")?tosms(\"#home\"):(setCookie(\"pageForward\",\"home\"),tosms(\"#device_settings\"))};var s=s(),t=t(),n=n();function a(e){return\"1\"!=s.tz_web_special_func[e]}function u(e){return\"1\"==t.hideItems[e]}function l(e){return\"1\"==n.hideItems[e]}function g(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"get_token\",n},function(e)"
+      },
+      {
+        "pos": 3889,
+        "context": "n\"}),o,u)},s):l(a,o,u)}function l(e,t,n){if(n=n||t,isErrorObject(e))switch(e.errorType){case\"cellularNetworkError\":case\"deviceError\":case\"wifiConnectionError\":m.receivedNonSpecificError(e);break;default:n(e)}else t(e)}}function I(){return v(arguments,{},function(e,t){var n={cmd:\"siemprePic_hide,siempre_hide,siempre_text,tz_language_select_hide,show_sim_spn,sim_spn,tz_uri_type,voip_reg_st,tz_voice_"
+      },
+      {
+        "pos": 27582,
+        "context": ",_({result:\"success\"})})},1e3)},5e3)}function Q(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"device_version\",n},function(e){return e?{device_version:e.device_version,real_device_version:e.real_device_version,build_time:e.build_time,wifi_mac:e.wifi_mac,eth0_mac:e.eth0_mac,fdd_calibration:e.fdd_calibration,tdd_calibration:e.tdd_calibration,tds_calibration:e.tds_calibration"
+      },
+      {
+        "pos": 27623,
+        "context": "tion Q(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"device_version\",n},function(e){return e?{device_version:e.device_version,real_device_version:e.real_device_version,build_time:e.build_time,wifi_mac:e.wifi_mac,eth0_mac:e.eth0_mac,fdd_calibration:e.fdd_calibration,tdd_calibration:e.tdd_calibration,tds_calibration:e.tds_calibration,wcdma_calibration:e.wcdma_calibration,gs"
+      },
+      {
+        "pos": 27640,
+        "context": "(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"device_version\",n},function(e){return e?{device_version:e.device_version,real_device_version:e.real_device_version,build_time:e.build_time,wifi_mac:e.wifi_mac,eth0_mac:e.eth0_mac,fdd_calibration:e.fdd_calibration,tdd_calibration:e.tdd_calibration,tds_calibration:e.tds_calibration,wcdma_calibration:e.wcdma_calibration,gsm_calibration:e.g"
+      }
+    ],
+    "client": [
+      {
+        "pos": 109334,
+        "context": "){return{isTest:o,multi_data:\"1\",cmd:\"ACL_mode,wifi_mac_black_list,wifi_hostname_black_list,wifi_cur_state,user_ip_addr,client_mac_address,wifi_mac_white_list\"}},function(e){return e?{ACL_mode:e.ACL_mode,wifi_mac_black_list:e.wifi_mac_black_list,wifi_hostname_black_list:e.wifi_hostname_black_list,RadioOff:e.wifi_cur_state,user_ip_addr:e.user_ip_addr,client_mac_address:e.client_mac_address,wifi_mac"
+      },
+      {
+        "pos": 109566,
+        "context": "ac_black_list,wifi_hostname_black_list:e.wifi_hostname_black_list,RadioOff:e.wifi_cur_state,user_ip_addr:e.user_ip_addr,client_mac_address:e.client_mac_address,wifi_mac_white_list:e.wifi_mac_white_list}:f},null,!1)},setMacFilter:function(){return v(arguments,{},function(e){return p.extend({goformId:\"WIFI_MAC_FILTER\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getFastboot"
+      },
+      {
+        "pos": 109587,
+        "context": "stname_black_list:e.wifi_hostname_black_list,RadioOff:e.wifi_cur_state,user_ip_addr:e.user_ip_addr,client_mac_address:e.client_mac_address,wifi_mac_white_list:e.wifi_mac_white_list}:f},null,!1)},setMacFilter:function(){return v(arguments,{},function(e){return p.extend({goformId:\"WIFI_MAC_FILTER\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getFastbootSetting:function(){re"
+      }
+    ],
+    "usage": [
+      {
+        "pos": 127592,
+        "context": "nfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"tz_dynamic_info\"}},function(e){return e?{tz_cpu_usage:e.tz_cpu_usage,mem_total:e.mem_total,mem_free:e.mem_free,mem_cached:e.mem_cached,mem_active:e.mem_active}:f},null,!1)},getlockcellinfo:function(e,t){return v(arguments,{},function(e,t){return{isTest:o,multi_data:1,cmd:\"nv_arfcn,nv_pci,actionlte,cellParaIdlte,uarfcnlte,CellL"
+      },
+      {
+        "pos": 127607,
+        "context": "return v(arguments,{},function(e,t){return{isTest:o,cmd:\"tz_dynamic_info\"}},function(e){return e?{tz_cpu_usage:e.tz_cpu_usage,mem_total:e.mem_total,mem_free:e.mem_free,mem_cached:e.mem_cached,mem_active:e.mem_active}:f},null,!1)},getlockcellinfo:function(e,t){return v(arguments,{},function(e,t){return{isTest:o,multi_data:1,cmd:\"nv_arfcn,nv_pci,actionlte,cellParaIdlte,uarfcnlte,CellLockSet\"}},funct"
+      }
+    ],
+    "bytes": [
+      {
+        "pos": 17629,
+        "context": "paddr\",\"battery_charging\",\"battery_vol_percent\",\"battery_pers\",\"spn_name_data\",\"spn_b1_flag\",\"spn_b2_flag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"ro"
+      },
+      {
+        "pos": 17649,
+        "context": "ging\",\"battery_vol_percent\",\"battery_pers\",\"spn_name_data\",\"spn_b1_flag\",\"spn_b2_flag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"roam_setting_option\",\""
+      },
+      {
+        "pos": 17724,
+        "context": "pn_b2_flag\",\"realtime_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"roam_setting_option\",\"upg_roam_switch\",\"fota_package_already_download\",\"ssid\",\"dial_mode\",\"ethwan"
+      },
+      {
+        "pos": 17743,
+        "context": "me_tx_bytes\",\"realtime_rx_bytes\",\"realtime_time\",\"realtime_tx_thrpt\",\"realtime_rx_thrpt\",\"monthly_rx_bytes\",\"monthly_tx_bytes\",\"traffic_alined_delta\",\"monthly_time\",\"date_month\",\"data_volume_limit_switch\",\"data_volume_limit_size\",\"data_volume_alert_percent\",\"data_volume_limit_unit\",\"roam_setting_option\",\"upg_roam_switch\",\"fota_package_already_download\",\"ssid\",\"dial_mode\",\"ethwan_mode\",\"default_wan"
+      },
+      {
+        "pos": 21349,
+        "context": "tx_thrpt?0:e.realtime_tx_thrpt,downloadRate:\"\"==e.realtime_rx_thrpt?0:e.realtime_rx_thrpt,currentSent:\"\"==e.realtime_tx_bytes?0:e.realtime_tx_bytes,currentReceived:\"\"==e.realtime_rx_bytes?0:e.realtime_rx_bytes,currentConnectedTime:\"\"==e.realtime_time?0:e.realtime_time,monthlySent:\"\"==e.monthly_tx_bytes?0:e.monthly_tx_bytes,monthlyReceived:\"\"==e.monthly_rx_bytes?0:e.monthly_rx_bytes,traffic_alined_"
+      }
+    ]
+  },
+  "goformBlocks": {
+    "ACL_SETTING": ".TZ_ACL_WAN_ICMP_3,wan_icmp_4:e.TZ_ACL_WAN_ICMP_4,wan_icmp_5:e.TZ_ACL_WAN_ICMP_5,web_set_wan_http:e.web_set_wan_http}:f},null,!1)},setAcl:function(){return v(arguments,{},function(e){return p.extend({goformId:\"ACL_SETTING\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},setWpsEnable:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ENABLE_WPS_SET\",n.tz_wps_enable=e.tz_wps_enable,n.current_pin_switch=e.current_pin_switch,n},function(e){return e||f},null,!0)},backupData:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_save_user_info\",n},function(e){return e||f},null,!1)},isHideSMS:function(e){return\"y",
+    "ADD_IP_PORT_FILETER": "unction(e){return e||f},null,!0)},setPortFilter:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,d.USE_IPV6_INTERFACE?(n.goformId=\"ADD_IP_PORT_FILETER_V4V6\",n.ip_version=e.ipType):n.goformId=\"ADD_IP_PORT_FILETER\";return n.mac_address=e.macAddress,n.dip_address=e.destIpAddress,n.sip_address=e.sourceIpAddress,n.dFromPort=e.destPortStart,n.dToPort=e.destPortEnd,n.sFromPort=e.sourcePortStart,n.sToPort=e.sourcePortEnd,n.action=e.action,n.protocol=e.protocol,n.comment=e.comment,n},function(e){return e||f},null,!0)},deleteFilterRules:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o;var _=c.filter(e.indexs,function(e){return 1==e.length});if(d.USE_IPV6_INTERFACE){",
+    "ADD_IP_PORT_FILETER_V4V6": "ltFirewallPolicy=e.defaultPolicy,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setPortFilter:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,d.USE_IPV6_INTERFACE?(n.goformId=\"ADD_IP_PORT_FILETER_V4V6\",n.ip_version=e.ipType):n.goformId=\"ADD_IP_PORT_FILETER\";return n.mac_address=e.macAddress,n.dip_address=e.destIpAddress,n.sip_address=e.sourceIpAddress,n.dFromPort=e.destPortStart,n.dToPort=e.destPortEnd,n.sFromPort=e.sourcePortStart,n.sToPort=e.sourcePortEnd,n.action=e.action,n.protocol=e.protocol,n.comment=e.comment,n},function(e){return e||f},null,!0)},deleteFilterRules:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o;var _=c.filter(e.inde",
+    "ADD_PORT_MAP": "r[0],_.destPort=r[2],_.protocol=transProtocol(r[3]),_.comment=r[4],t.push(_)}return t}(n),t}return f}},null,!1)},setPortMap:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ADD_PORT_MAP\",n.portMapEnabled=e.portMapEnable,n.fromPort=e.sourcePort,n.ip_address=e.destIpAddress,n.toPort=e.destPort,n.protocol=e.protocol,n.comment=e.comment,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enablePortMap:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ADD_PORT_MAP\",n.portMapEnabled=e.portMapEnable,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},deleteMapRules:function(){return v(arguments,{},function(",
+    "ADD_RATE_LIMIT": "ss=r[0],_.download_speed=r[1],_.upload_speed=r[2],_.comment=r[3],t.push(_)}return t}(n),t}return f}},null,!1)},setRateLimit:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ADD_RATE_LIMIT\",n.ip_address=e.ip_address,n.download_speed=e.download_speed,n.upload_speed=e.upload_speed,n.comment=e.comment,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},deleteRateLimitRules:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"DEL_RATE_LIMIT\",n.delete_id=e.indexs.join(\";\")+\";\",n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enableRateLimit:function(){return v(arguments,{},function(e,t){var n={};return n.i",
+    "ALL_DELETE_SMS": "(p.extend(f,{errorType:\"saveFail\",errorText:\"save_fail\"}))},null,!0)},deleteAllMessages:function(){var n=arguments[1],_=arguments[2]?arguments[2]:n;return v(arguments,{},function(e,t){return{isTest:o,goformId:\"ALL_DELETE_SMS\",notCallback:!0,which_cgi:e.location}},function(e){if(!e)return void _(p.extend(f,{errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"}));\"success\"==e.result?F(\"sms_cmd_status_info\",r):_(p.extend(f,{errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"}))},null,!0);function r(e){var t=e.sms_cmd_status_info;\"2\"==t?(W(\"sms_cmd_status_info\",r),_(p.extend(f,{errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"}))):\"3\"==t&&(W(\"sms_cmd_status_info\",r),n({result:!0}",
+    "APN2_PROC_EX": "PP\",pdp_select:\"auto\",pdp_addr:\"\"}}},function(e){return\"success\"==e.result?{result:!0}:{result:!1}},null,!0)},addOrEditApn2:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"APN2_PROC_EX\",n.profileName=e.profileName,n.wanApn=e.wanApn,n.pdpType=e.pdpType,n.username=e.username,n.password=e.password,n.main_nat_1=e.main_nat_1,n.authMode=e.authMode,n.filterApn=e.filterApn,n},function(e){return e&&\"success\"==e.result?e:f},null,!0)},addOrEditApn3:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"APN3_PROC_EX\",n.profileName=e.profileName,n.pdpType=e.pdpType,n.username=e.username,n.main_nat_2=e.main_nat_2,n.password=e.password,n.",
+    "APN3_PROC_EX": "t_1,n.authMode=e.authMode,n.filterApn=e.filterApn,n},function(e){return e&&\"success\"==e.result?e:f},null,!0)},addOrEditApn3:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"APN3_PROC_EX\",n.profileName=e.profileName,n.pdpType=e.pdpType,n.username=e.username,n.main_nat_2=e.main_nat_2,n.password=e.password,n.authMode=e.authMode,n.wanApn=e.wanApn,n.filterApn=e.filterApn,n},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getSIMPhoneBookCapacity:function(){var e=G(arguments,!0);return{simPbmTotalCapacity:parseInt(e.pbm_sim_max_record_num),simPbmUsedCapacity:parseInt(e.pbm_sim_used_record_num),simType:e.pbm_sim_type,maxNameLen:parseInt(e.pbm_sim_max_nam",
+    "APN_PROC": ":o,main_nat:e.main_nat,goformId:\"APN_PROC_EX\",apn_mode:e.apnMode};return\"manual\"==e.apnMode&&(n.apn_action=\"set_default\",n.set_default_flag=\"1\",n.pdp_type=e.pdpType,n.index=e.index),n}return{isTest:o,goformId:\"APN_PROC\",apn_action:\"set_default\",index:e.index,apn_mode:e.apnMode,profile_name:e.profileName,wan_apn:e.wanApn,dns_mode:e.dnsMode,prefer_dns_manual:e.dns1,w_standby_dns_manual:e.dns2,ppp_username:e.username,ppp_passwd:e.password,ppp_auth_mode:e.authMode,apn_select:\"manual\",wan_dial:\"*99#\",pdp_type:\"PPP\",pdp_select:\"auto\",pdp_addr:\"\",set_default_flag:\"1\"}}},function(e){return\"success\"==e.result?{result:!0}:{result:!1}},null,!0)},addOrEditApn:function(){return v(arguments,{},function(e,",
+    "APN_PROC_EX": " n},function(e){return\"success\"==e.result?{result:!0}:{result:!1}},null,!0)},setDefaultApn:function(){return v(arguments,{},function(e,t){{if(d.USE_IPV6_INTERFACE){var n={isTest:o,main_nat:e.main_nat,goformId:\"APN_PROC_EX\",apn_mode:e.apnMode};return\"manual\"==e.apnMode&&(n.apn_action=\"set_default\",n.set_default_flag=\"1\",n.pdp_type=e.pdpType,n.index=e.index),n}return{isTest:o,goformId:\"APN_PROC\",apn_action:\"set_default\",index:e.index,apn_mode:e.apnMode,profile_name:e.profileName,wan_apn:e.wanApn,dns_mode:e.dnsMode,prefer_dns_manual:e.dns1,w_standby_dns_manual:e.dns2,ppp_username:e.username,ppp_passwd:e.password,ppp_auth_mode:e.authMode,apn_select:\"manual\",wan_dial:\"*99#\",pdp_type:\"PPP\",pdp_sel",
+    "BASIC_SETTING": "ter_accept\":\"filter_drop\",r.protocol=transProtocol(s[8]),r.comment=s[10],r.ipType=t,n.push(r)}return n}},setPortFilterBasic:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"BASIC_SETTING\",n.portFilterEnabled=e.portFilterEnable,n.defaultFirewallPolicy=e.defaultPolicy,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setPortFilter:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,d.USE_IPV6_INTERFACE?(n.goformId=\"ADD_IP_PORT_FILETER_V4V6\",n.ip_version=e.ipType):n.goformId=\"ADD_IP_PORT_FILETER\";return n.mac_address=e.macAddress,n.dip_address=e.destIpAddress,n.sip_address=e.sourceIpAddress,n.dFromPort=e.destPortStart,n.dToPort=e.d",
+    "CHANGE_MODE": "{};return n.isTest=o,n.goformId=\"REBOOT_DEVICE\",n},function(e){return e||f},null,!0)},timerUpdaterEnable:e,switchPortForLog:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"CHANGE_MODE\",n.change_mode=e.change_mode,n},function(e){return e||f},null,!0)},childGroupList:ne,checkCurrentUserInChildGroup:function(e){if(void 0!==d.currentUserInChildGroup)return{result:d.currentUserInChildGroup};var t=[];t=void 0!==e?e:ne({}).devices;var n=_e({}).get_user_mac_addr,_=c.find(t,function(e){return e.mac==n});return d.currentUserInChildGroup=void 0!==_,{result:void 0!==_}},editHostName:function(){return v(arguments,{},function(e,t){return{isTest:o,goformId:\"EDIT_HOSTNA",
+    "CHANGE_PASSWORD": "CODE?Base64.encode(e.newUsername):e.newUsername,n.newPassword=d.PASSWORD_ENCODE?Base64.encode(e.newPassword):e.newPassword,n.oldPassword=d.PASSWORD_ENCODE?Base64.encode(e.oldPassword):e.oldPassword,n.goformId=\"CHANGE_PASSWORD\",n.isTest=o,n},function(e){return e&&\"success\"===e.result?{result:!0}:\"user_name_already_exist\"===e.result?p.extend(f,{errorType:\"usernameExist\"}):p.extend(f,{errorType:\"badPassword\"})},null,!0)},getPinData:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"pinnumber,pin_status,puknumber,modem_main_state,auto_simpin\",n.multi_data=1,n},function(e){return e||f},null,!1)},enablePin:function(){return v(arguments,{},function(e,t){var n={goformId",
+    "CONNECT_NETWORK": "0),t.blc_wan_mode=N.blc_wan_mode,t},getStatusInfo:z,connect:function(){var t=arguments[1],n=0;return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.notCallback=!0,n.disconnect_internet=0,n.goformId=\"CONNECT_NETWORK\",n},function(e){\"success\"==e.result?(n=(new Date).getTime(),O(_)):t({result:!1})},null,!0);function _(e){\"ppp_connecting\"==e.ppp_status?N.connectStatus=\"ppp_connecting\":checkConnectedStatus(e.ppp_status)?(U(_),N.connectStatus=\"ppp_connected\",t({result:!0,status:N.connectStatus})):(new Date).getTime()-n<1e4?N.connectStatus=\"ppp_connecting\":(U(_),t({result:!1}))}},disconnect:function(){var t=arguments[1],n=0;return v(arguments,{},function(e,t){var n={};return n.isTest=o,n",
+    "DATA_LIMIT_SETTING": "_content:decodeMessage(escapeMessage(e.data_remind_sms_content))}}return f}},null,!1)},setTrafficAlertInfo:function(){return v(arguments,{},function(e,t){var n=\"1\"==e.dataLimitTypeChecked,_={isTest:o,goformId:\"DATA_LIMIT_SETTING\",data_volume_limit_switch:e.dataLimitChecked,data_remind_sms_switch:e.data_remind_sms_switch,CSRFToken:e.CSRFToken};\"1\"==e.dataLimitChecked&&(_.data_volume_limit_unit=n?\"data\":\"time\",_.data_volume_limit_size=n?e.limitDataMonth:e.limitTimeMonth,_.data_volume_alert_percent=n?e.alertDataReach:e.alertTimeReach);\"1\"==e.data_remind_sms_switch&&(_.data_remind_sms_number=e.data_remind_sms_number,_.data_remind_sms_content=escapeMessage(encodeMessage(e.data_remind_sms_content)",
+    "DELETE_SMS": "&&(W(\"sms_cmd_status_info\",r),n({result:!0}))}},deleteMessage:function(){var t=arguments[1],n=arguments[2]?arguments[2]:t;return v(arguments,{},function(e,t){var n=e.ids.join(\";\")+\";\";return{isTest:o,goformId:\"DELETE_SMS\",msg_id:n,notCallback:!0}},function(e){if(!e)return void n(p.extend(f,{errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"}));\"success\"==e.result?q({smsCmd:6,errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"},t,n):n(p.extend(f,{errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"}))},null,!0)},setSmsRead:function(){return v(arguments,{},function(e,t){var n=e.ids.join(\";\");0<e.ids.length&&(n+=\";\");return{isTest:o,goformId:\"SET_MSG_READ\",msg_id:n,tag:0}},functi",
+    "DEL_IP_PORT_FILETER": ".length});if(d.USE_IPV6_INTERFACE){n.goformId=\"DEL_IP_PORT_FILETER_V4V6\";var r=[];c.each(e.indexs,function(e){2==e.length&&r.push(e.substring(1))}),n.delete_id_v6=0<r.length?r.join(\";\")+\";\":\"\"}else n.goformId=\"DEL_IP_PORT_FILETER\";return n.delete_id=0<_.length?_.join(\";\")+\";\":\"\",n},function(e){return e||f},null,!0)},getWifiAdvance:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_wifi_ch_hi_max,WirelessMode,CountryCode,Channel,HT_MCS,wifi_band,wifi_11n_cap,MAX_Access_num,m_MAX_Access_num,MAX_Station_num,wifi_sta_connection,manual_channelOption_start\",n.multi_data=1,n},function(e){{return e?{tz_wifi_ch_hi_max:e.tz_wifi_ch_hi_max,mode:e.WirelessMode,countryCod",
+    "DEL_IP_PORT_FILETER_V4V6": "tion(e){return e||f},null,!0)},deleteFilterRules:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o;var _=c.filter(e.indexs,function(e){return 1==e.length});if(d.USE_IPV6_INTERFACE){n.goformId=\"DEL_IP_PORT_FILETER_V4V6\";var r=[];c.each(e.indexs,function(e){2==e.length&&r.push(e.substring(1))}),n.delete_id_v6=0<r.length?r.join(\";\")+\";\":\"\"}else n.goformId=\"DEL_IP_PORT_FILETER\";return n.delete_id=0<_.length?_.join(\";\")+\";\":\"\",n},function(e){return e||f},null,!0)},getWifiAdvance:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_wifi_ch_hi_max,WirelessMode,CountryCode,Channel,HT_MCS,wifi_band,wifi_11n_cap,MAX_Access_num,m_MAX_Access_num,MAX_Statio",
+    "DEL_PORT_MAP": "ADD_PORT_MAP\",n.portMapEnabled=e.portMapEnable,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},deleteMapRules:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"DEL_PORT_MAP\",n.delete_id=e.indexs.join(\";\")+\";\",n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},getTrafficAlertInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"data_volume_limit_switch,data_volume_limit_unit,data_volume_limit_size,data_volume_alert_percent,monthly_tx_bytes,monthly_rx_bytes,monthly_time,traffic_alined_delta,data_remind_sms_switch,data_remind_sms_number,data_remind_sms_content\",multi_data:1}},function(e){{if(e){var t=\"data\"==e.data_",
+    "DEL_RATE_LIMIT": "speed=e.upload_speed,n.comment=e.comment,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},deleteRateLimitRules:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"DEL_RATE_LIMIT\",n.delete_id=e.indexs.join(\";\")+\";\",n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enableRateLimit:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ADD_RATE_LIMIT\",n.RateLimitEnable=e.RateLimitEnable,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enableFlowSwitch:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"FLOW_SWITCH\",n.tz_traffic_share_switch=e.tz_traffic_share_",
+    "DHCP_SETTING": "a0_dhcpLease=parseInt(e.va0_dhcpLease/3600,10),t.va1_dhcpLease=parseInt(e.va1_dhcpLease/3600,10),t}return f}},null,!1)},setLanInfo:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,n.goformId=\"DHCP_SETTING\",n.lanIp=e.ipAddress,n.lanNetmask=e.subnetMask,n.lanDhcpType=\"1\"==e.dhcpServer?\"SERVER\":\"DISABLE\",n.CSRFToken=e.CSRFToken,\"SERVER\"==n.lanDhcpType&&(n.dhcpStart=e.dhcpStart,n.dhcpEnd=e.dhcpEnd,n.dhcpDns=e.dhcpDns,n.dhcp2_Enabled=e.dhcp2_Enabled,n.dhcp2_Dns=e.dhcp2_Dns,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},setSipServer:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SIP_SERVER_SETTING\"",
+    "DHCP_SETTING1": "p_apn=e.voip_apn,n.sip_reg_account=e.sip_reg_account,n.sip_reg_pwd=e.sip_reg_pwd,n},function(e){return e||f},null,!0)},setLanInfo1:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,n.goformId=\"DHCP_SETTING1\",n.lanIp=e.ipAddress,n.lanNetmask=e.subnetMask,n.lanDhcpType=\"1\"==e.dhcpServer?\"SERVER\":\"DISABLE\",n.CSRFToken=e.CSRFToken,\"SERVER\"==n.lanDhcpType&&(n.dhcpStart=e.dhcpStart,n.dhcpEnd=e.dhcpEnd,n.dhcpDns=e.dhcpDns,n.va0_dhcp2_Dns=e.dhcp2_Dns,n.va0_dhcp2_Enabled=e.dhcp2_Enabled,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},setLanInfo2:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,n.goformId=\"DHCP_SETTING2\",n.l",
+    "DHCP_SETTING2": "cp2_Enabled=e.dhcp2_Enabled,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},setLanInfo2:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,n.goformId=\"DHCP_SETTING2\",n.lanIp=e.ipAddress,n.lanNetmask=e.subnetMask,n.lanDhcpType=\"1\"==e.dhcpServer?\"SERVER\":\"DISABLE\",n.CSRFToken=e.CSRFToken,\"SERVER\"==n.lanDhcpType&&(n.dhcpStart=e.dhcpStart,n.dhcpEnd=e.dhcpEnd,n.dhcpDns=e.dhcpDns,n.va1_dhcp2_Dns=e.dhcp2_Dns,n.va1_dhcp2_Enabled=e.dhcp2_Enabled,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},getSmsSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"sms_parameter_",
+    "DIGITMAP_SETTINGS": "GS\",n.siproxd_enable=e.enable,n.sip_listen_port=e.sip_listen_port,n},function(e){return e||f},null,!0)},digitmapSettings:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"DIGITMAP_SETTINGS\",n.digitmap_switch=e.digitmap_switch,n.digitmap_str=e.digitmap_str,n},function(e){return e||f},null,!0)},wbMode:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"WB_MODE\",n.wb_mode=e.digitmap_switch,n},function(e){return e||f},null,!0)},hotlineSettings:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"HOTLINE_SETTINGS\",n.dialog_hotline_str=e.dialog_hotline_str,n},function(e){return e||f},nul",
+    "DISABLE_PIN": "NABLE_PIN\"};return n.OldPinNumber=e.oldPin,n.isTest=o,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},null,!0)},disablePin:function(){return v(arguments,{},function(e,t){var n={goformId:\"DISABLE_PIN\"};return n.OldPinNumber=e.oldPin,n.CSRFToken=e.CSRFToken,n.isTest=o,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},null,!0)},changePin:function(){return v(arguments,{},function(e,t){var n={goformId:\"ENABLE_PIN\"};return n.OldPinNumber=e.oldPin,n.NewPinNumber=e.newPin,n.CSRFToken=e.CSRFToken,n.isTest=o,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},null,!0)},getLanInfo:function(){return v(arguments,{},function(e,t){var n={};retu",
+    "DISCONNECT_NETWORK": ":(U(_),t({result:!1}))}},disconnect:function(){var t=arguments[1],n=0;return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.notCallback=!0,n.disconnect_internet=1,n.CSRFToken=e.CSRFToken,n.goformId=\"DISCONNECT_NETWORK\",n},function(e){\"success\"==e.result?(n=(new Date).getTime(),O(_)):t({result:!1})},null,!0);function _(e){\"ppp_disconnecting\"==e.ppp_status?N.connectStatus=\"ppp_disconnecting\":\"ppp_disconnected\"==e.ppp_status?(U(_),N.connectStatus=\"ppp_disconnected\",t({result:!0,status:N.connectStatus})):(new Date).getTime()-n<1e4?N.connectStatus=\"ppp_disconnecting\":(U(_),t({result:!1}))}},setNetwork:function(e,t,n,_){var r;(\"string\"==typeof e&&\"\"!==e&&\"number\"==typeof t&&!isNaN(t)||\"",
+    "DMZ_SETTING": "ata=1,n},function(e){{if(e){var t={};return t.dmzSetting=\"1\"==e.DMZEnable?\"1\":\"0\",t.ipAddress=e.DMZIPAddress,t}return f}},null,!1)},setDmzSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"DMZ_SETTING\"};n.isTest=o,n.DMZEnabled=e.dmzSetting,n.CSRFToken=e.CSRFToken,\"1\"==n.DMZEnabled&&(n.DMZIPAddress=e.ipAddress);return n},function(e){return e||f},null,!0)},getSSIDPwdRuless:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"ssid_and_pwd\",n.multi_data=1,n},function(e){{if(e){var t={};return t.ssid_and_pwd=e.ssid_and_pwd,t}return f}},null,!1)},getDeviceInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"wifi_coverage,m_ssid_e",
+    "EDIT_HOSTNAME": "get_user_mac_addr,_=c.find(t,function(e){return e.mac==n});return d.currentUserInChildGroup=void 0!==_,{result:void 0!==_}},editHostName:function(){return v(arguments,{},function(e,t){return{isTest:o,goformId:\"EDIT_HOSTNAME\",mac:e.mac,hostname:e.hostname}},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getHostNameList:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"hostNameList\"}},function(e){return e&&(e.hostNameList||e.devices)?o?e.hostNameList:e:{devices:[]}},null,!1)},getTsw:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"openEnable,closeEnable,openTime,closeTime\",multi_data:\"1\"}},function(e){{if(e){if(-1!=e.openTime.indexOf(\":\")){var t=e",
+    "ENABLE_PIN": "urn n.isTest=o,n.cmd=\"pinnumber,pin_status,puknumber,modem_main_state,auto_simpin\",n.multi_data=1,n},function(e){return e||f},null,!1)},enablePin:function(){return v(arguments,{},function(e,t){var n={goformId:\"ENABLE_PIN\"};return n.OldPinNumber=e.oldPin,n.isTest=o,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},null,!0)},disablePin:function(){return v(arguments,{},function(e,t){var n={goformId:\"DISABLE_PIN\"};return n.OldPinNumber=e.oldPin,n.CSRFToken=e.CSRFToken,n.isTest=o,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},null,!0)},changePin:function(){return v(arguments,{},function(e,t){var n={goformId:\"ENABLE_PIN\"};return n.OldPinNumber=e.oldPin,",
+    "ENABLE_WPS_SET": "return p.extend({goformId:\"ACL_SETTING\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},setWpsEnable:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ENABLE_WPS_SET\",n.tz_wps_enable=e.tz_wps_enable,n.current_pin_switch=e.current_pin_switch,n},function(e){return e||f},null,!0)},backupData:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_save_user_info\",n},function(e){return e||f},null,!1)},isHideSMS:function(e){return\"yes\"==t.hideItems[e]},setVoiceCallType:function(){return v(arguments,{},function(e,t){return p.extend({isTest:o},e)},function(e){return e||f},null,!0)},voiceCallType:function(){return ",
+    "ENTER_PIN": "ggedIn=!1,N.tz_account_power=\"0\",{result:!0}):p.extend(f,{errorType:\"loggedOutError\"})},null,!0)},getLoginStatus:X,enterPIN:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ENTER_PIN\",n.PinNumber=e.PinNumber,n.CSRFToken=e.CSRFToken,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},{},!0)},enterPUK:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ENTER_PUK\",n.PUKNumber=e.PUKNumber,n.PinNumber=e.PinNumber,n.CSRFToken=e.CSRFToken,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},{},!0)},getSMSReady:function(){if(d.smsIsReady){var e=arguments[1];return e?e({sms_cmd:\"1\",sms_cmd_stat",
+    "ENTER_PUK": "e.PinNumber,n.CSRFToken=e.CSRFToken,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},{},!0)},enterPUK:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ENTER_PUK\",n.PUKNumber=e.PUKNumber,n.PinNumber=e.PinNumber,n.CSRFToken=e.CSRFToken,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},{},!0)},getSMSReady:function(){if(d.smsIsReady){var e=arguments[1];return e?e({sms_cmd:\"1\",sms_cmd_status_result:\"3\"}):{sms_cmd:\"1\",sms_cmd_status_result:\"3\"}}return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"sms_cmd_status_info\",n.sms_cmd=1,n},function(e){return e?(\"3\"==e.sms_cmd_status_result&&(d.smsIsReady=!0),e",
+    "FLOW_CALIBRATION_MANUAL": "2tp_ipsec_enable=e.tz_l2tp_ipsec_enable,n.tz_l2tp_ipsec_psk=e.tz_l2tp_ipsec_psk,n},function(e){return e||f},null,!0)},trafficCalibration:function(){return v(arguments,{},function(e,t){return{isTest:o,goformId:\"FLOW_CALIBRATION_MANUAL\",calibration_way:e.way,time:\"time\"==e.way?e.value:0,data:\"data\"==e.way?e.value:0}},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getParams:re,getUpgradeResult:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"upgrade_result\",n},function(e){return e||f},null,!1)},getCurrentUpgradeState:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"fota_current_upgrade_state\",n},function(e){return e?(\"dow",
+    "FLOW_SWITCH": "E_LIMIT\",n.RateLimitEnable=e.RateLimitEnable,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enableFlowSwitch:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"FLOW_SWITCH\",n.tz_traffic_share_switch=e.tz_traffic_share_switch,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setCleanFlow:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"clean_flow\",n.mac=e.mac,n},function(e){return e||f},null,!0)},getSDConfiguration:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"sdcard_mode_option,sd_card_state,HTTP_SHARE_STATUS,HTTP_SHARE_CARD_USER,HTTP_SHARE_WR_AUTH,HTTP_SHARE_FILE\",multi_d",
+    "FW_FORWARD_ADD": "=r[1]+\" - \"+r[2],_.protocol=transProtocol(r[3]),_.comment=r[4],t.push(_)}return t}(n),t}return f}},null,!1)},setPortForward:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"FW_FORWARD_ADD\",n.ipAddress=e.ipAddress,n.portStart=e.portStart,n.portEnd=e.portEnd,n.protocol=e.protocol,n.comment=e.comment,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},deleteForwardRules:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"FW_FORWARD_DEL\",n.delete_id=e.indexs.join(\";\")+\";\",n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enableVirtualServer:function(){return v(arguments,{},function(e,t){var n={};return n",
+    "FW_FORWARD_DEL": ",n.protocol=e.protocol,n.comment=e.comment,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},deleteForwardRules:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"FW_FORWARD_DEL\",n.delete_id=e.indexs.join(\";\")+\";\",n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enableVirtualServer:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"VIRTUAL_SERVER\",n.PortForwardEnable=e.portForwardEnable,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},getRateLimit:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"RateLimitEnable,RateLimitRules_0,RateLimitRules_1,RateLimit",
+    "GET_STATUS_ROUTE": "ay,n.status=e.status,n.routeMode=e.routeMode,n.routeIndex=e.routeIndex,n},function(e){return e||f},null,!0)},getStaticRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"GET_STATUS_ROUTE\",n},function(e){{if(e){var t={},n=[],_=[];for(var r in e)e.hasOwnProperty(r)&&(t={},n=e[r].split(\",\"),t.index=r.charAt(11),t.interface=\"1\"==n[0]?p.i18n.prop(\"lan\"):p.i18n.prop(\"wan\"),t.ipAddress=n[1],t.netmask=n[2],t.gateway=n[3],t.status=\"1\"==n[4]?p.i18n.prop(\"invalid\"):p.i18n.prop(\"valid\"),_.push(t));return{staticRouteList:_}}return f}},null,!1)},getAclInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,multi_data:\"1\",cmd:\"TZ_ACL_LAN_HTTP_0,TZ_ACL_LAN",
+    "GOFORM_HTTPSHARE_CHECK_FILE": "RD_USER,share_auth:\"readOnly\"==e.HTTP_SHARE_WR_AUTH?\"0\":\"1\",file_to_share:t,share_file:e.HTTP_SHARE_FILE}):f}},null,!1)},checkFileExists:function(){return v(arguments,{},function(e,t){return{isTest:o,goformId:\"GOFORM_HTTPSHARE_CHECK_FILE\",path_SD_CARD:e.path}},function(e){return e?\"no_sdcard\"==e.result?{status:\"no_sdcard\"}:\"noexist\"==e.result?{status:\"noexist\"}:\"processing\"==e.result?{status:\"processing\"}:{status:\"exist\"}:f},null,!0)},getQuickSettingInfo:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o;var _=d.PASSWORD_ENCODE?\",WPAPSK1_encode\":\",WPAPSK1\";return n.cmd=\"pdp_type,ipv6_pdp_type,wifi_cur_state,SSID1,HideSSID,AuthMode,WscModeOption,ppp_status,apn_index,ipv6_apn_i",
+    "GRE_SETTING": "t.ipAddress=e.tz_gre_ip_addr,t.localIp=e.tz_gre_local_ip,t.remoteIp=e.tz_gre_remote_ip,t}return f}},null,!1)},setGreSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"GRE_SETTING\",n.greEnable=e.greEnable,n.tunnelName=e.tunnelName,n.defaultGateway=e.defaultGateway,n.ipAddress=e.ipAddress,n.localIp=e.localIp,n.remoteIp=e.remoteIp,n},function(e){return e||f},null,!0)},getDynamicInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"tz_dynamic_info\"}},function(e){return e?{tz_cpu_usage:e.tz_cpu_usage,mem_total:e.mem_total,mem_free:e.mem_free,mem_cached:e.mem_cached,mem_active:e.mem_active}:f},null,!1)},getlockcellinfo:function(e,t){ret",
+    "HOTLINE_SETTINGS": "return n.isTest=o,n.goformId=\"WB_MODE\",n.wb_mode=e.digitmap_switch,n},function(e){return e||f},null,!0)},hotlineSettings:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"HOTLINE_SETTINGS\",n.dialog_hotline_str=e.dialog_hotline_str,n},function(e){return e||f},null,!0)},getMonitor:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"MONITOR_GETTINGS\",n},function(e){return e||f},null,!0)},getGreSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_gre_state,tz_gre_tunnel_name,tz_gre_default_gateway,tz_gre_ip_addr,tz_gre_local_ip,tz_gre_remote_ip\",n.multi_data=1,n},function(e){{if(e){",
+    "HTTPS_PORT_SETTINGS": " p.extend({goformId:\"HTTPS_SWITCH_PORT_SETTINGS\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},httpsPortSettings:function(){return v(arguments,{},function(e){return p.extend({goformId:\"HTTPS_PORT_SETTINGS\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getVPNStatus:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_pptp_vpn_state,tz_l2tp_state,tz_gre_state\",n.multi_data=1,n},function(e){{if(e){var t={};return t.tz_pptp_vpn_state=e.tz_pptp_vpn_state,t.tz_l2tp_state=e.tz_l2tp_state,t.tz_gre_state=e.tz_gre_state,t}return f}},null,!1)},getmtuInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTe",
+    "HTTPS_SWITCH_PORT_SETTINGS": "e,wan_ssl_port\"}},function(e){return e?{wan_ssl_enable:e.wan_ssl_enable,wan_ssl_port:e.wan_ssl_port}:f},null,!1)},httpsSwitchPortSettings:function(){return v(arguments,{},function(e){return p.extend({goformId:\"HTTPS_SWITCH_PORT_SETTINGS\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},httpsPortSettings:function(){return v(arguments,{},function(e){return p.extend({goformId:\"HTTPS_PORT_SETTINGS\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getVPNStatus:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_pptp_vpn_state,tz_l2tp_state,tz_gre_state\",n.multi_data=1,n},function(e){{if(e){var t={};return t.tz_pptp_vpn_st",
+    "IF_UPGRADE": "upgrade_state&&(e.fota_current_upgrade_state=\"upgrading\"),e.current_upgrade_state=e.fota_current_upgrade_state,e):f},null,!1)},setUpgradeSelectOp:function(){return v(arguments,{},function(e,t){var n={goformId:\"IF_UPGRADE\"};n.isTest=o,n.select_op=e.selectOp,\"check\"==n.select_op&&(n.ota_manual_check_roam_state=1);return n},function(e){return e||f},null,!0)},addTimerThings:F,removeTimerThings:W,getPackSizeInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"pack_size_info\",n},function(e){return e||f},null,!1)},getNewVersionInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"update_info\",n},function(e){return e||f},null,!1)},getM",
+    "L2TP_SETTING": "_l2tp_ipsec_enable,tz_l2tp_ipsec_psk:e.tz_l2tp_ipsec_psk,tz_l2tp_ipsec_status:e.tz_l2tp_ipsec_status}:f}},null,!1)},setL2tp:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"L2TP_SETTING\",n.tz_l2tp_state=e.tz_l2tp_state,n.tz_l2tp_lac_name=e.tz_l2tp_lac_name,n.tz_l2tp_lns_server=e.tz_l2tp_lns_server,n.tz_l2tp_tunnel_name=e.tz_l2tp_tunnel_name,n.tz_l2tp_challenge_pass=e.tz_l2tp_challenge_pass,n.tz_l2tp_auth_name=e.tz_l2tp_auth_name,n.tz_l2tp_mtu=e.tz_l2tp_mtu,n.tz_l2tp_lns_checkalive=e.tz_l2tp_lns_checkalive,n.tz_l2tp_auth_pass=e.tz_l2tp_auth_pass,n.tz_l2tp_ipsec_enable=e.tz_l2tp_ipsec_enable,n.tz_l2tp_ipsec_psk=e.tz_l2tp_ipsec_psk,n},function(e){return e||f",
+    "LOCK_FREQUENCY": "?e.actionlte:\"0\",cellParaIdlte:e.cellParaIdlte,uarfcnlte:e.uarfcnlte,CellLockSet:e.CellLockSet}:f},null,!1)},setlockcellcfg:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"LOCK_FREQUENCY\",n.actionlte=e.actionlte,n.uarfcnlte=e.uarfcnlte,n.cellParaIdlte=e.cellParaIdlte,n},function(e){return e||f},null,!0)},volteApn:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"VOLTE_APN\",n.volteAPN=e.volteAPN,n.volteUrl=e.volteUrl,n},function(e){return e||f},null,!0)},getOperatorName:function(e){return e?\"china mobile\"==e.toLowerCase()?\"china_mobile\":\"china unicom\"==e.toLowerCase()?\"china_unicom\":\"china telecom\"==e.toLowerCase()?\"chi",
+    "LOGIN": "eturn{pcPbmTotalCapacity:parseInt(e.pbm_dev_max_record_num),pcPbmUsedCapacity:parseInt(e.pbm_dev_used_record_num)}},getLoginData:j,login:function(){return v(arguments,{},function(e,t){return{isTest:o,goformId:\"LOGIN\",username:Base64.encode(e.username),CSRFToken:e.CSRFToken,password:d.PASSWORD_ENCODE?Base64.encode(e.password):e.password}},function(e){{if(!e||\"0\"!=e.result&&\"4\"!=e.result){var t={};switch(e.result){case\"1\":t={errorType:\"Login Fail\"};break;case\"2\":t={errorType:\"duplicateUser\"};break;case\"3\":t={errorType:\"badPassword\"};break;case\"5\":t={errorType:\"notexistUser\"};break;default:t={errorType:\"Login Fail\"}}return N.isLoggedIn=!1,N.tz_account_power=\"0\",p.extend(f,t)}return N.isLoggedIn",
+    "LOGOUT": "tend(f,t)}return N.isLoggedIn=!0,N.tz_account_power=e.power,{result:!0}}},{errorType:\"badPassword\"},!0)},logout:function(){return v(arguments,{},function(e,t){var n=p.extend({},e);return n.isTest=o,n.goformId=\"LOGOUT\",n},function(e){return e&&\"success\"==e.result?(N.isLoggedIn=!1,N.tz_account_power=\"0\",{result:!0}):p.extend(f,{errorType:\"loggedOutError\"})},null,!0)},getLoginStatus:X,enterPIN:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"ENTER_PIN\",n.PinNumber=e.PinNumber,n.CSRFToken=e.CSRFToken,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},{},!0)},enterPUK:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o",
+    "MGMT_CONTROL_POWER_ON_SPEED": "_quicken_power_on?\"1\":\"0\",need_hard_reboot:e.need_hard_reboot,need_sim_pin:\"yes\"==e.need_sim_pin?\"yes\":\"no\"}},null,!1)},setFastbootSetting:function(){return v(arguments,{},function(e){return{isTest:o,goformId:\"MGMT_CONTROL_POWER_ON_SPEED\",mgmt_quicken_power_on:e.fastbootEnabled}},function(e){return e&&\"success\"==e.result?e:f},null,!0)},turnOffDevice:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TURN_OFF_DEVICE\",n},function(e){return e||f},null,!0)},restart:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"REBOOT_DEVICE\",n},function(e){return e||f},null,!0)},timerUpdaterEnable:e,switchPortForLog:function(){return v(ar",
+    "MONITOR_GETTINGS": "n.goformId=\"HOTLINE_SETTINGS\",n.dialog_hotline_str=e.dialog_hotline_str,n},function(e){return e||f},null,!0)},getMonitor:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"MONITOR_GETTINGS\",n},function(e){return e||f},null,!0)},getGreSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_gre_state,tz_gre_tunnel_name,tz_gre_default_gateway,tz_gre_ip_addr,tz_gre_local_ip,tz_gre_remote_ip\",n.multi_data=1,n},function(e){{if(e){var t={};return t.greEnable=e.tz_gre_state?e.tz_gre_state:0,t.tunnelName=e.tz_gre_tunnel_name,t.defaultGateway=e.tz_gre_default_gateway?e.tz_gre_default_gateway:0,t.ipAddress=e.tz_gre_ip_addr,t.loca",
+    "MONITOR_SETTINGS": "r n={};return n.isTest=o,n.cmd=\"get_hash\",n},function(e){{return e?{hash:e.hash}:f}},null,!1)},setHash:w,monitorSettings:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"MONITOR_SETTINGS\",n.siproxd_enable=e.enable,n.sip_listen_port=e.sip_listen_port,n},function(e){return e||f},null,!0)},digitmapSettings:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"DIGITMAP_SETTINGS\",n.digitmap_switch=e.digitmap_switch,n.digitmap_str=e.digitmap_str,n},function(e){return e||f},null,!0)},wbMode:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"WB_MODE\",n.wb_mode=e.digitmap_switch,n},functio",
+    "NAT_SETTING": "\"UPNP_SETTING\"};return n.isTest=o,n.upnp_setting_option=e.upnpSetting,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setNatSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"NAT_SETTING\"};return n.isTest=o,n.main_nat=e.main_nat,n.main_nat_1=e.main_nat_1,n.main_nat_2=e.main_nat_2,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setPolarityReversa:function(){return v(arguments,{},function(e,t){var n={goformId:\"POLARITY_REVERSAL\"};return n.isTest=o,n.polarity_reversal=e.polarity_reversal,n},function(e){return e||f},null,!0)},getNatSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"main_nat,main_nat_1,main_nat",
+    "PBM_CONTACT_ADD": ",_(!1))},1e3);else _(!1)},function(e){_(!1)},!0)):_(!1)},savePhoneBook:function(){var t=arguments[1];return v(arguments,{},function(e,t){var n={};n.isTest=o,n.notCallback=!0,n.CSRFToken=e.CSRFToken,n.goformId=\"PBM_CONTACT_ADD\",n.location=e.location,n.name=encodeMessage(e.name),n.mobilephone_num=e.mobile_phone_number,1==n.location?(n.add_index_pc=e.index,n.homephone_num=e.home_phone_number,n.officephone_num=e.office_phone_number,n.email=encodeMessage(e.mail),n.groupchoose=e.group,n.groupchoose||(n.groupchoose=\"common\")):n.edit_index=e.index;null!=e.delId&&(n.delId=e.delId);return n},function(e){e&&\"success\"==e.result?F(\"pbm_write_flag\",n):t(e)},null,!0);function n(e){K(e,t,n)}},deletePhoneBoo",
+    "PBM_CONTACT_DEL": "e.result?F(\"pbm_write_flag\",n):t(e)},null,!0);function n(e){K(e,t,n)}},deletePhoneBooks:function(){var t=arguments[1];return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.notCallback=!0,n.goformId=\"PBM_CONTACT_DEL\",n.del_option=\"delete_num\",n.delete_id=e.indexs.join(\",\"),n},function(e){e&&\"success\"==e.result?F(\"pbm_write_flag\",n):t(e)},null,!0);function n(e){K(e,t,n)}},deleteAllPhoneBooks:function(){var t=arguments[1];return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.notCallback=!0,n.goformId=\"PBM_CONTACT_DEL\",n.del_option=\"delete_all\",n.del_all_location=e.location,n},function(e){e&&\"success\"==e.result?F(\"pbm_write_flag\",n):t(e)},null,!0);function n(e){K(e,t,n)}},d",
+    "POLARITY_REVERSAL": "t=e.main_nat,n.main_nat_1=e.main_nat_1,n.main_nat_2=e.main_nat_2,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setPolarityReversa:function(){return v(arguments,{},function(e,t){var n={goformId:\"POLARITY_REVERSAL\"};return n.isTest=o,n.polarity_reversal=e.polarity_reversal,n},function(e){return e||f},null,!0)},getNatSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"main_nat,main_nat_1,main_nat_2\",n.multi_data=1,n},function(e){{if(e){var t={};return t.main_nat=\"1\"==e.main_nat?\"1\":\"0\",t.main_nat_1=\"1\"==e.main_nat_1?\"1\":\"0\",t.main_nat_2=\"1\"==e.main_nat_2?\"1\":\"0\",t}return f}},null,!1)},getDmzSetting:function(){return v(arguments,{},function(e,",
+    "PORT_SETTINGS": ",{},function(e){return p.extend({goformId:\"STATIC_IP\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},portSettings:function(){return v(arguments,{},function(e){return p.extend({goformId:\"PORT_SETTINGS\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},setStaticRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_STATUS_ROUTE\",n.interface=e.interface,n.ipAddress=e.ipAddress,n.netmask=e.netmask,n.gateway=e.gateway,n.status=e.status,n.routeMode=e.routeMode,n.routeIndex=e.routeIndex,n},function(e){return e||f},null,!0)},getStaticRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.",
+    "PPPOE_SETTING": "thwan_secdns:e.static_ethwan_secdns,pppoe_password:e.pppoe_password,pppoe_username:e.pppoe_username}:f}},null,!1)},setpppoe:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"PPPOE_SETTING\",n.rj45_mode=e.rj45_mode,n.ethwan_mode=e.ethwan_mode,n.static_ethwan_ip=e.static_ethwan_ip,n.static_ethwan_mac=e.static_ethwan_mac,n.static_ethwan_gw=e.static_ethwan_gw,n.static_ethwan_nm=e.static_ethwan_nm,n.static_ethwan_pridns=e.static_ethwan_pridns,n.static_ethwan_secdns=e.static_ethwan_secdns,n.pppoe_password=e.pppoe_password,n.pppoe_username=e.pppoe_username,n},function(e){return e||f},null,!0)},isUserHide:l,isHide:u,getUriType:function(){return v(arguments,{},funct",
+    "QUICK_SETUP": "ick_apn_hide\",n.multi_data=1,n},function(e){return e?(d.PASSWORD_ENCODE&&(e.WPAPSK1=Base64.decode(e.WPAPSK1_encode)),e):f},null,!1)},setQuickSetting:function(){Y(arguments,function(e){return{isTest:o,goformId:\"QUICK_SETUP\",apn_mode:e.apnMode,CSRFToken:e.CSRFToken,Profile_Name:e.Profile_Name,APN_name:e.APN_name,ppp_auth_mode:e.ppp_auth_mode,ppp_username:e.ppp_username,ppp_passwd:e.ppp_passwd,SSID_name:e.SSID_name,SSID_Broadcast:e.SSID_Broadcast,Encryption_Mode_hid:e.Encryption_Mode_hid,security_shared_mode:e.security_shared_mode,WPA_PreShared_Key:d.PASSWORD_ENCODE?Base64.encode(e.WPA_PreShared_Key):e.WPA_PreShared_Key,wep_default_key:e.wep_default_key,WPA_ENCRYPTION_hid:e.WPA_ENCRYPTION_hid}}",
+    "QUICK_SETUP_EX": "ey:e.wep_default_key,WPA_ENCRYPTION_hid:e.WPA_ENCRYPTION_hid}},function(e){return e||p.extend(f,{errorType:\"SetSetUpError\"})})},setQuickSetting4IPv6:function(){Y(arguments,function(e){var t={isTest:o,goformId:\"QUICK_SETUP_EX\",index:e.apn_index,CSRFToken:e.CSRFToken,pdp_type:e.pdp_type,apn_mode:e.apnMode,profile_name:e.profile_name,wan_apn:e.wan_apn,ppp_auth_mode:e.ppp_auth_mode,ppp_username:e.ppp_username,ppp_passwd:e.ppp_passwd,ipv6_wan_apn:e.ipv6_wan_apn,ipv6_ppp_auth_mode:e.ipv6_ppp_auth_mode,ipv6_ppp_username:e.ipv6_ppp_username,ipv6_ppp_passwd:e.ipv6_ppp_passwd,SSID_name:e.SSID_name,SSID_Broadcast:e.SSID_Broadcast,Encryption_Mode_hid:e.Encryption_Mode_hid,security_shared_mode:e.security",
+    "REBOOT_DEVICE": "ents,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TURN_OFF_DEVICE\",n},function(e){return e||f},null,!0)},restart:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"REBOOT_DEVICE\",n},function(e){return e||f},null,!0)},timerUpdaterEnable:e,switchPortForLog:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"CHANGE_MODE\",n.change_mode=e.change_mode,n},function(e){return e||f},null,!0)},childGroupList:ne,checkCurrentUserInChildGroup:function(e){if(void 0!==d.currentUserInChildGroup)return{result:d.currentUserInChildGroup};var t=[];t=void 0!==e?e:ne({}).devices;var n=_e({}).get_user_mac_addr,_=c.find(t,function(e){ret",
+    "RESTORE_FACTORY_SETTINGS": "l\",errorText:\"delete_fail_try_again\"}))},null,!0)},restoreFactorySettings:function(){return d.HAS_PARENTAL_CONTROL&&d.currentUserInChildGroup,v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"RESTORE_FACTORY_SETTINGS\",n},function(e){return e||f},null,!0)},checkRestoreStatus:function t(n){var e={};e.isTest=o,e.cmd=\"restore_flag\",e.multi_data=1,T(e,function(e){e&&\"1\"===e.restore_flag?n():setTimeout(function(){t(n)},5e3)},function(){setTimeout(function(){t(n)},5e3)},!1)},getWpsInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"wifi_wps_index,WscModeOption,AuthMode,wifi_cur_state,EncrypType,wps_mode,WPS_SSID,m_ssid_enable,SSID1,m_SSID,m_Encryp",
+    "RESULT_RESTORE": "lStrength:function(){return re({nv:[\"network_type\",\"rssi\",\"rscp\",\"lte_rsrp\"]},arguments[1],arguments[2])},clearUpdateResult:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"RESULT_RESTORE\",n},function(e){return e&&\"success\"==e.result?e:f},null,!0)},refreshAPStationStatus:function(){return te({},function(e){N.ap_station_enable=1==e.ap_station_enable,N.ap_station_mode=e.ap_station_mode})},setUsbMode:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_USB_MODE\",n.usb_mode=e.usb_mode,n},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getUsbMode:function(){return v(arguments,{},function(e,t){var n={};return n.isTe",
+    "SAVE_SMS": "rorType:\"sendFail\",errorText:\"send_fail_try_again\"}))},null,!0)},saveSMS:function(){var t=arguments[1],n=arguments[2]?arguments[2]:t;return v(arguments,{},function(e,t){return{isTest:o,notCallback:!0,goformId:\"SAVE_SMS\",SMSMessage:escapeMessage(encodeMessage(e.message)),SMSNumber:e.numbers.join(\";\")+\";\",Index:e.index,encode_type:getEncodeType(e.message).encodeType,sms_time:e.currentTimeString,draft_group_id:e.groupId}},function(e){if(!e)return void n(p.extend(f,{errorType:\"saveFail\",errorText:\"save_fail\"}));\"success\"==e.result?q({smsCmd:5,errorType:\"saveFail\",errorText:\"save_fail\"},t,n):n(p.extend(f,{errorType:\"saveFail\",errorText:\"save_fail\"}))},null,!0)},deleteAllMessages:function(){var n=",
+    "SAVE_TSW": ");e.closeH=leftInsert(n[0],2,\"0\"),e.closeM=leftInsert(n[1],2,\"0\")}else e.closeH=\"22\",e.closeM=\"00\";return e}return f}},null,!1)},saveTsw:function(){return v(arguments,{},function(e,t){var n={isTest:o,goformId:\"SAVE_TSW\",openEnable:e.openEnable,closeEnable:e.closeEnable};\"1\"==e.openEnable&&(n.openTime=e.openTime,n.closeTime=e.closeTime);return n},function(e){return e&&\"success\"==e.result?e:e&&\"failure\"==e.result?e:f},null,!0)},getMultiAPN:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"apn2_profile_name,apn2_wan,apn2_type,apn2_auth_mode,apn2_username,apn2_passwd,apn3_profile_name,apn3_wan,apn3_type,apn3_auth_mode,apn3_username,apn3_passwd,tz_apn2_enable,tz_apn",
+    "SCAN_NETWORK": "ce(/\\D/g,\"\"),nRat:parseInt(t[4],10),nState:parseInt(t[1],10),SubAct:parseInt(t[5],10)});a(!0,_)}o?setTimeout(function(){n(simulate.m_netselect_contents)},500):p.post(\"/goform/goform_set_cmd_process\",{goformId:\"SCAN_NETWORK\"},function(e){\"success\"==e.result?t():a(!1,[])},\"json\").error(function(){a(!1,[])})},getConnectionInfo:function(){var e=\"1\"==N.limitVolumeType,t={data_counter:N.data_counter,connectStatus:N.connectStatus,rj45ConnectStatus:N.rj45ConnectStatus,limitVolumeEnable:N.limitVolumeEnable,limitVolumeType:N.limitVolumeType,limitVolumePercent:N.limitVolumePercent,networkType:N.networkType};return e?(t.limitDataMonth=N.limitVolumeSize,t.limitTimeMonth=0):(t.limitTimeMonth=N.limitVolume",
+    "SEND_SMS": "e.messages&&0<e.messages.length?{messages:Z(e.messages)}:{messages:[]}},{},!1)},sendSMS:function(){var t=arguments[1],n=arguments[2]?arguments[2]:t;return v(arguments,{},function(e,t){return{isTest:o,goformId:\"SEND_SMS\",notCallback:!0,Number:e.number,sms_time:getCurrentTimeString(),MessageBody:escapeMessage(encodeMessage(e.message)),ID:e.id,encode_type:getEncodeType(e.message).encodeType}},function(e){if(!e)return void n(p.extend(f,{errorType:\"sendFail\",errorText:\"send_fail_try_again\"}));\"success\"==e.result?setTimeout(function(){q({smsCmd:4,errorType:\"sendFail\",errorText:\"send_fail_try_again\"},t,n)},1e3):n(p.extend(f,{errorType:\"sendFail\",errorText:\"send_fail_try_again\"}))},null,!0)},saveSMS",
+    "SEND_SMS_ID": "on_password\",n.tzphone_cnfg_protect_pwd=e.protection_password,n},function(e){return e||f},null,!0)},getOnceData:I,sendSmsId:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SEND_SMS_ID\",n.smsId=e.id,n},function(e){return e||f},null,!0)},enterOnlyPUK:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_ENTER_PUK\",n.PUKNumber=e.PUKNumber,n.CSRFToken=e.CSRFToken,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},{},!0)},getHotspotServer:function(e,t){return v(arguments,{},function(e,t){return{isTest:o,multi_data:1,cmd:\"hotspot_enable,hotspot_eap_enable,hotspot_eap_radius_ip,hotspot_eap_radius_port,hotsp",
+    "SET_BEARER_PREFERENCE": "ormId=\"SET_WEB_LANGUAGE\",n.Language=e.Language,n},function(e){return e||f},null,!0)},getNetSelectInfo:R,setBearerPreference:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_BEARER_PREFERENCE\",n.BearerPreference=e.strBearerPreference,n},function(e){return e||f},null,!0)},scanForNetwork:function(a){function t(){p.getJSON(\"/goform/goform_get_cmd_process\",{cmd:\"m_netselect_status\",_:(new Date).getTime()},function(e){\"manual_selecting\"==e.m_netselect_status?setTimeout(t,1e3):p.getJSON(\"/goform/goform_get_cmd_process\",{cmd:\"m_netselect_contents\",_:(new Date).getTime()},function(e){\"\"!=_(e.m_netselect_contents)?n(e.m_netselect_contents):a(!1,[])}).error(func",
+    "SET_HOTSPOTSERVER": "function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_export_diagnosis\",n},function(e){return e||f},null,!1)},setHotspotServer:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_HOTSPOTSERVER\",n.hotspotEap=e.hotspotEap,n.radiusIp=e.radiusIp,n.radiusPort=e.radiusPort,n.radiusPassWd=e.radiusPassWd,n.hotsporServer=e.hotsporServer,n},function(e){return e||f},null,!0)},tz_tcpdump:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.tz_tcpdump=e.tz_tcpdump,n.number=e.number,n.cmd=\"tz_tcpdump\",n},function(e){return e||f},null,!1)},tr069Log:function(){return v(arguments,{},function(e,t){return p.extend({isTest:o},e)},function(e){return e||f}",
+    "SET_MESSAGE_CENTER": "ault:t.validity=\"twelve_hours\"}return t}return f}},null,!1)},setSmsSetting:function(){var t=arguments[1],n=arguments[2]?arguments[2]:t;return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_MESSAGE_CENTER\",n.save_time=e.validity,n.MessageCenter=e.centerNumber,n.status_save=e.deliveryReport,n.CSRFToken=e.CSRFToken,n.save_location=\"native\",n.notCallback=!0,n},function(e){if(!e)return void n(p.extend(f,{errorType:\"smsSettingFail\",errorText:\"error_info\"}));\"success\"==e.result?q({smsCmd:3,errorType:\"smsSettingFail\",errorText:\"error_info\"},t,n):n(p.extend(f,{errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"}))},null,!0)},restoreFactorySettings:function(){return d.HAS",
+    "SET_MSG_READ": "tend(f,{errorType:\"deleteFail\",errorText:\"delete_fail_try_again\"}))},null,!0)},setSmsRead:function(){return v(arguments,{},function(e,t){var n=e.ids.join(\";\");0<e.ids.length&&(n+=\";\");return{isTest:o,goformId:\"SET_MSG_READ\",msg_id:n,tag:0}},function(e){return\"success\"==e.result?{result:!0}:{result:!1}},null,!0)},resetNewSmsReceivedVar:function(){N.newSmsReceived=!1},resetSmsReportReceivedVar:function(){N.smsReportReceived=!1},getSMSDeliveryReport:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"sms_status_rpt_data\",page:e.page,data_per_page:e.smsCount}},function(e){return e?{messages:Z(e.messages,!0)}:f},{},!1)},getSmsCapability:function(){return v(arguments,{},function(e,",
+    "SET_MTU": ",n.cmd=\"mtu,mss\",n.multi_data=1,n},function(e){{if(e){var t={};return t.mtu=e.mtu,t.mss=e.mss,t}return f}},null,!1)},setMtu:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_MTU\",n.mtu=e.tz_mtu,n.mss=e.tz_mss,n},function(e){return e||f},null,!0)},getSystemLogStatus:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"is_have_system_log,is_start_syslog\",n.multi_data=1,n},function(e){{if(e){var t={};return t.is_have_system_log=e.is_have_system_log,t.is_start_syslog=e.is_start_syslog,t}return f}},null,!1)}}});",
+    "SET_NETWORK": "tion(e,t,n,_){var r;(\"string\"==typeof e&&\"\"!==e&&\"number\"==typeof t&&!isNaN(t)||\"function\"!=typeof _)&&(-1!==(0===t?0:2===t?2:7==t?7:-1)||\"function\"!=typeof _)?(r=\"NaN\"==n.toString()?\"\":n,T({isTest:o,goformId:\"SET_NETWORK\",NetworkNumber:e,Rat:t,nSubrat:r},function(e){if(e&&\"success\"==e.result)var t=0,n=setInterval(function(){var e=h({cmd:\"m_netselect_result\",isTest:o},!1);e||_(!1),\"manual_success\"==e.m_netselect_result?(\"1\",window.clearInterval(n),_(!0)):\"manual_fail\"==e.m_netselect_result?(\"0\",window.clearInterval(n),_(!1)):t<120?t++:(window.clearInterval(n),_(!1))},1e3);else _(!1)},function(e){_(!1)},!0)):_(!1)},savePhoneBook:function(){var t=arguments[1];return v(arguments,{},function(e,t",
+    "SET_STATUS_ROUTE": "rn p.extend({goformId:\"PORT_SETTINGS\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},setStaticRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_STATUS_ROUTE\",n.interface=e.interface,n.ipAddress=e.ipAddress,n.netmask=e.netmask,n.gateway=e.gateway,n.status=e.status,n.routeMode=e.routeMode,n.routeIndex=e.routeIndex,n},function(e){return e||f},null,!0)},getStaticRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"GET_STATUS_ROUTE\",n},function(e){{if(e){var t={},n=[],_=[];for(var r in e)e.hasOwnProperty(r)&&(t={},n=e[r].split(\",\"),t.index=r.charAt(11),t.interface=\"1\"==n[0]?p.i18n.prop(\"la",
+    "SET_UART_BAUDRATE": "nts,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"uart_baudrate\",n},function(e){return e||f},null,!1)},setUartBaudrate:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_UART_BAUDRATE\",n.uart_baudrate=e.uart_baudrate,n},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getDdnsParams:function(e,t){return v(arguments,{},function(e,t){return{isTest:o,multi_data:1,cmd:\"DDNS_Enable,DDNS_Mode,DDNSProvider,DDNSAccount,DDNSPassword,DDNS,DDNS_Hash_Value\"}},function(e){return e?{DDNS_Enable:e.DDNS_Enable,DDNS_Mode:e.DDNS_Mode,DDNSProvider:e.DDNSProvider,DDNSAccount:e.DDNSAccount,DDNSPassword:e.DDNSPassword,DDNS:e.DDNS,DDNS_Hash_Value:e.DDNS_Hash_Value",
+    "SET_USB_MODE": "ion(){return te({},function(e){N.ap_station_enable=1==e.ap_station_enable,N.ap_station_mode=e.ap_station_mode})},setUsbMode:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_USB_MODE\",n.usb_mode=e.usb_mode,n},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getUsbMode:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"usb_mode\",n},function(e){return e||f},null,!1)},getUartBaudrate:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"uart_baudrate\",n},function(e){return e||f},null,!1)},setUartBaudrate:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SE",
+    "SET_W13_WLAN": "1:e.m_Key2Str1,m_Key3Str1:e.m_Key3Str1,m_Key4Str1:e.m_Key4Str1,rotationFlag:e.rotationFlag,ap_station_enable:e.wifi_sta_connection}:f}},null,!1)},setW13Basic:function(){Y(arguments,function(e){var t={goformId:\"SET_W13_WLAN\",isTest:o,ssid:e.SSID,broadcastSsidEnabled:e.broadcast,security_mode:e.AuthMode,wifi_11n_cap:e.bandwidth,selectedChannel:e.channel,wifiMode:e.mode,MAX_Access_num:e.MAX_Access_num,wifiEnabled:e.wifiEnabled,w13_lan_ip:e.ipAddress};d.WIFI_WEP_SUPPORT&&(t.wep_default_key=e.wep_default_key,t.wep_key_1=e.wep_key_1,t.wep_key_2=e.wep_key_2,t.wep_key_3=e.wep_key_3,t.wep_key_4=e.wep_key_4,\"1\"==e.wep_default_key?t.WEP2Select=e.WEP2Select:\"2\"==e.wep_default_key?t.WEP3Select=e.WEP3Sele",
+    "SET_WEB_LANGUAGE": "\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip,t.push(r)}return{attachedDevices:t}},null,!1)},getLanguage:E,setLanguage:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_WEB_LANGUAGE\",n.Language=e.Language,n},function(e){return e||f},null,!0)},getNetSelectInfo:R,setBearerPreference:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_BEARER_PREFERENCE\",n.BearerPreference=e.strBearerPreference,n},function(e){return e||f},null,!0)},scanForNetwork:function(a){function t(){p.getJSON(\"/goform/goform_get_cmd_process\",{cmd:\"m_netselect_status\",_:(new Date).getTime()},function(e){\"manual_selecting\"==e.m_netselect_status",
+    "SET_WIFI_COVERAGE": "return n.isTest=o,n.cmd=\"wifi_coverage\",n},function(e){{if(e){var t={};return t.wifiRangeMode=e.wifi_coverage,t}return f}},null,!1)},setWifiRange:function(){return v(arguments,{},function(e,t){var n={goformId:\"SET_WIFI_COVERAGE\"};return n.isTest=o,n.wifi_coverage=e.wifiRangeMode,n},function(e){return e||f},null,!0)},getUpnpSetting:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"upnpEnabled\",n.multi_data=1,n},function(e){{if(e){var t={};return t.upnpSetting=\"1\"==e.upnpEnabled?\"1\":\"0\",t}return f}},null,!1)},setUpnpSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"UPNP_SETTING\"};return n.isTest=o,n.upnp_setting_option=e.upnpSetting,n.CSRFTo",
+    "SET_WIFI_INFO": ":t.m_EncrypType=\"NONE\";return t},function(e){return e||f})},setWifiBasicMultiSSIDSwitch:function(){Y(arguments,function(e){var t=e;\"0\"==e.wifiEnabled&&(t={wifiEnabled:e.wifiEnabled});return p.extend({goformId:\"SET_WIFI_INFO\",isTest:o},t)},function(e){return e||f})},setWifiBasicMultiSSIDSwitch2:function(){Y(arguments,function(e){var t=e;\"0\"==e.wifiEnabled&&(t={wifiEnabled:e.wifiEnabled,wifiOrder:e.wifiOrder});return p.extend({goformId:\"SET_WIFI_INFO2\",isTest:o},t)},function(e){return e||f})},getCurrentlyAttachedDevicesInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"station_list\"}},function(e){for(var t=[],n=e.station_list,_=0;n&&_<n.length;_++){var r={};r.ssid_index=n",
+    "SET_WIFI_INFO2": "st:o},t)},function(e){return e||f})},setWifiBasicMultiSSIDSwitch2:function(){Y(arguments,function(e){var t=e;\"0\"==e.wifiEnabled&&(t={wifiEnabled:e.wifiEnabled,wifiOrder:e.wifiOrder});return p.extend({goformId:\"SET_WIFI_INFO2\",isTest:o},t)},function(e){return e||f})},getCurrentlyAttachedDevicesInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"station_list\"}},function(e){for(var t=[],n=e.station_list,_=0;n&&_<n.length;_++){var r={};r.ssid_index=n[_].ssid_index,r.macAddress=n[_].mac_addr;var s=n[_].hostname;r.hostName=\"\"==s?p.i18n.prop(\"unknown\"):s,r.ipAddress=n[_].ip_addr,t.push(r)}return{attachedDevices:t}},null,!1)},getAttachedCableDevices:function(){return v(arguments",
+    "SET_WIFI_SLEEP_INFO": "IdleTimeToSleep\",n},function(e){{if(e){var t={};return t.sleepMode=e.sysIdleTimeToSleep,t}return f}},null,!1)},setSleepMode:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_WIFI_SLEEP_INFO\",n.sysIdleTimeToSleep=e.sleepMode,n},function(e){return e||f},null,!0)},getFlow:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"tz_get_flow\",n},function(e){return e||f},null,!0)},getPortForward:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"PortForwardEnable,PortForwardRules_0,PortForwardRules_1,PortForwardRules_2,PortForwardRules_3,PortForwardRules_4,PortForwardRules_5,PortForwardRules_6,Por",
+    "SET_WIFI_SSID1_SETTINGS": "\"):\"WEP\"==e.encryptType?(t.security_shared_mode=\"WEP\",t.security_mode=\"OPEN\"):t.security_shared_mode=\"NONE\";return t},function(e){return e||f})},setWifiBasic:function(){Y(arguments,function(e){var t={goformId:\"SET_WIFI_SSID1_SETTINGS\",isTest:o,ssid:e.SSID,broadcastSsidEnabled:e.broadcast,MAX_Access_num:e.station,security_mode:e.AuthMode,cipher:e.cipher,NoForwarding:e.NoForwarding,show_qrcode_flag:e.show_qrcode_flag};d.WIFI_WEP_SUPPORT&&(t.wep_default_key=e.wep_default_key,t.wep_key_1=e.wep_key_1,t.wep_key_2=e.wep_key_2,t.wep_key_3=e.wep_key_3,t.wep_key_4=e.wep_key_4,\"1\"==e.wep_default_key?t.WEP2Select=e.WEP2Select:\"2\"==e.wep_default_key?t.WEP3Select=e.WEP3Select:\"3\"==e.wep_default_key?t.WEP4",
+    "SET_WIFI_SSID2_SETTINGS": "P\"==e.encryptType?(t.security_shared_mode=\"WEP\",t.security_mode=\"OPEN\"):t.security_shared_mode=\"NONE\";return t},function(e){return e||f})},setWifiBasic4SSID2:function(){Y(arguments,function(e){var t={goformId:\"SET_WIFI_SSID2_SETTINGS\",isTest:o,m_SSID:e.m_SSID,m_HideSSID:e.m_broadcast,m_MAX_Access_num:e.m_station,m_AuthMode:e.m_AuthMode,cipher:e.m_cipher,m_NoForwarding:e.m_NoForwarding,m_show_qrcode_flag:e.m_show_qrcode_flag};d.WIFI_WEP_SUPPORT&&(t.m_DefaultKeyID=e.m_wep_default_key,t.m_Key1Str1=e.m_wep_key_1,t.m_Key2Str1=e.m_wep_key_2,t.m_Key3Str1=e.m_wep_key_3,t.m_Key4Str1=e.m_wep_key_4,\"1\"==e.m_wep_default_key?t.m_Key2Type=e.m_WEP2Select:\"2\"==e.m_wep_default_key?t.m_Key3Type=e.m_WEP3Select",
+    "SET_WIFI_SSID3_SETTINGS": "):\"WEP\"==e.encryptType?(t.security_shared_mode=\"WEP\",t.security_mode=\"OPEN\"):t.security_shared_mode=\"NONE\";return t},function(e){return e||f})},setWifiBasic3:function(){Y(arguments,function(e){var t={goformId:\"SET_WIFI_SSID3_SETTINGS\",isTest:o,ssid:e.SSID,broadcastSsidEnabled:e.broadcast,MAX_Access_num3:e.station,security_mode:e.AuthMode,cipher:e.cipher,NoForwarding:e.NoForwarding,show_qrcode_flag:e.show_qrcode_flag};d.WIFI_WEP_SUPPORT&&(t.wep_default_key=e.wep_default_key,t.wep_key_1=e.wep_key_1,t.wep_key_2=e.wep_key_2,t.wep_key_3=e.wep_key_3,t.wep_key_4=e.wep_key_4,\"1\"==e.wep_default_key?t.WEP2Select=e.WEP2Select:\"2\"==e.wep_default_key?t.WEP3Select=e.WEP3Select:\"3\"==e.wep_default_key?t.WEP",
+    "SET_WIFI_SSID4_SETTINGS": "):\"WEP\"==e.encryptType?(t.security_shared_mode=\"WEP\",t.security_mode=\"OPEN\"):t.security_shared_mode=\"NONE\";return t},function(e){return e||f})},setWifiBasic4:function(){Y(arguments,function(e){var t={goformId:\"SET_WIFI_SSID4_SETTINGS\",isTest:o,ssid:e.SSID,broadcastSsidEnabled:e.broadcast,MAX_Access_num2:e.station,security_mode:e.AuthMode,cipher:e.cipher,NoForwarding:e.NoForwarding,show_qrcode_flag:e.show_qrcode_flag};d.WIFI_WEP_SUPPORT&&(t.wep_default_key=e.wep_default_key,t.wep_key_1=e.wep_key_1,t.wep_key_2=e.wep_key_2,t.wep_key_3=e.wep_key_3,t.wep_key_4=e.wep_key_4,\"1\"==e.wep_default_key?t.WEP2Select=e.WEP2Select:\"2\"==e.wep_default_key?t.WEP3Select=e.WEP3Select:\"3\"==e.wep_default_key?t.WEP",
+    "SET_WIFI_SSID5_SETTINGS": "):\"WEP\"==e.encryptType?(t.security_shared_mode=\"WEP\",t.security_mode=\"OPEN\"):t.security_shared_mode=\"NONE\";return t},function(e){return e||f})},setWifiBasic5:function(){Y(arguments,function(e){var t={goformId:\"SET_WIFI_SSID5_SETTINGS\",isTest:o,ssid:e.SSID,broadcastSsidEnabled:e.broadcast,MAX_Access_num4:e.station,security_mode:e.AuthMode,cipher:e.cipher,NoForwarding:e.NoForwarding,show_qrcode_flag:e.show_qrcode_flag};d.WIFI_WEP_SUPPORT&&(t.wep_default_key=e.wep_default_key,t.wep_key_1=e.wep_key_1,t.wep_key_2=e.wep_key_2,t.wep_key_3=e.wep_key_3,t.wep_key_4=e.wep_key_4,\"1\"==e.wep_default_key?t.WEP2Select=e.WEP2Select:\"2\"==e.wep_default_key?t.WEP3Select=e.WEP3Select:\"3\"==e.wep_default_key?t.WEP",
+    "SIP_SERVER_SETTING": "cp2_Dns=e.dhcp2_Dns,n.dhcpLease=e.dhcpLease);return n.dhcp_reboot_flag=1,n},function(e){return e||f},null,!0)},setSipServer:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SIP_SERVER_SETTING\",n.sip_reg_server=e.sip_reg_server,n.sip_reg_port=e.sip_reg_port,n.is_show_sipServer=e.is_show_sipServer,n.sip_domain_address=e.sip_domain_address,n.sip_domain_port=e.sip_domain_port,n.sip_proxy_address=e.sip_proxy_address,n.sip_proxy_port=e.sip_proxy_port,n.sip_proxy_enable=e.sip_proxy_enable,n.sip_display_name=e.sip_display_name,n.sip_user_name=e.sip_user_name,n.voip_apn_enable=e.voip_apn_enable,n.voip_apn=e.voip_apn,n.sip_reg_account=e.sip_reg_account,n.sip_reg_pw",
+    "STATIC_IP": "tic_ip_16,tz_static_ip_17:e.tz_static_ip_17,tz_static_ip_18:e.tz_static_ip_18,tz_static_ip_19:e.tz_static_ip_19}:f},null,!1)},setStaticIp:function(){return v(arguments,{},function(e){return p.extend({goformId:\"STATIC_IP\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},portSettings:function(){return v(arguments,{},function(e){return p.extend({goformId:\"PORT_SETTINGS\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},setStaticRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"SET_STATUS_ROUTE\",n.interface=e.interface,n.ipAddress=e.ipAddress,n.netmask=e.netmask,n.gateway=e.gateway,n.status=e.status,n.routeMode=",
+    "TURN_OFF_DEVICE": "_ON_SPEED\",mgmt_quicken_power_on:e.fastbootEnabled}},function(e){return e&&\"success\"==e.result?e:f},null,!0)},turnOffDevice:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TURN_OFF_DEVICE\",n},function(e){return e||f},null,!0)},restart:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"REBOOT_DEVICE\",n},function(e){return e||f},null,!0)},timerUpdaterEnable:e,switchPortForLog:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"CHANGE_MODE\",n.change_mode=e.change_mode,n},function(e){return e||f},null,!0)},childGroupList:ne,checkCurrentUserInChildGroup:function(e){if(void 0!==d.currentUserI",
+    "TZ_CMD_SECURE_LOGIN": "69_ACS_auth,cpeAuth:e.tr069_CPE_auth,periodicInform:e.tr069_PeriodicInformEnable}:f},null,!1)},itemFuncMode:a,setSysService:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_CMD_SECURE_LOGIN\",n.telnetdEnable=e.telnetFlag,n.adbEnable=e.adbFlag,n.dropbearEnable=e.sshFlag,n},function(e){return e||f},null,!0)},getSysService:function(){return v(arguments,{},function(e,t){var n={cmd:\"telnetd_enable,dropbear_enable,adbd_enable\",multi_data:1};return n.isTest=o,n},function(e){return e?{telnetFlag:\"y\"==e.telnetd_enable?\"y\":\"n\",adbd_enable:\"y\"==e.adbd_enable?\"y\":\"n\",sshFlag:\"y\"==e.dropbear_enable?\"y\":\"n\"}:f},null,!1)},bindCommonData:function(e){e.permissionTozed=\"",
+    "TZ_ENTER_PUK": "on(e,t){var n={};return n.isTest=o,n.goformId=\"SEND_SMS_ID\",n.smsId=e.id,n},function(e){return e||f},null,!0)},enterOnlyPUK:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_ENTER_PUK\",n.PUKNumber=e.PUKNumber,n.CSRFToken=e.CSRFToken,n},function(e){return e&&\"success\"===e.result?{result:!0}:{result:!1}},{},!0)},getHotspotServer:function(e,t){return v(arguments,{},function(e,t){return{isTest:o,multi_data:1,cmd:\"hotspot_enable,hotspot_eap_enable,hotspot_eap_radius_ip,hotspot_eap_radius_port,hotspot_eap_radius_secret\"}},function(e){return e?{hotspot_enable:e.hotspot_enable,hotspot_eap_enable:e.hotspot_eap_enable,hotspot_eap_radius_ip:e.hotspot_eap_radius_ip",
+    "TZ_GET_LOCK_BAND": ":e.rssi,rank:e.rank,mcs:e.mcs,tz_lock_current_cellid:e.tz_lock_current_cellid,only_antenna:e.only_antenna}},getLockBandInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_GET_LOCK_BAND\",n},function(e){return e||f},null,!0)},getUnlockPlmn:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_UNLOCK_PLMN\",n},function(e){return e||f},null,!0)},execNetworkTools:b,LogsNetworkTools:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"logs_level\",n.logs_level=e.logs_lev,n},function(e){return!!e||f},null,!1)},setLockBandInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=",
+    "TZ_GET_LOCK_PLMN": "Test=o,n.cmd=\"tz_real_version\",n},function(e){return e?(N.tz_real_version=e.tz_real_version,e):f},null,!1)},getLockPLMNInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_GET_LOCK_PLMN\",n},function(e){return e||f},null,!0)},setLockPLMNInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.plmn_state=e.plmnState,n.plmn_list=e.plmnList,n.goformId=\"TZ_SET_LOCK_PLMN\",n},function(e){return e||f},null,!0)},backupFirewall:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_save_iptables\",n},function(e){return e||f},null,!1)},getSystemLog:function(){return v(arguments,{},function(e,t){return{isTest:o,",
+    "TZ_PIN_WSC_CONFIGURED": "on(){return v(arguments,{},function(e,t){return p.extend({isTest:o},e)},function(e){return e||f},null,!1)},getWscConfigured:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_PIN_WSC_CONFIGURED\",n},function(e){return e||f},null,!0)},setWpsPinConfig:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_SET_WPS_PIN_CONFIG\",n.set_pin_type=e.set_pin_type,n},function(e){return e||f},null,!0)},getTheme:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_change_theme\",n.multi_data=1,n},function(e){{if(e){var t={};return t.tz_change_theme=e.tz_change_theme,t}return f}},null,!1)},getShowBattery:fu",
+    "TZ_POST_ROUTE": "nction(){return v(arguments,{},function(e,t){return p.extend({isTest:o},e)},function(e){return e||f},null,!0)},setPostRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_POST_ROUTE\",n.postRouteFlag=e.postRouteFlag,n.ip_postroute_mac=e.ip_postroute_mac,n},function(e){return e||f},null,!0)},getPermissionInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_account_power\",n},function(e){return e||f},null,!1)},getDdosStatus:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"get_ddos_status\",n},function(e){{return e?{ddosProtectionFlag:e.ddosStatus}:f}},null,!1)},setDdosStatus:function(){re",
+    "TZ_SET_LOCK_BAND": "kBandInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.band_state=e.band_state,n.band_list=e.band_list,n.wcdma_list=e.wcdma_list,n.tds_list=e.tds_list,n.zeact=e.zeact,n.goformId=\"TZ_SET_LOCK_BAND\",n},function(e){return e||f},null,!0)},loginLock:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.lockCode=e.lockCode,n.goformId=\"UNLOCK_PLMN_PSK\",n},function(e){return e||f},null,!0)},getNetworkType:function(e){return isInArr(e,[\"HSPA+\",\"TDD\",\"FDD\"])?\"4G\":isInArr(e,[\"TD-SCDMA\",\"HSDPA\",\"HSUPA\",\"HSPA\",\"TD\",\"WCDMA\"])?\"3G\":isInArr(e,[\"GPRS\",\"EDGE\"])?\"2G\":e},startSystemUpgrade:function(){return v(arguments,{},function(e,t){var n={};return n.isTes",
+    "TZ_SET_LOCK_PLMN": "Id=\"TZ_GET_LOCK_PLMN\",n},function(e){return e||f},null,!0)},setLockPLMNInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.plmn_state=e.plmnState,n.plmn_list=e.plmnList,n.goformId=\"TZ_SET_LOCK_PLMN\",n},function(e){return e||f},null,!0)},backupFirewall:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_save_iptables\",n},function(e){return e||f},null,!1)},getSystemLog:function(){return v(arguments,{},function(e,t){return{isTest:o,cmd:\"system_log\",subcmd:e.subcmd}},function(e){return e?{result:\"success\"}:f},null,!1)},startConfigUpdate:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_START_CONFI",
+    "TZ_SET_UNLOCK_CODE": "k_plmn_pwd,tz_unlock_plmn_times:e.tz_unlock_plmn_times,tz_unlock_private_mark:e.tz_unlock_private_mark}:f},null,!1)},setUnlockCode:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,n.goformId=\"TZ_SET_UNLOCK_CODE\",n.tz_unlock_index=e.index,1==e.index?n.tz_unlock_private_mark=e.tz_unlock_private_mark:n.tz_unlock_plmn_pwd=e.tz_unlock_plmn_pwd;return n},function(e){return e?{result:e}:f},null,!0)},sendAtTools:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"send_at_tools\",n.url=e.url,n},function(e){return!!e||f},null,!0)},getPostRoute:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"ip_postroute_enable,ip_postr",
+    "TZ_SET_USB_STATUS": "tion(e,t){var n={};return n.flow=e.str1,n.isTest=o,n.goformId=\"set_flow\",n},function(e){return e||f},null,!0)},setUsbStatus:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_SET_USB_STATUS\",n.usbPortEnable=e.usbPortFlag,n.usbDownloadEnable=e.usbDownloadFlag,n},function(e){return e?{result:\"success\"}:f},null,!0)},getStaticIpInfo:function(){return v(arguments,{},function(e,t){return{isTest:o,multi_data:\"1\",cmd:\"staticIPEnable,tz_static_mac_0,tz_static_mac_1,tz_static_mac_2,tz_static_mac_3,tz_static_mac_4,tz_static_mac_5,tz_static_mac_6,tz_static_mac_7,tz_static_mac_8,tz_static_mac_9,tz_static_mac_10,tz_static_mac_11,tz_static_mac_12,tz_static_mac_13,tz_st",
+    "TZ_SET_WPS_PIN_CONFIG": "on(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_PIN_WSC_CONFIGURED\",n},function(e){return e||f},null,!0)},setWpsPinConfig:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_SET_WPS_PIN_CONFIG\",n.set_pin_type=e.set_pin_type,n},function(e){return e||f},null,!0)},getTheme:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_change_theme\",n.multi_data=1,n},function(e){{if(e){var t={};return t.tz_change_theme=e.tz_change_theme,t}return f}},null,!1)},getShowBattery:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"is_show_showBattery\",n.multi_data=\"1\",n},function(e){var t={};return e?(t.showBatter",
+    "TZ_START_CONFIG_UPDATE": "){return{isTest:o,cmd:\"system_log\",subcmd:e.subcmd}},function(e){return e?{result:\"success\"}:f},null,!1)},startConfigUpdate:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_START_CONFIG_UPDATE\",n},function(e){return e||f},null,!0)},getToken:g,setToken:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"set_token\",n.token=e.token,n},function(e){return!!e||f},null,!1)},getRandom:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"get_random\",n},function(e){{return e?{random:e.random}:f}},null,!1)},setRandom:S,getHash:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"",
+    "TZ_START_SYSTEM_UPGRADE": "\"4G\":isInArr(e,[\"TD-SCDMA\",\"HSDPA\",\"HSUPA\",\"HSPA\",\"TD\",\"WCDMA\"])?\"3G\":isInArr(e,[\"GPRS\",\"EDGE\"])?\"2G\":e},startSystemUpgrade:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_START_SYSTEM_UPGRADE\",n},function(e){return e||f},null,!0)},systemUpgradeState:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_upgrade_state\",n},function(e){return e||f},null,!1)},getDeviceVersion:Q,getRealDeviceVersion:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"tz_real_version\",n},function(e){return e?(N.tz_real_version=e.tz_real_version,e):f},null,!1)},getLockPLMNInfo:function(){return v(arguments,{},functio",
+    "TZ_UNLOCK_PLMN": ",function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_GET_LOCK_BAND\",n},function(e){return e||f},null,!0)},getUnlockPlmn:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_UNLOCK_PLMN\",n},function(e){return e||f},null,!0)},execNetworkTools:b,LogsNetworkTools:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"logs_level\",n.logs_level=e.logs_lev,n},function(e){return!!e||f},null,!1)},setLockBandInfo:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.band_state=e.band_state,n.band_list=e.band_list,n.wcdma_list=e.wcdma_list,n.tds_list=e.tds_list,n.zeact=e.zeact,n.goformId=\"TZ_SET_LOCK_BAND\",n},functio",
+    "UNLOCK_NETWORK": "arguments,{},function(e,t){return{isTest:o,cmd:\"unlock_nck_time\"}},function(e){return e||f},null,!1)},unlockNetwork:function(){var t=arguments[1],e=0;return v(arguments,{},function(e){return{isTest:o,goformId:\"UNLOCK_NETWORK\",notCallback:!0,unlock_network_code:e.unlock_network_code}},function(e){e&&\"success\"==e.result?O(n):t({result:\"fail\"})},null,!0);function n(){5<e?(U(n),t({result:\"fail\"})):\"modem_imsi_waitnck\"!=N.simStatus&&(U(n),t({result:\"success\"})),e++}},getAPStationBasic:te,getHotspotList:function(){return v(arguments,{},function(e,t){for(var n=\"wifi_profile_num,wifi_profile\",_=1;_<d.AP_STATION_LIST_LENGTH;_++)n=n+\",wifi_profile\"+_;return{isTest:o,multi_data:1,cmd:n}},function(e){{i",
+    "UNLOCK_PLMN_PSK": "ds_list,n.zeact=e.zeact,n.goformId=\"TZ_SET_LOCK_BAND\",n},function(e){return e||f},null,!0)},loginLock:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.lockCode=e.lockCode,n.goformId=\"UNLOCK_PLMN_PSK\",n},function(e){return e||f},null,!0)},getNetworkType:function(e){return isInArr(e,[\"HSPA+\",\"TDD\",\"FDD\"])?\"4G\":isInArr(e,[\"TD-SCDMA\",\"HSDPA\",\"HSUPA\",\"HSPA\",\"TD\",\"WCDMA\"])?\"3G\":isInArr(e,[\"GPRS\",\"EDGE\"])?\"2G\":e},startSystemUpgrade:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"TZ_START_SYSTEM_UPGRADE\",n},function(e){return e||f},null,!0)},systemUpgradeState:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.",
+    "UPNP_SETTING": "\"upnpEnabled\",n.multi_data=1,n},function(e){{if(e){var t={};return t.upnpSetting=\"1\"==e.upnpEnabled?\"1\":\"0\",t}return f}},null,!1)},setUpnpSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"UPNP_SETTING\"};return n.isTest=o,n.upnp_setting_option=e.upnpSetting,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setNatSetting:function(){return v(arguments,{},function(e,t){var n={goformId:\"NAT_SETTING\"};return n.isTest=o,n.main_nat=e.main_nat,n.main_nat_1=e.main_nat_1,n.main_nat_2=e.main_nat_2,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},setPolarityReversa:function(){return v(arguments,{},function(e,t){var n={goformId:\"POLARITY_REVERSAL\"};return n.i",
+    "USSD_PROCESS": "emind_sms_content).encodeType);return _},function(e){return e||f},null,!0)},getUSSDResponse:function(){var t=arguments[1];return v(arguments,{},function(e,t){{if(\"send\"==e.sendOrReply)return{isTest:o,goformId:\"USSD_PROCESS\",USSD_operator:e.operator,USSD_send_number:e.strUSSDCommand,notCallback:!0};if(\"reply\"==e.sendOrReply)return{isTest:o,goformId:\"USSD_PROCESS\",USSD_operator:e.operator,USSD_reply_number:e.strUSSDCommand,notCallback:!0}}},function(e){if(!e)return void t(!1,\"ussd_fail\");\"success\"==e.result?(callbackTemp=t,ee()):t(!1,\"ussd_fail\")},null,!0)},USSDReplyCancel:function(t){function n(){p.ajax({url:\"/goform/goform_get_cmd_process\",data:{cmd:\"ussd_write_flag\",isTest:o},cache:!1,async",
+    "VIRTUAL_SERVER": "D_DEL\",n.delete_id=e.indexs.join(\";\")+\";\",n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},enableVirtualServer:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"VIRTUAL_SERVER\",n.PortForwardEnable=e.portForwardEnable,n.CSRFToken=e.CSRFToken,n},function(e){return e||f},null,!0)},getRateLimit:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"RateLimitEnable,RateLimitRules_0,RateLimitRules_1,RateLimitRules_2,RateLimitRules_3,RateLimitRules_4,RateLimitRules_5,RateLimitRules_6,RateLimitRules_7,RateLimitRules_8,RateLimitRules_9\",n.multi_data=1,n},function(e){{if(e){var t={};t.RateLimitEnable=e.RateLimitEnable;var n=[];",
+    "VOLTE_APN": "ctionlte=e.actionlte,n.uarfcnlte=e.uarfcnlte,n.cellParaIdlte=e.cellParaIdlte,n},function(e){return e||f},null,!0)},volteApn:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"VOLTE_APN\",n.volteAPN=e.volteAPN,n.volteUrl=e.volteUrl,n},function(e){return e||f},null,!0)},getOperatorName:function(e){return e?\"china mobile\"==e.toLowerCase()?\"china_mobile\":\"china unicom\"==e.toLowerCase()?\"china_unicom\":\"china telecom\"==e.toLowerCase()?\"china_telecom\":\"guatemala\"==e.toLowerCase()?\"guatemala\":\"nicaragua\"==e.toLowerCase()?\"nicaragua\":\"honduras\"==e.toLowerCase()?\"honduras\":\"panama\"==e.toLowerCase()?\"panama\":\"ei salvador\"==e.toLowerCase()?\"ei_salvador\":\"costa rica\"==e.",
+    "WB_MODE": "SETTINGS\",n.digitmap_switch=e.digitmap_switch,n.digitmap_str=e.digitmap_str,n},function(e){return e||f},null,!0)},wbMode:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"WB_MODE\",n.wb_mode=e.digitmap_switch,n},function(e){return e||f},null,!0)},hotlineSettings:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"HOTLINE_SETTINGS\",n.dialog_hotline_str=e.dialog_hotline_str,n},function(e){return e||f},null,!0)},getMonitor:function(e,t){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.goformId=\"MONITOR_GETTINGS\",n},function(e){return e||f},null,!0)},getGreSetting:function(){return v(arguments,{},function(",
+    "WIFI_MAC_FILTER": ",user_ip_addr:e.user_ip_addr,client_mac_address:e.client_mac_address,wifi_mac_white_list:e.wifi_mac_white_list}:f},null,!1)},setMacFilter:function(){return v(arguments,{},function(e){return p.extend({goformId:\"WIFI_MAC_FILTER\",isTest:o},e)},function(e){return e&&\"success\"==e.result?e:f},null,!0)},getFastbootSetting:function(){return v(arguments,{},function(e){return{isTest:o,cmd:\"mgmt_quicken_power_on,need_hard_reboot,need_sim_pin\",multi_data:1}},function(e){return{fastbootEnabled:\"1\"==e.mgmt_quicken_power_on?\"1\":\"0\",need_hard_reboot:e.need_hard_reboot,need_sim_pin:\"yes\"==e.need_sim_pin?\"yes\":\"no\"}},null,!1)},setFastbootSetting:function(){return v(arguments,{},function(e){return{isTest:o,gof",
+    "WIFI_WPS_SET": "itch=e.current_pin_switch,t.ap_station_enable=e.wifi_sta_connection,t.tz_wps_enable=e.tz_wps_enable,t}return f}},null,!1)},openWps:function(){return v(arguments,{},function(e,t){var n={};n.isTest=o,n.goformId=\"WIFI_WPS_SET\",n.WPS_SSID=e.wpsSSID,n.wps_mode=e.wpsType,n.wifi_wps_index=e.wpsIndex,n.CSRFToken=e.CSRFToken,\"PIN\"==n.wps_mode&&(n.wps_pin=e.wpsPin);return n},function(e){return e||f},null,!0)},getSleepMode:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n.cmd=\"sysIdleTimeToSleep\",n},function(e){{if(e){var t={};return t.sleepMode=e.sysIdleTimeToSleep,t}return f}},null,!1)},setSleepMode:function(){return v(arguments,{},function(e,t){var n={};return n.isTest=o,n."
+  }
+}

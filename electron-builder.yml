@@ -1,0 +1,32 @@
+appId: com.browser-control.app
+productName: Router Control
+copyright: Copyright © 2026
+afterPack: scripts/after-pack.mjs
+directories:
+  output: release
+  buildResources: resources
+files:
+  - dist-electron/**/*
+  - package.json
+extraResources:
+  - from: electron-resources/standalone
+    to: standalone
+  - from: resources/icon.png
+    to: icon.png
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: resources/icon.png
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Router Control
+asar: true
+asarUnpack:
+  - "**/*.node"
+  - "**/@libsql/**"
+  - "**/libsql/**"

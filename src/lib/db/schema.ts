@@ -51,6 +51,15 @@ export const usageSnapshots = sqliteTable("usage_snapshots", {
   yearMonth: text("year_month").notNull(),
 });
 
+/** Rolled-up daily traffic totals derived from snapshots and live sync */
+export const dailyUsage = sqliteTable("daily_usage", {
+  date: text("date").primaryKey(), // YYYY-MM-DD (local)
+  txBytes: integer("tx_bytes").notNull().default(0),
+  rxBytes: integer("rx_bytes").notNull().default(0),
+  totalBytes: integer("total_bytes").notNull().default(0),
+  updatedAt: integer("updated_at").notNull(),
+});
+
 /** User-recorded data purchases tracked against cumulative usage */
 export const dataPurchases = sqliteTable("data_purchases", {
   id: integer("id").primaryKey({ autoIncrement: true }),

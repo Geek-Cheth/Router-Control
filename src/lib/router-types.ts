@@ -89,3 +89,32 @@ export interface DataPurchase {
   alertPercent: number;
   status: "scheduled" | "active" | "depleted" | "expired";
 }
+
+export interface DailyUsageRow {
+  date: string;
+  txBytes: number;
+  rxBytes: number;
+  totalBytes: number;
+}
+
+export type PlanLimitingFactor =
+  | "burn_rate"
+  | "expiry"
+  | "already_depleted"
+  | "insufficient_data";
+
+export interface PlanPrediction {
+  averageDailyBytes: number;
+  daysUntilDepletion: number | null;
+  daysUntilExpiry: number | null;
+  estimatedDepletionAt: number | null;
+  limitingFactor: PlanLimitingFactor;
+  sampleDays: number;
+}
+
+export interface UsageAnalytics {
+  daily: DailyUsageRow[];
+  averageDailyBytes: number;
+  sampleDays: number;
+  prediction: PlanPrediction | null;
+}

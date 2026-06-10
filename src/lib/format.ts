@@ -21,6 +21,20 @@ export function formatDuration(seconds: number): string {
   return `${m}m`;
 }
 
+export function formatDays(days: number | null): string {
+  if (days == null) return "—";
+  if (days < 1) return "< 1 day";
+  if (days < 2) return "1 day";
+  return `${Math.round(days)} days`;
+}
+
+export function formatDateLabel(dateKey: string): string {
+  const match = dateKey.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return dateKey;
+  const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  return date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+}
+
 export function parseDataLimit(raw: string): number {
   // Format: "80_1024" means 80 GB (value_unit where unit 1024 = GB)
   const [value] = raw.split("_");

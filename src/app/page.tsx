@@ -11,21 +11,23 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { POLL_INTERVAL, useRouterData } from "@/hooks/use-router-data";
 import { useLiveSpeed } from "@/hooks/use-live-speed";
-import { formatBytes, formatSpeed } from "@/lib/format";
+import { formatBytes, formatDays } from "@/lib/format";
 import { cn } from "@/lib/utils";
-import type { DashboardData, LiveSpeed } from "@/lib/router-types";
+import type { DashboardData, LiveSpeed, PlanPrediction } from "@/lib/router-types";
 import {
   Activity,
+  CalendarClock,
   Database,
   History,
   LayoutDashboard,
   Settings,
   Shield,
   Smartphone,
-  Wifi,
 } from "lucide-react";
 import { SettingsPanel } from "@/components/dashboard/settings-panel";
+import { UsageAnalyticsSummary } from "@/components/dashboard/usage-analytics-summary";
 import { UsageHistoryPanel } from "@/components/dashboard/usage-history-panel";
+import { useUsageAnalytics } from "@/hooks/use-usage-analytics";
 
 const TAB_TRIGGER_CLASS =
   "gap-2 rounded-none border-0 px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-muted-foreground shadow-none after:bottom-0 after:h-px after:bg-cyan-400 data-active:bg-transparent data-active:text-cyan-400 data-active:shadow-[0_1px_12px_theme(colors.cyan.400/0.35)] dark:data-active:bg-transparent sm:px-4";
@@ -33,6 +35,8 @@ const TAB_TRIGGER_CLASS =
 export default function DashboardPage() {
   const { data, error, loading, lastUpdated, refresh } = useRouterData();
   const { speed: liveSpeed } = useLiveSpeed(!!data);
+  const { data: usageAnalytics, loading: analyticsLoading, error: analyticsError } =
+    useUsageAnalytics(30, !!data);
 
   const routerUrl =
     process.env.NEXT_PUBLIC_ROUTER_URL ?? "192.168.8.1";
@@ -93,13 +97,28 @@ export default function DashboardPage() {
             </TabsList>
 
             <TabsContent value="overview" className="space-y-4">
-              <OverviewStats data={data} liveSpeed={liveSpeed} />
+              <OverviewStats
+                data={data}
+                liveSpeed={liveSpeed}
+                averageDailyBytes={
+                  usageAnalytics?.prediction?.averageDailyBytes ??
+                  usageAnalytics?.averageDailyBytes
+                }
+                prediction={usageAnalytics?.prediction ?? null}
+              />
               <div className="grid gap-3 lg:grid-cols-12">
-                <div className="lg:col-span-5">
+                <div className="lg:col-span-5 space-y-3">
                   <UsageCard
                     traffic={data.traffic}
                     stored={data.storedUsage}
                     purchaseStatus={data.purchaseStatus ?? undefined}
+                    prediction={usageAnalytics?.prediction ?? null}
+                  />
+                  <UsageAnalyticsSummary
+                    analytics={usageAnalytics}
+                    loading={analyticsLoading}
+                    error={analyticsError}
+                    compact
                   />
                 </div>
                 <div className="lg:col-span-4">
@@ -160,18 +179,31 @@ export default function DashboardPage() {
 
 function OverviewStats({
   data,
-  liveSpeed,
+  averageDailyBytes,
+  prediction,
 }: {
   data: DashboardData;
   liveSpeed: LiveSpeed | null;
+  averageDailyBytes?: number;
+  prediction?: PlanPrediction | null;
 }) {
-  const downloadKbps = liveSpeed?.realtimeRxKbps ?? 0;
-  const isLiveSpeed = liveSpeed !== null;
-
   const purchase = data.purchaseStatus;
   const dataUsedValue = purchase
     ? `${formatBytes(purchase.usedBytes)} / ${purchase.amountGb} GB`
     : formatBytes(data.storedUsage?.totalBytes ?? data.traffic.totalBytes);
+
+  const forecastValue =
+    prediction?.limitingFactor === "already_depleted"
+      ? "Depleted"
+      : prediction?.limitingFactor === "insufficient_data"
+        ? "—"
+        : prediction?.daysUntilDepletion != null
+          ? formatDays(
+              prediction.limitingFactor === "expiry"
+                ? prediction.daysUntilExpiry
+                : prediction.daysUntilDepletion
+            )
+          : "—";
 
   const stats = [
     {
@@ -187,17 +219,20 @@ function OverviewStats({
       live: false,
     },
     {
-      label: "Download",
-      value: formatSpeed(downloadKbps),
+      label: "Avg / day",
+      value:
+        averageDailyBytes != null && averageDailyBytes > 0
+          ? formatBytes(averageDailyBytes)
+          : "—",
       icon: Activity,
-      live: isLiveSpeed,
+      live: false,
     },
     {
-      label: "Wi-Fi",
-      value: data.info.wifiState ? "On" : "Off",
-      icon: Wifi,
-      live: data.info.wifiState,
-      isToggle: true,
+      label: purchase ? "Plan lasts" : "Forecast",
+      value: purchase ? forecastValue : "—",
+      icon: CalendarClock,
+      live: false,
+      highlight: prediction?.limitingFactor === "burn_rate",
     },
   ];
 
@@ -214,36 +249,15 @@ function OverviewStats({
             </p>
             <stat.icon className="h-3 w-3 shrink-0 text-muted-foreground/40" />
           </div>
-          {stat.isToggle ? (
-            <div className="flex items-center gap-2">
-              <span
-                className={cn(
-                  "h-1.5 w-1.5 shrink-0 rounded-full",
-                  stat.live
-                    ? "bg-cyan-400 shadow-[0_0_6px_theme(colors.cyan.400/0.6)]"
-                    : "bg-muted-foreground/50"
-                )}
-                aria-hidden
-              />
-              <p
-                className={cn(
-                  "font-mono text-base font-medium tabular-nums tracking-tight",
-                  stat.live ? "text-cyan-400" : "text-muted-foreground"
-                )}
-              >
-                {stat.value}
-              </p>
-            </div>
-          ) : (
-            <p
-              className={cn(
-                "truncate font-mono text-base font-medium tabular-nums tracking-tight",
-                stat.live && "text-cyan-400"
-              )}
-            >
-              {stat.value}
-            </p>
-          )}
+          <p
+            className={cn(
+              "truncate font-mono text-base font-medium tabular-nums tracking-tight",
+              stat.live && "text-cyan-400",
+              "highlight" in stat && stat.highlight && "text-cyan-400"
+            )}
+          >
+            {stat.value}
+          </p>
         </div>
       ))}
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,7 +32,7 @@ import {
 } from "@/components/ui/table";
 import { formatBytes } from "@/lib/format";
 import type { DataPurchase } from "@/lib/router-types";
-import { AlertCircle, History, Info } from "lucide-react";
+import { AlertCircle, BarChart3, History, Info } from "lucide-react";
 
 interface MonthlyUsageRow {
   month: string;
@@ -169,6 +170,15 @@ export function UsageHistoryPanel() {
         <CardDescription className="text-xs">
           Data purchase records and calendar month traffic totals.
         </CardDescription>
+        <Button
+          variant="outline"
+          size="sm"
+          className="mt-3 h-8 border-border/50 font-mono text-[11px] uppercase tracking-wide"
+          render={<Link href="/usage" />}
+        >
+          <BarChart3 className="h-3.5 w-3.5" />
+          Daily usage chart
+        </Button>
       </CardHeader>
       <CardContent className="space-y-6">
         <Alert className="border-border/50 bg-muted/20">

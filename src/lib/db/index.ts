@@ -80,6 +80,14 @@ function runMigrations(client: Client) {
     `CREATE INDEX IF NOT EXISTS idx_data_purchases_active ON data_purchases(closed_at, purchased_at DESC)`,
     `CREATE INDEX IF NOT EXISTS idx_audit_log_created ON audit_log(created_at DESC)`,
     `CREATE INDEX IF NOT EXISTS idx_usage_snapshots_month ON usage_snapshots(year_month, captured_at DESC)`,
+    `CREATE TABLE IF NOT EXISTS daily_usage (
+      date TEXT PRIMARY KEY,
+      tx_bytes INTEGER NOT NULL DEFAULT 0,
+      rx_bytes INTEGER NOT NULL DEFAULT 0,
+      total_bytes INTEGER NOT NULL DEFAULT 0,
+      updated_at INTEGER NOT NULL
+    )`,
+    `CREATE INDEX IF NOT EXISTS idx_daily_usage_updated ON daily_usage(updated_at DESC)`,
   ];
 
   for (const sql of statements) {

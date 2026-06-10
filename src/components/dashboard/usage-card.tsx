@@ -7,14 +7,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { formatBytes } from "@/lib/format";
-import type { PurchaseStatus, TrafficStats } from "@/lib/router-types";
+import { formatBytes, formatDays } from "@/lib/format";
+import type { PlanPrediction, PurchaseStatus, TrafficStats } from "@/lib/router-types";
 import { cn } from "@/lib/utils";
-import { ArrowDown, ArrowUp, Database } from "lucide-react";
+import { ArrowDown, ArrowUp, CalendarClock, Database } from "lucide-react";
 
 interface Props {
   traffic: TrafficStats;
   purchaseStatus?: PurchaseStatus;
+  prediction?: PlanPrediction | null;
   stored?: {
     yearMonth: string;
     txBytes: number;
@@ -23,7 +24,7 @@ interface Props {
   };
 }
 
-export function UsageCard({ traffic, purchaseStatus, stored }: Props) {
+export function UsageCard({ traffic, purchaseStatus, prediction, stored }: Props) {
   const displayTx = stored ? stored.txBytes : traffic.monthlyTxBytes;
   const displayRx = stored ? stored.rxBytes : traffic.monthlyRxBytes;
   const displayTotal = stored ? stored.totalBytes : traffic.totalBytes;
@@ -118,6 +119,29 @@ export function UsageCard({ traffic, purchaseStatus, stored }: Props) {
                   Approaching plan limit - {formatBytes(remainingBytes)} left
                 </p>
               )}
+              {prediction &&
+                !isDepleted &&
+                prediction.limitingFactor !== "insufficient_data" && (
+                  <p className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                    <CalendarClock className="h-3 w-3 shrink-0 text-cyan-400/70" />
+                    {prediction.limitingFactor === "expiry" ? (
+                      <>
+                        Expires in{" "}
+                        <span className="font-mono tabular-nums text-foreground">
+                          {formatDays(prediction.daysUntilExpiry)}
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        ~{" "}
+                        <span className="font-mono tabular-nums text-cyan-400">
+                          {formatDays(prediction.daysUntilDepletion)}
+                        </span>{" "}
+                        left at current pace
+                      </>
+                    )}
+                  </p>
+                )}
             </div>
           </>
         ) : (

@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import { listDataPurchases, recordDataPurchase } from "@/lib/db/repository";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    prepareProfileRequest(request);
     const rows = await listDataPurchases();
     return NextResponse.json({
       purchases: rows.map((r) => ({
@@ -29,6 +31,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
+    prepareProfileRequest(req);
     const body = await req.json();
     const amountGb = Math.floor(Number(body.amountGb));
     if (!Number.isFinite(amountGb) || amountGb < 1) {

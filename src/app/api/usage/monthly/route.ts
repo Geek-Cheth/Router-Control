@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import { listMonthlyUsage } from "@/lib/db/repository";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    prepareProfileRequest(request);
     const rows = await listMonthlyUsage();
     return NextResponse.json({
       months: rows.map((r) => ({

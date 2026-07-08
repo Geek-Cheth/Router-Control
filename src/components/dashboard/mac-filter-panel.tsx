@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import type { ConnectedDevice, MacFilterState } from "@/lib/router-types";
+import { useProfile } from "@/hooks/use-profile";
 import { AlertCircle, Ban, CheckCircle2, Plus, Shield, Trash2 } from "lucide-react";
 
 const MAC_REGEX = /^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/;
@@ -34,6 +35,7 @@ interface Props {
   macFilter: MacFilterState;
   devices: ConnectedDevice[];
   onUpdate: () => void;
+  unsupported?: boolean;
 }
 
 function serverMacsForMode(
@@ -52,7 +54,8 @@ function macListsEqual(a: string[], b: string[]): boolean {
   return sortedA.every((mac, i) => mac === sortedB[i]);
 }
 
-export function MacFilterPanel({ macFilter, devices, onUpdate }: Props) {
+export function MacFilterPanel({ macFilter, devices, onUpdate, unsupported = false }: Props) {
+  const { withProfile } = useProfile();
   const [mode, setMode] = useState(macFilter.mode);
   const [macs, setMacs] = useState<string[]>(
     mode === "blacklist" ? macFilter.blackList : macFilter.whiteList
@@ -82,7 +85,7 @@ export function MacFilterPanel({ macFilter, devices, onUpdate }: Props) {
     setError(null);
     setSuccess(null);
     try {
-      const res = await fetch("/api/router/mac-filter", {
+      const res = await fetch(withProfile("/api/router/mac-filter"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mode: nextMode, macs: nextMacs }),
@@ -131,14 +134,25 @@ export function MacFilterPanel({ macFilter, devices, onUpdate }: Props) {
         <div className="flex items-center gap-2">
           <Shield className="size-4 text-cyan-400" />
           <CardTitle className="text-base">MAC Filter</CardTitle>
-          <Badge variant="outline" className="ml-auto capitalize text-[10px]">
-            {macFilter.mode}
-          </Badge>
+          {!unsupported ? (
+            <Badge variant="outline" className="ml-auto capitalize text-[10px]">
+              {macFilter.mode}
+            </Badge>
+          ) : null}
         </div>
         <CardDescription className="text-xs">
-          Block or allow devices by hardware address.
+          {unsupported
+            ? "MAC filtering is not available on the B310 router profile."
+            : "Block or allow devices by hardware address."}
         </CardDescription>
       </CardHeader>
+      {unsupported ? (
+        <CardContent>
+          <p className="text-sm text-muted-foreground">
+            Switch to the Dialog CPE profile to manage MAC filtering.
+          </p>
+        </CardContent>
+      ) : (
       <CardContent className="space-y-5">
         <div className="space-y-2">
           <Label htmlFor="mac-filter-mode" className="text-xs text-muted-foreground">
@@ -292,6 +306,7 @@ export function MacFilterPanel({ macFilter, devices, onUpdate }: Props) {
           </Button>
         </div>
       </CardContent>
+      )}
     </Card>
   );
 }

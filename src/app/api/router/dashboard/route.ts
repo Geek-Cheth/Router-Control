@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getRouterClient } from "@/lib/router-client";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import {
   getPurchaseStatus,
   getStoredUsageForCurrentMonth,
@@ -8,9 +8,9 @@ import {
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const client = getRouterClient();
+    const { profileId, client } = prepareProfileRequest(request);
     const data = await client.getDashboard();
     const raw = await client.getTrafficAlertRaw().catch(() => ({} as Record<string, string>));
 
@@ -36,7 +36,7 @@ export async function GET() {
       stored?.totalBytes ?? data.traffic.monthlyTxBytes + data.traffic.monthlyRxBytes;
     data.purchaseStatus = await getPurchaseStatus(currentTotalBytes);
 
-    return NextResponse.json(data);
+    return NextResponse.json({ ...data, profileId });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Failed to reach router";
     return NextResponse.json({ error: message, connected: false }, { status: 502 });

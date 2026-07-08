@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import type { DashboardData } from "@/lib/router-types";
+import { ProfileSwitcher } from "@/components/dashboard/profile-switcher";
 import { RefreshCw, Router } from "lucide-react";
 
 interface DashboardHeaderProps {
@@ -45,6 +46,7 @@ export function DashboardHeader({
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <ProfileSwitcher />
           <div className="flex items-center gap-2">
             <span
               className={`h-2 w-2 shrink-0 rounded-full ${

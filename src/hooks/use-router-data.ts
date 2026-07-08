@@ -1,11 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useProfile } from "@/hooks/use-profile";
 import type { DashboardData } from "@/lib/router-types";
 
 export const POLL_INTERVAL = 10000;
 
 export function useRouterData() {
+  const { withProfile, activeProfileId, loading: profileLoading } = useProfile();
   const [data, setData] = useState<DashboardData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ export function useRouterData() {
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await fetch("/api/router/dashboard");
+      const res = await fetch(withProfile("/api/router/dashboard"));
       const json = await res.json();
       if (!res.ok) {
         setError(json.error ?? "Failed to connect to router");
@@ -29,9 +31,11 @@ export function useRouterData() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [withProfile]);
 
   useEffect(() => {
+    if (profileLoading) return;
+
     const initial = setTimeout(() => {
       void fetchData();
     }, 0);
@@ -42,7 +46,7 @@ export function useRouterData() {
       clearTimeout(initial);
       clearInterval(id);
     };
-  }, [fetchData]);
+  }, [fetchData, activeProfileId, profileLoading]);
 
-  return { data, error, loading, lastUpdated, refresh: fetchData };
+  return { data, error, loading: loading || profileLoading, lastUpdated, refresh: fetchData };
 }

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getRouterClient } from "@/lib/router-client";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import { updateEnvPassword } from "@/lib/env-password";
 import { logAudit, logSettingChange } from "@/lib/db/repository";
 
@@ -7,6 +7,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
+    const { profileId, client } = prepareProfileRequest(req);
     const body = await req.json();
     const { oldPassword, newPassword, confirmPassword } = body;
 
@@ -17,12 +18,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Passwords do not match" }, { status: 400 });
     }
 
-    const client = getRouterClient();
     await client.changePassword(oldPassword, newPassword);
-    updateEnvPassword(newPassword);
+    updateEnvPassword(profileId, newPassword);
 
-    await logAudit("password.change", { success: true });
-    await logSettingChange("admin_password", true, { method: "CHANGE_PASSWORD" });
+    await logAudit("password.change", { success: true, profileId });
+    await logSettingChange("admin_password", true, { method: "CHANGE_PASSWORD", profileId });
 
     return NextResponse.json({ success: true });
   } catch (err) {

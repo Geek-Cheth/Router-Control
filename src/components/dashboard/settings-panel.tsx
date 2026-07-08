@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useProfile } from "@/hooks/use-profile";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -42,6 +43,7 @@ export function SettingsPanel() {
 }
 
 function RebootPanel() {
+  const { withProfile } = useProfile();
   const [open, setOpen] = useState(false);
   const [rebooting, setRebooting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -50,7 +52,7 @@ function RebootPanel() {
     setRebooting(true);
     setError(null);
     try {
-      const res = await fetch("/api/router/reboot", { method: "POST" });
+      const res = await fetch(withProfile("/api/router/reboot"), { method: "POST" });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Reboot failed");
       setOpen(false);
@@ -128,6 +130,7 @@ function RebootPanel() {
 }
 
 function PasswordChangePanel() {
+  const { withProfile } = useProfile();
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -157,7 +160,7 @@ function PasswordChangePanel() {
 
     setSaving(true);
     try {
-      const res = await fetch("/api/router/password", {
+      const res = await fetch(withProfile("/api/router/password"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ oldPassword, newPassword, confirmPassword }),
@@ -286,6 +289,7 @@ function parseDateInputToMs(dateInput: string, opts: { endExclusive: boolean }) 
 }
 
 function DataPurchasePanel({ className }: DataPurchasePanelProps) {
+  const { withProfile } = useProfile();
   const [amountGb, setAmountGb] = useState(80);
   const [notes, setNotes] = useState("");
   const [alertPercent, setAlertPercent] = useState(80);
@@ -322,7 +326,7 @@ function DataPurchasePanel({ className }: DataPurchasePanelProps) {
 
   async function loadActiveStatus() {
     setError(null);
-    const res = await fetch("/api/usage/active");
+    const res = await fetch(withProfile("/api/usage/active"));
     const json = await res.json();
     if (!res.ok) throw new Error(json.error ?? "Failed to load active purchase");
     setActiveStatus(json.status ?? null);
@@ -365,7 +369,7 @@ function DataPurchasePanel({ className }: DataPurchasePanelProps) {
       const startAt = parseDateInputToMs(startDate, { endExclusive: false });
       const expiresAt = parseDateInputToMs(expiresDate, { endExclusive: true });
 
-      const res = await fetch("/api/usage/purchases", {
+      const res = await fetch(withProfile("/api/usage/purchases"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

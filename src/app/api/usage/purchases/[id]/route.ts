@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import {
   deleteDataPurchase,
   updateDataPurchase,
@@ -16,6 +17,7 @@ export async function PUT(
   context: { params: Promise<{ id: string }> }
 ) {
   try {
+    prepareProfileRequest(req);
     const { id: idStr } = await context.params;
     const id = Math.floor(Number(idStr));
     if (!Number.isFinite(id) || id < 1) {
@@ -63,10 +65,11 @@ export async function PUT(
 }
 
 export async function DELETE(
-  _req: NextRequest,
+  req: NextRequest,
   context: { params: Promise<{ id: string }> }
 ) {
   try {
+    prepareProfileRequest(req);
     const { id: idStr } = await context.params;
     const id = Math.floor(Number(idStr));
     if (!Number.isFinite(id) || id < 1) {

@@ -4,12 +4,17 @@ import { mkdirSync } from "fs";
 import { dirname, join } from "path";
 import * as schema from "./schema";
 import { getDefaultDbPath } from "@/lib/app-config";
+import { getDbProfile } from "./profile-context";
 
 const defaultPath = join(process.cwd(), "data", "router-control.db");
 
-function resolveDbFilePath() {
-  if (process.env.DB_PATH) return process.env.DB_PATH.replace(/^file:/, "");
-  if (process.env.APP_DATA_DIR) return getDefaultDbPath();
+function resolveDbFilePath(profileId?: string) {
+  const id = profileId ?? getDbProfile();
+  if (process.env.DB_PATH && !profileId && getDbProfile() === "dialog") {
+    return process.env.DB_PATH.replace(/^file:/, "");
+  }
+  if (process.env.APP_DATA_DIR) return getDefaultDbPath(id);
+  if (id !== "dialog") return join(process.cwd(), "data", `router-control-${id}.db`);
   return defaultPath;
 }
 
@@ -129,22 +134,28 @@ function runMigrations(client: Client) {
 
 declare global {
   // eslint-disable-next-line no-var
-  var __db: ReturnType<typeof drizzle<typeof schema>> | undefined;
+  var __dbMap: Map<string, ReturnType<typeof drizzle<typeof schema>>> | undefined;
   // eslint-disable-next-line no-var
-  var __libsql: Client | undefined;
+  var __libsqlMap: Map<string, Client> | undefined;
 }
 
-export function getDb() {
-  if (!global.__db) {
-    const filePath = resolveDbFilePath();
-    const url = filePath.startsWith("file:") ? filePath : `file:${filePath}`;
-    mkdirSync(dirname(filePath.replace(/^file:/, "")), { recursive: true });
-    const client = createClient({ url });
-    runMigrations(client);
-    global.__libsql = client;
-    global.__db = drizzle(client, { schema });
-  }
-  return global.__db;
+export function getDb(profileId?: string) {
+  const id = profileId ?? getDbProfile();
+  if (!global.__dbMap) global.__dbMap = new Map();
+  if (!global.__libsqlMap) global.__libsqlMap = new Map();
+
+  const existing = global.__dbMap.get(id);
+  if (existing) return existing;
+
+  const filePath = resolveDbFilePath(id);
+  const url = filePath.startsWith("file:") ? filePath : `file:${filePath}`;
+  mkdirSync(dirname(filePath.replace(/^file:/, "")), { recursive: true });
+  const client = createClient({ url });
+  runMigrations(client);
+  global.__libsqlMap.set(id, client);
+  const db = drizzle(client, { schema });
+  global.__dbMap.set(id, db);
+  return db;
 }
 
 export { schema };

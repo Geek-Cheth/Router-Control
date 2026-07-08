@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import { getUsageAnalytics } from "@/lib/db/repository";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
   try {
+    prepareProfileRequest(request);
     const { searchParams } = new URL(request.url);
     const days = Math.min(
       Math.max(parseInt(searchParams.get("days") ?? "30", 10) || 30, 1),

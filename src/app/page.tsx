@@ -28,6 +28,7 @@ import { SettingsPanel } from "@/components/dashboard/settings-panel";
 import { UsageAnalyticsSummary } from "@/components/dashboard/usage-analytics-summary";
 import { UsageHistoryPanel } from "@/components/dashboard/usage-history-panel";
 import { useUsageAnalytics } from "@/hooks/use-usage-analytics";
+import { useProfile } from "@/hooks/use-profile";
 
 const TAB_TRIGGER_CLASS =
   "gap-2 rounded-none border-0 px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-muted-foreground shadow-none after:bottom-0 after:h-px after:bg-cyan-400 data-active:bg-transparent data-active:text-cyan-400 data-active:shadow-[0_1px_12px_theme(colors.cyan.400/0.35)] dark:data-active:bg-transparent sm:px-4";
@@ -37,9 +38,9 @@ export default function DashboardPage() {
   const { speed: liveSpeed } = useLiveSpeed(!!data);
   const { data: usageAnalytics, loading: analyticsLoading, error: analyticsError } =
     useUsageAnalytics(30, !!data);
+  const { activeProfile } = useProfile();
 
-  const routerUrl =
-    process.env.NEXT_PUBLIC_ROUTER_URL ?? "192.168.8.1";
+  const routerUrl = activeProfile?.host ?? "192.168.8.1";
   const refreshSeconds = POLL_INTERVAL / 1000;
 
   return (
@@ -69,7 +70,7 @@ export default function DashboardPage() {
         {loading && !data ? (
           <DashboardSkeleton />
         ) : data ? (
-          <Tabs defaultValue="overview" className="space-y-5">
+          <Tabs key={activeProfile?.id} defaultValue="overview" className="space-y-5">
             <TabsList
               variant="line"
               className="h-auto w-full justify-start gap-0 overflow-x-auto border-b border-border/40 bg-transparent p-0"
@@ -144,6 +145,7 @@ export default function DashboardPage() {
                   macFilter={data.macFilter}
                   devices={data.devices}
                   onUpdate={refresh}
+                  unsupported={activeProfile?.type === "huawei"}
                 />
                 <DevicesTable devices={data.devices} />
               </div>

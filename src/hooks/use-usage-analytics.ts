@@ -2,9 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { POLL_INTERVAL } from "@/hooks/use-router-data";
+import { useProfile } from "@/hooks/use-profile";
 import type { UsageAnalytics } from "@/lib/router-types";
 
 export function useUsageAnalytics(days = 30, enabled = true) {
+  const { withProfile, activeProfileId, loading: profileLoading } = useProfile();
   const [data, setData] = useState<UsageAnalytics | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -18,7 +20,7 @@ export function useUsageAnalytics(days = 30, enabled = true) {
     setError(null);
 
     try {
-      const res = await fetch(`/api/usage/analytics?days=${days}`);
+      const res = await fetch(withProfile(`/api/usage/analytics?days=${days}`));
       const json = await res.json();
       if (requestId !== requestIdRef.current) return;
 
@@ -34,10 +36,10 @@ export function useUsageAnalytics(days = 30, enabled = true) {
         setLoading(false);
       }
     }
-  }, [days, enabled]);
+  }, [days, enabled, withProfile]);
 
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled || profileLoading) return;
 
     const initial = window.setTimeout(() => {
       void refresh();
@@ -50,7 +52,7 @@ export function useUsageAnalytics(days = 30, enabled = true) {
       window.clearTimeout(initial);
       window.clearInterval(id);
     };
-  }, [enabled, refresh]);
+  }, [enabled, refresh, activeProfileId, profileLoading]);
 
-  return { data, loading, error, refresh };
+  return { data, loading: loading || profileLoading, error, refresh };
 }

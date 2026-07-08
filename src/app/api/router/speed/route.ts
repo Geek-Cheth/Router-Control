@@ -1,23 +1,24 @@
 import { NextResponse } from "next/server";
-import { getRouterClient } from "@/lib/router-client";
+import { prepareProfileRequest } from "@/lib/api-profile";
 
 export const dynamic = "force-dynamic";
 
-let inFlight: Promise<unknown> | null = null;
+const inFlight = new Map<string, Promise<unknown>>();
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    if (!inFlight) {
-      inFlight = getRouterClient()
-        .getLiveSpeed()
-        .finally(() => {
-          inFlight = null;
-        });
+    const { profileId, client } = prepareProfileRequest(request);
+    if (!inFlight.has(profileId)) {
+      inFlight.set(
+        profileId,
+        client.getLiveSpeed().finally(() => {
+          inFlight.delete(profileId);
+        })
+      );
     }
-    const speed = await inFlight;
+    const speed = await inFlight.get(profileId);
     return NextResponse.json(speed);
   } catch (err) {
-    inFlight = null;
     const message = err instanceof Error ? err.message : "Failed to fetch speed";
     return NextResponse.json({ error: message }, { status: 502 });
   }

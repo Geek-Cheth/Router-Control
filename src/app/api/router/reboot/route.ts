@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import { getRouterClient } from "@/lib/router-client";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import { logAudit } from "@/lib/db/repository";
 
 export const dynamic = "force-dynamic";
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
-    const client = getRouterClient();
+    const { client } = prepareProfileRequest(request);
     await client.reboot();
     await logAudit("router.reboot", { initiated: true });
     return NextResponse.json({ success: true, message: "Router is rebooting" });

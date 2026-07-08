@@ -2,22 +2,26 @@ import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { resetRouterClient } from "@/lib/router-client";
 import {
-  loadAppConfig,
-  saveAppConfig,
+  loadProfilesConfig,
+  saveProfilesConfig,
   updateRouterPasswordInConfig,
 } from "@/lib/app-config";
 
-export function updateEnvPassword(newPassword: string): void {
-  updateRouterPasswordInConfig(newPassword);
+export function updateEnvPassword(profileId: string, newPassword: string): void {
+  updateRouterPasswordInConfig(profileId, newPassword);
+
+  if (profileId !== "dialog") {
+    resetRouterClient(profileId);
+    return;
+  }
 
   const envPath = join(process.cwd(), ".env.local");
   let content = "";
   try {
     content = readFileSync(envPath, "utf8");
   } catch {
-    // Dev-only fallback; packaged app uses config.json
-    saveAppConfig({ ...loadAppConfig(), routerPassword: newPassword });
-    resetRouterClient();
+    saveProfilesConfig(loadProfilesConfig());
+    resetRouterClient(profileId);
     return;
   }
   if (/ROUTER_PASSWORD=/m.test(content)) {
@@ -27,5 +31,5 @@ export function updateEnvPassword(newPassword: string): void {
   }
   writeFileSync(envPath, content, "utf8");
   process.env.ROUTER_PASSWORD = newPassword;
-  resetRouterClient();
+  resetRouterClient(profileId);
 }

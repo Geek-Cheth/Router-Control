@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getRouterClient } from "@/lib/router-client";
+import { prepareProfileRequest } from "@/lib/api-profile";
 import type { MacFilterState } from "@/lib/router-types";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const client = getRouterClient();
+    const { client } = prepareProfileRequest(request);
     const macFilter = await client.getMacFilter();
     return NextResponse.json(macFilter);
   } catch (err) {
@@ -17,6 +17,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
+    const { client } = prepareProfileRequest(req);
     const body = await req.json();
     const mode = body.mode as MacFilterState["mode"];
     const macs = (body.macs as string[]) ?? [];
@@ -25,7 +26,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid mode" }, { status: 400 });
     }
 
-    const client = getRouterClient();
     await client.setMacFilter(mode, macs);
     const macFilter = await client.getMacFilter();
     const { logAudit } = await import("@/lib/db/repository");

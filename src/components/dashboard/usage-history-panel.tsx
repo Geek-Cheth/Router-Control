@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useProfile } from "@/hooks/use-profile";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
@@ -107,6 +108,7 @@ function EmptySection({ message }: { message: string }) {
 }
 
 export function UsageHistoryPanel() {
+  const { withProfile, activeProfileId } = useProfile();
   const [purchases, setPurchases] = useState<DataPurchase[]>([]);
   const [monthlyRows, setMonthlyRows] = useState<MonthlyUsageRow[]>([]);
   const [loading, setLoading] = useState(true);
@@ -127,8 +129,8 @@ export function UsageHistoryPanel() {
       setError(null);
       try {
         const [purchasesRes, monthlyRes] = await Promise.all([
-          fetch("/api/usage/purchases"),
-          fetch("/api/usage/monthly"),
+          fetch(withProfile("/api/usage/purchases")),
+          fetch(withProfile("/api/usage/monthly")),
         ]);
         const purchasesJson = await purchasesRes.json();
         const monthlyJson = await monthlyRes.json();
@@ -158,7 +160,7 @@ export function UsageHistoryPanel() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [withProfile, activeProfileId]);
 
   return (
     <Card className="border-border/50 bg-card/80 backdrop-blur">
@@ -306,7 +308,7 @@ export function UsageHistoryPanel() {
                                   );
                                   if (!ok) return;
                                   await fetch(
-                                    `/api/usage/purchases/${purchase.id}`,
+                                    withProfile(`/api/usage/purchases/${purchase.id}`),
                                     { method: "DELETE" }
                                   );
                                   window.location.reload();
@@ -486,7 +488,7 @@ export function UsageHistoryPanel() {
                         });
 
                         const res = await fetch(
-                          `/api/usage/purchases/${editTarget.id}`,
+                          withProfile(`/api/usage/purchases/${editTarget.id}`),
                           {
                             method: "PUT",
                             headers: {

@@ -52,12 +52,67 @@ export const huaweiScram = {
   },
 };
 
-export function object2xml(root: string, obj: Record<string, string | number>) {
-  let xml = `<?xml version="1.0" encoding="UTF-8"?><${root}>`;
-  for (const [key, value] of Object.entries(obj)) {
-    xml += `<${key}>${value}</${key}>`;
+type XmlValue = string | number | null | undefined | XmlValue[] | { [key: string]: XmlValue };
+
+function valueToXml(key: string, value: XmlValue): string {
+  if (value === null || value === undefined) return `<${key}></${key}>`;
+  if (Array.isArray(value)) {
+    return value.map((item) => valueToXml(key, item)).join("");
   }
-  return `${xml}</${root}>`;
+  if (typeof value === "object") {
+    let inner = "";
+    for (const [childKey, childValue] of Object.entries(value)) {
+      inner += valueToXml(childKey, childValue);
+    }
+    return `<${key}>${inner}</${key}>`;
+  }
+  return `<${key}>${value}</${key}>`;
+}
+
+export function object2xml(root: string, obj: Record<string, XmlValue>) {
+  let inner = "";
+  for (const [key, value] of Object.entries(obj)) {
+    inner += valueToXml(key, value);
+  }
+  return `<?xml version="1.0" encoding="UTF-8"?><${root}>${inner}</${root}>`;
+}
+
+export const HUAWEI_MAC_FILTER_SLOTS = 10;
+
+export function parseHuaweiMacFilterSlots(
+  data: Record<string, string>
+): string[] {
+  const macs: string[] = [];
+  for (let i = 0; i < HUAWEI_MAC_FILTER_SLOTS; i += 1) {
+    const mac = (data[`WifiMacFilterMac${i}`] ?? "").trim();
+    if (mac) macs.push(mac.toUpperCase());
+  }
+  return macs;
+}
+
+export function buildHuaweiMacFilterSlots(
+  macs: string[],
+  hostnames: string[] = []
+): Record<string, string> {
+  const slots: Record<string, string> = {};
+  for (let i = 0; i < HUAWEI_MAC_FILTER_SLOTS; i += 1) {
+    slots[`WifiMacFilterMac${i}`] = (macs[i] ?? "").toLowerCase();
+    slots[`wifihostname${i}`] = hostnames[i] ?? "";
+  }
+  return slots;
+}
+
+/** Extract each <Ssid>...</Ssid> block as a flat field map. */
+export function parseHuaweiSsidBlocks(text: string): Array<Record<string, string>> {
+  const blocks: Array<Record<string, string>> = [];
+  for (const match of text.matchAll(/<Ssid>([\s\S]*?)<\/Ssid>/g)) {
+    const fields: Record<string, string> = {};
+    for (const field of match[1].matchAll(/<([A-Za-z0-9_]+)>([^<]*)<\/\1>/g)) {
+      fields[field[1]] = field[2];
+    }
+    if (Object.keys(fields).length > 0) blocks.push(fields);
+  }
+  return blocks;
 }
 
 export function parseXmlResponse(text: string): Record<string, string> {
@@ -85,7 +140,11 @@ export function getVerificationTokens(headers: Headers): string[] {
     "__requestverificationtoken",
   ]) {
     const value = headers.get(key);
-    if (value) tokens.push(value);
+    if (!value) continue;
+    for (const part of value.split("#")) {
+      const trimmed = part.trim();
+      if (trimmed) tokens.push(trimmed);
+    }
   }
   return tokens;
 }

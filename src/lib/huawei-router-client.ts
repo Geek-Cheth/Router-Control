@@ -9,13 +9,18 @@ import type {
   TrafficStats,
 } from "./router-types";
 import type { RouterProfile } from "./profiles";
+import { macFilterModeFromCode } from "./format";
 import {
+  buildHuaweiMacFilterSlots,
   bytesPerSecondToKbps,
   getVerificationTokens,
+  HUAWEI_MAC_FILTER_SLOTS,
   huaweiScram,
   networkTypeLabel,
   object2xml,
   parseHostList,
+  parseHuaweiMacFilterSlots,
+  parseHuaweiSsidBlocks,
   parseXmlResponse,
   xmlHasError,
 } from "./huawei/helpers";
@@ -33,14 +38,19 @@ export class HuaweiRouterClient {
     return this.profile.routerUrl.replace(/\/$/, "");
   }
 
-  private headers(): HeadersInit {
+  private headers(consumeToken: boolean): HeadersInit {
     const h: HeadersInit = {
       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
       Accept: "*/*",
       "X-Requested-With": "XMLHttpRequest",
     };
     if (this.cookie) h.Cookie = this.cookie;
-    if (this.tokens[0]) h.__RequestVerificationToken = this.tokens[0];
+    if (this.tokens.length) {
+      // POSTs consume one-time CSRF tokens; GETs reuse the current token.
+      h.__RequestVerificationToken = consumeToken
+        ? this.tokens.shift()!
+        : this.tokens[0];
+    }
     return h;
   }
 
@@ -54,9 +64,11 @@ export class HuaweiRouterClient {
   }
 
   private async request(path: string, init?: RequestInit): Promise<Response> {
+    const method = (init?.method ?? "GET").toUpperCase();
+    const consumeToken = method === "POST" || method === "PUT" || method === "DELETE";
     const res = await fetch(`${this.baseUrl}/${path.replace(/^\//, "")}`, {
       ...init,
-      headers: { ...this.headers(), ...init?.headers },
+      headers: { ...this.headers(consumeToken), ...init?.headers },
       signal: AbortSignal.timeout(10000),
     });
     this.mergeSession(res);
@@ -72,7 +84,11 @@ export class HuaweiRouterClient {
     return parseXmlResponse(text);
   }
 
-  private async post(path: string, body: string): Promise<Record<string, string>> {
+  private async post(
+    path: string,
+    body: string,
+    retries = 2
+  ): Promise<Record<string, string>> {
     const res = await this.request(path, {
       method: "POST",
       headers: { "Content-Type": "application/xml" },
@@ -80,7 +96,13 @@ export class HuaweiRouterClient {
     });
     const text = await res.text();
     if (xmlHasError(text)) {
-      throw new Error(`Huawei API error on ${path}`);
+      const code = text.match(/<code>([^<]+)/)?.[1] ?? "unknown";
+      // 100004 = system busy — brief wait then retry (token already rotated)
+      if (code === "100004" && retries > 0) {
+        await new Promise((r) => setTimeout(r, 750));
+        return this.post(path, body, retries - 1);
+      }
+      throw new Error(`Huawei API error on ${path} (code ${code})`);
     }
     return parseXmlResponse(text);
   }
@@ -207,16 +229,94 @@ export class HuaweiRouterClient {
   }
 
   async getMacFilter(): Promise<MacFilterState> {
+    await this.ensureLogin();
+    const text = await this.request("api/wlan/multi-macfilter-settings").then(
+      (r) => r.text()
+    );
+    if (xmlHasError(text)) {
+      // Fallback for firmwares without multi-SSID MAC filter API
+      const data = await this.get("api/wlan/mac-filter");
+      const modeCode = data.WifiMacFilterStatus ?? "0";
+      const macs = parseHuaweiMacFilterSlots(data);
+      return {
+        mode: macFilterModeFromCode(modeCode),
+        modeCode,
+        whiteList: modeCode === "1" ? macs : [],
+        blackList: modeCode === "2" ? macs : [],
+      };
+    }
+
+    const ssids = parseHuaweiSsidBlocks(text);
+    const primary = ssids[0] ?? {};
+    const modeCode = primary.WifiMacFilterStatus ?? "0";
+    const macs = parseHuaweiMacFilterSlots(primary);
     return {
-      mode: "disabled",
-      modeCode: "0",
-      whiteList: [],
-      blackList: [],
+      mode: macFilterModeFromCode(modeCode),
+      modeCode,
+      whiteList: modeCode === "1" ? macs : [],
+      blackList: modeCode === "2" ? macs : [],
     };
   }
 
-  async setMacFilter(): Promise<void> {
-    throw new Error("MAC filtering is not supported on this router profile");
+  async setMacFilter(
+    mode: MacFilterState["mode"],
+    macs: string[]
+  ): Promise<void> {
+    await this.ensureLogin();
+
+    if (macs.length > HUAWEI_MAC_FILTER_SLOTS) {
+      throw new Error(
+        `B310 supports at most ${HUAWEI_MAC_FILTER_SLOTS} MAC filter entries`
+      );
+    }
+
+    const modeCode =
+      mode === "whitelist" ? "1" : mode === "blacklist" ? "2" : "0";
+    const normalized =
+      mode === "disabled"
+        ? []
+        : [...new Set(macs.map((m) => m.trim().toUpperCase()).filter(Boolean))];
+
+    if (mode !== "disabled" && normalized.length === 0) {
+      throw new Error("Add at least one MAC address before enabling the filter");
+    }
+
+    const text = await this.request("api/wlan/multi-macfilter-settings").then(
+      (r) => r.text()
+    );
+
+    if (xmlHasError(text)) {
+      const slots = buildHuaweiMacFilterSlots(normalized);
+      await this.post(
+        "api/wlan/mac-filter",
+        object2xml("request", {
+          WifiMacFilterStatus: modeCode,
+          ...slots,
+        })
+      );
+      return;
+    }
+
+    const ssids = parseHuaweiSsidBlocks(text);
+    if (ssids.length === 0) {
+      throw new Error("No WLAN SSIDs found for MAC filter update");
+    }
+
+    const slots = buildHuaweiMacFilterSlots(normalized);
+    const updated = ssids.map((ssid) => ({
+      Index: ssid.Index ?? "0",
+      WifiMacFilterStatus: modeCode,
+      ...slots,
+    }));
+
+    await this.post(
+      "api/wlan/multi-macfilter-settings",
+      object2xml("request", {
+        Ssids: {
+          Ssid: updated,
+        },
+      })
+    );
   }
 
   async getRouterInfo(): Promise<RouterInfo> {

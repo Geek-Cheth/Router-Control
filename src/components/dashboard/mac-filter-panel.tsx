@@ -35,7 +35,6 @@ interface Props {
   macFilter: MacFilterState;
   devices: ConnectedDevice[];
   onUpdate: () => void;
-  unsupported?: boolean;
 }
 
 function serverMacsForMode(
@@ -54,7 +53,7 @@ function macListsEqual(a: string[], b: string[]): boolean {
   return sortedA.every((mac, i) => mac === sortedB[i]);
 }
 
-export function MacFilterPanel({ macFilter, devices, onUpdate, unsupported = false }: Props) {
+export function MacFilterPanel({ macFilter, devices, onUpdate }: Props) {
   const { withProfile } = useProfile();
   const [mode, setMode] = useState(macFilter.mode);
   const [macs, setMacs] = useState<string[]>(
@@ -134,25 +133,14 @@ export function MacFilterPanel({ macFilter, devices, onUpdate, unsupported = fal
         <div className="flex items-center gap-2">
           <Shield className="size-4 text-cyan-400" />
           <CardTitle className="text-base">MAC Filter</CardTitle>
-          {!unsupported ? (
-            <Badge variant="outline" className="ml-auto capitalize text-[10px]">
-              {macFilter.mode}
-            </Badge>
-          ) : null}
+          <Badge variant="outline" className="ml-auto capitalize text-[10px]">
+            {macFilter.mode}
+          </Badge>
         </div>
         <CardDescription className="text-xs">
-          {unsupported
-            ? "MAC filtering is not available on the B310 router profile."
-            : "Block or allow devices by hardware address."}
+          Block or allow devices by hardware address.
         </CardDescription>
       </CardHeader>
-      {unsupported ? (
-        <CardContent>
-          <p className="text-sm text-muted-foreground">
-            Switch to the Dialog CPE profile to manage MAC filtering.
-          </p>
-        </CardContent>
-      ) : (
       <CardContent className="space-y-5">
         <div className="space-y-2">
           <Label htmlFor="mac-filter-mode" className="text-xs text-muted-foreground">
@@ -306,7 +294,6 @@ export function MacFilterPanel({ macFilter, devices, onUpdate, unsupported = fal
           </Button>
         </div>
       </CardContent>
-      )}
     </Card>
   );
 }

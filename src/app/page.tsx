@@ -145,7 +145,6 @@ export default function DashboardPage() {
                   macFilter={data.macFilter}
                   devices={data.devices}
                   onUpdate={refresh}
-                  unsupported={activeProfile?.type === "huawei"}
                 />
                 <DevicesTable devices={data.devices} />
               </div>
